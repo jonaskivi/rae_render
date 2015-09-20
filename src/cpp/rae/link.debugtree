@@ -1,0 +1,564 @@
+// this file is automatically created from Rae programming language module:
+///Users/joonaz/Dropbox/jonas/2015/ohjelmointi/rae_programming_language/rae_render/src/cpp/rae/link
+type:empty name:<rae.link> Token::MODULE line: 1 rae.link
+	type:empty name:<rae>    RAE_ERROR Token:: not recognized. line: 1 rae.link.rae
+	type:empty name:<link>   Token::MODULE_NAME line: 2 rae.link.link
+	NEWLINE
+	NEWLINE
+	type:empty name:<@cpp>   Token::PRAGMA_CPP line: 4 rae.link.@cpp
+	RETURN WHICH IS NOT NEWLINE.
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<namespace rae
+> Token::PASSTHROUGH_HDR line: 6 rae.link.namespace rae
+
+	type:empty name:<{
+>     Token::PASSTHROUGH_HDR line: 7 rae.link.{
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<using namespace std;
+> Token::PASSTHROUGH_HDR line: 9 rae.link.using namespace std;
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<//write c++ code here...
+> Token::PASSTHROUGH_HDR line: 11 rae.link.//write c++ code here...
+
+	type:empty name:<template<typename T> class LinkList;
+> Token::PASSTHROUGH_HDR line: 12 rae.link.template<typename T> class LinkList;
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<template<typename T> class link
+> Token::PASSTHROUGH_HDR line: 14 rae.link.template<typename T> class link
+
+	type:empty name:<{
+>     Token::PASSTHROUGH_HDR line: 15 rae.link.{
+
+	type:empty name:<public:
+> Token::PASSTHROUGH_HDR line: 16 rae.link.public:
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	link(T* link_me)
+> Token::PASSTHROUGH_HDR line: 18 rae.link.	link(T* link_me)
+
+	type:empty name:<	: obj(nullptr)
+> Token::PASSTHROUGH_HDR line: 19 rae.link.	: obj(nullptr)
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 20 rae.link.	{
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 21 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"link.new().\n";
+> Token::PASSTHROUGH_HDR line: 22 rae.link.			cout<<"link.new().\n";
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 23 rae.link.		#endif
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<		linkTo(link_me);
+> Token::PASSTHROUGH_HDR line: 25 rae.link.		linkTo(link_me);
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 26 rae.link.	}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	link()
+> Token::PASSTHROUGH_HDR line: 28 rae.link.	link()
+
+	type:empty name:<	: obj(nullptr)
+> Token::PASSTHROUGH_HDR line: 29 rae.link.	: obj(nullptr)
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 30 rae.link.	{
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 31 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"link.new().\n";
+> Token::PASSTHROUGH_HDR line: 32 rae.link.			cout<<"link.new().\n";
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 33 rae.link.		#endif
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 34 rae.link.	}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	~link()
+> Token::PASSTHROUGH_HDR line: 36 rae.link.	~link()
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 37 rae.link.	{
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 38 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"link.free().\n";
+> Token::PASSTHROUGH_HDR line: 39 rae.link.			cout<<"link.free().\n";
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 40 rae.link.		#endif
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<		unlink();
+> Token::PASSTHROUGH_HDR line: 42 rae.link.		unlink();
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 43 rae.link.	}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	bool isValid()
+> Token::PASSTHROUGH_HDR line: 45 rae.link.	bool isValid()
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 46 rae.link.	{
+
+	type:empty name:<		if(obj != nullptr)
+> Token::PASSTHROUGH_HDR line: 47 rae.link.		if(obj != nullptr)
+
+	type:empty name:<			return true;
+> Token::PASSTHROUGH_HDR line: 48 rae.link.			return true;
+
+	type:empty name:<		//else
+> Token::PASSTHROUGH_HDR line: 49 rae.link.		//else
+
+	type:empty name:<		return false;
+> Token::PASSTHROUGH_HDR line: 50 rae.link.		return false;
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 51 rae.link.	}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	void linkTo( T* link_me )//, LinkList<T>* set_link_list )
+> Token::PASSTHROUGH_HDR line: 53 rae.link.	void linkTo( T* link_me )//, LinkList<T>* set_link_list )
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 54 rae.link.	{
+
+	type:empty name:<		//This is set later by T._rae_link()
+> Token::PASSTHROUGH_HDR line: 55 rae.link.		//This is set later by T._rae_link()
+
+	type:empty name:<		//obj = &link_me;
+> Token::PASSTHROUGH_HDR line: 56 rae.link.		//obj = &link_me;
+
+	type:empty name:<		
+>    Token::PASSTHROUGH_HDR line: 57 rae.link.		
+
+	type:empty name:<		link_me->_rae_link(*this);
+> Token::PASSTHROUGH_HDR line: 58 rae.link.		link_me->_rae_link(*this);
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 59 rae.link.	}
+
+	type:empty name:<	
+>     Token::PASSTHROUGH_HDR line: 60 rae.link.	
+
+	type:empty name:<	void unlink()
+> Token::PASSTHROUGH_HDR line: 61 rae.link.	void unlink()
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 62 rae.link.	{
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 63 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"link._rae_unlink() just one:";
+> Token::PASSTHROUGH_HDR line: 64 rae.link.			cout<<"link._rae_unlink() just one:";
+
+	type:empty name:<			if(obj) cout<<*obj<<"\n"; else cout<<"nullptr\n";
+> Token::PASSTHROUGH_HDR line: 65 rae.link.			if(obj) cout<<*obj<<"\n"; else cout<<"nullptr\n";
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 66 rae.link.		#endif
+
+	type:empty name:<		
+>    Token::PASSTHROUGH_HDR line: 67 rae.link.		
+
+	type:empty name:<		if(obj)
+> Token::PASSTHROUGH_HDR line: 68 rae.link.		if(obj)
+
+	type:empty name:<		{
+>   Token::PASSTHROUGH_HDR line: 69 rae.link.		{
+
+	type:empty name:<			if(obj->_rae_link_list)
+> Token::PASSTHROUGH_HDR line: 70 rae.link.			if(obj->_rae_link_list)
+
+	type:empty name:<			{
+>  Token::PASSTHROUGH_HDR line: 71 rae.link.			{
+
+	type:empty name:<				#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 72 rae.link.				#ifdef RAE_DEBUG
+
+	type:empty name:<					cout<<"link._rae_unlink() Should call link_list.unlinkJustOneLink().\n";
+> Token::PASSTHROUGH_HDR line: 73 rae.link.					cout<<"link._rae_unlink() Should call link_list.unlinkJustOneLink().\n";
+
+	type:empty name:<				#endif
+> Token::PASSTHROUGH_HDR line: 74 rae.link.				#endif
+
+	type:empty name:<				obj->_rae_link_list->unlinkJustOneLink(this);
+> Token::PASSTHROUGH_HDR line: 75 rae.link.				obj->_rae_link_list->unlinkJustOneLink(this);
+
+	type:empty name:<			}
+>  Token::PASSTHROUGH_HDR line: 76 rae.link.			}
+
+	type:empty name:<			#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 77 rae.link.			#ifdef RAE_DEBUG
+
+	type:empty name:<			else
+> Token::PASSTHROUGH_HDR line: 78 rae.link.			else
+
+	type:empty name:<			{
+>  Token::PASSTHROUGH_HDR line: 79 rae.link.			{
+
+	type:empty name:<				cout<<"link._rae_unlink() Didn't call link_list.unlinkJustOneLink() because _rae_link_list is nullptr.\n";
+> Token::PASSTHROUGH_HDR line: 80 rae.link.				cout<<"link._rae_unlink() Didn't call link_list.unlinkJustOneLink() because _rae_link_list is nullptr.\n";
+
+	type:empty name:<			}
+>  Token::PASSTHROUGH_HDR line: 81 rae.link.			}
+
+	type:empty name:<			#endif
+> Token::PASSTHROUGH_HDR line: 82 rae.link.			#endif
+
+	type:empty name:<			obj = nullptr;
+> Token::PASSTHROUGH_HDR line: 83 rae.link.			obj = nullptr;
+
+	type:empty name:<		}
+>   Token::PASSTHROUGH_HDR line: 84 rae.link.		}
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 85 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<		else
+> Token::PASSTHROUGH_HDR line: 86 rae.link.		else
+
+	type:empty name:<		{
+>   Token::PASSTHROUGH_HDR line: 87 rae.link.		{
+
+	type:empty name:<			cout<<"link._rae_unlink() we were already unlinked since obj is nullptr.\n";
+> Token::PASSTHROUGH_HDR line: 88 rae.link.			cout<<"link._rae_unlink() we were already unlinked since obj is nullptr.\n";
+
+	type:empty name:<		}
+>   Token::PASSTHROUGH_HDR line: 89 rae.link.		}
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 90 rae.link.		#endif
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 91 rae.link.	}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	void unlinkByValue()
+> Token::PASSTHROUGH_HDR line: 93 rae.link.	void unlinkByValue()
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 94 rae.link.	{
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 95 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"link.unlinkByValue()\n";
+> Token::PASSTHROUGH_HDR line: 96 rae.link.			cout<<"link.unlinkByValue()\n";
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 97 rae.link.		#endif
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<		obj = nullptr;
+> Token::PASSTHROUGH_HDR line: 99 rae.link.		obj = nullptr;
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 100 rae.link.	}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	T* obj;
+> Token::PASSTHROUGH_HDR line: 102 rae.link.	T* obj;
+
+	type:empty name:<};
+>    Token::PASSTHROUGH_HDR line: 103 rae.link.};
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<template<typename T> class LinkList
+> Token::PASSTHROUGH_HDR line: 105 rae.link.template<typename T> class LinkList
+
+	type:empty name:<{
+>     Token::PASSTHROUGH_HDR line: 106 rae.link.{
+
+	type:empty name:<public:
+> Token::PASSTHROUGH_HDR line: 107 rae.link.public:
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	LinkList(T* set_val, link<T>* set_first_link)
+> Token::PASSTHROUGH_HDR line: 109 rae.link.	LinkList(T* set_val, link<T>* set_first_link)
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 110 rae.link.	{
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 111 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"LinkList.new() linklist POINTER: "<<this<<"\nobj POINTER: "<<set_val<<"\n";
+> Token::PASSTHROUGH_HDR line: 112 rae.link.			cout<<"LinkList.new() linklist POINTER: "<<this<<"\nobj POINTER: "<<set_val<<"\n";
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 113 rae.link.		#endif
+
+	type:empty name:<		obj = set_val;
+> Token::PASSTHROUGH_HDR line: 114 rae.link.		obj = set_val;
+
+	type:empty name:<		addLink(set_first_link);
+> Token::PASSTHROUGH_HDR line: 115 rae.link.		addLink(set_first_link);
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 116 rae.link.	}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	~LinkList()
+> Token::PASSTHROUGH_HDR line: 118 rae.link.	~LinkList()
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 119 rae.link.	{
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 120 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"LinkList.free():";
+> Token::PASSTHROUGH_HDR line: 121 rae.link.			cout<<"LinkList.free():";
+
+	type:empty name:<			if(obj) cout<<*obj<<"\n"; else cout<<"already freed: nullptr\n";
+> Token::PASSTHROUGH_HDR line: 122 rae.link.			if(obj) cout<<*obj<<"\n"; else cout<<"already freed: nullptr\n";
+
+	type:empty name:<			cout<<"also the size of links is: "<<links.size()<<"\n";
+> Token::PASSTHROUGH_HDR line: 123 rae.link.			cout<<"also the size of links is: "<<links.size()<<"\n";
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 124 rae.link.		#endif
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 125 rae.link.	}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	//use this just to update the objects address that
+> Token::PASSTHROUGH_HDR line: 127 rae.link.	//use this just to update the objects address that
+
+	type:empty name:<	//was passed when creating this LinkList.
+> Token::PASSTHROUGH_HDR line: 128 rae.link.	//was passed when creating this LinkList.
+
+	type:empty name:<	void updateObject( T* set_object )
+> Token::PASSTHROUGH_HDR line: 129 rae.link.	void updateObject( T* set_object )
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 130 rae.link.	{
+
+	type:empty name:<		obj = set_object;
+> Token::PASSTHROUGH_HDR line: 131 rae.link.		obj = set_object;
+
+	type:empty name:<		for(auto* a_link : links)
+> Token::PASSTHROUGH_HDR line: 132 rae.link.		for(auto* a_link : links)
+
+	type:empty name:<		{
+>   Token::PASSTHROUGH_HDR line: 133 rae.link.		{
+
+	type:empty name:<			//we'll take the risk of not checking for null here:
+> Token::PASSTHROUGH_HDR line: 134 rae.link.			//we'll take the risk of not checking for null here:
+
+	type:empty name:<			a_link->obj = set_object;
+> Token::PASSTHROUGH_HDR line: 135 rae.link.			a_link->obj = set_object;
+
+	type:empty name:<		}
+>   Token::PASSTHROUGH_HDR line: 136 rae.link.		}
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 137 rae.link.	}
+
+	type:empty name:<	
+>     Token::PASSTHROUGH_HDR line: 138 rae.link.	
+
+	type:empty name:<	void addLink( link<T>* link_me )
+> Token::PASSTHROUGH_HDR line: 139 rae.link.	void addLink( link<T>* link_me )
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 140 rae.link.	{
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 141 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"LinkList.addLink():";
+> Token::PASSTHROUGH_HDR line: 142 rae.link.			cout<<"LinkList.addLink():";
+
+	type:empty name:<			if(obj) cout<<*obj<<"\n"; else cout<<"nullptr\n";
+> Token::PASSTHROUGH_HDR line: 143 rae.link.			if(obj) cout<<*obj<<"\n"; else cout<<"nullptr\n";
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<			assert(obj != nullptr);
+> Token::PASSTHROUGH_HDR line: 145 rae.link.			assert(obj != nullptr);
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 146 rae.link.		#endif
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<		link_me->obj = obj;
+> Token::PASSTHROUGH_HDR line: 148 rae.link.		link_me->obj = obj;
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<		links.push_back(link_me);
+> Token::PASSTHROUGH_HDR line: 150 rae.link.		links.push_back(link_me);
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 151 rae.link.	}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	void unlinkAllByValue()
+> Token::PASSTHROUGH_HDR line: 153 rae.link.	void unlinkAllByValue()
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 154 rae.link.	{
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 155 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"LinkList.unlinkByValue():";
+> Token::PASSTHROUGH_HDR line: 156 rae.link.			cout<<"LinkList.unlinkByValue():";
+
+	type:empty name:<			if(obj) cout<<*obj<<"\n"; else cout<<"nullptr\n";
+> Token::PASSTHROUGH_HDR line: 157 rae.link.			if(obj) cout<<*obj<<"\n"; else cout<<"nullptr\n";
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 158 rae.link.		#endif
+
+	type:empty name:<		for(link<T>* a_link : links)
+> Token::PASSTHROUGH_HDR line: 159 rae.link.		for(link<T>* a_link : links)
+
+	type:empty name:<		{
+>   Token::PASSTHROUGH_HDR line: 160 rae.link.		{
+
+	type:empty name:<			a_link->unlinkByValue();
+> Token::PASSTHROUGH_HDR line: 161 rae.link.			a_link->unlinkByValue();
+
+	type:empty name:<		}
+>   Token::PASSTHROUGH_HDR line: 162 rae.link.		}
+
+	type:empty name:<		links.clear();
+> Token::PASSTHROUGH_HDR line: 163 rae.link.		links.clear();
+
+	type:empty name:<		obj = nullptr;
+> Token::PASSTHROUGH_HDR line: 164 rae.link.		obj = nullptr;
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 165 rae.link.	}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	void unlinkJustOneLink(link<T>* rem)
+> Token::PASSTHROUGH_HDR line: 167 rae.link.	void unlinkJustOneLink(link<T>* rem)
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 168 rae.link.	{
+
+	type:empty name:<		#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 169 rae.link.		#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"LinkList.unlinkJustOneLink():";
+> Token::PASSTHROUGH_HDR line: 170 rae.link.			cout<<"LinkList.unlinkJustOneLink():";
+
+	type:empty name:<			if(obj) cout<<*obj<<"\n"; else cout<<"nullptr\n";
+> Token::PASSTHROUGH_HDR line: 171 rae.link.			if(obj) cout<<*obj<<"\n"; else cout<<"nullptr\n";
+
+	type:empty name:<		#endif
+> Token::PASSTHROUGH_HDR line: 172 rae.link.		#endif
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<		if(links.empty())
+> Token::PASSTHROUGH_HDR line: 174 rae.link.		if(links.empty())
+
+	type:empty name:<		{
+>   Token::PASSTHROUGH_HDR line: 175 rae.link.		{
+
+	type:empty name:<			#ifdef RAE_DEBUG
+> Token::PASSTHROUGH_HDR line: 176 rae.link.			#ifdef RAE_DEBUG
+
+	type:empty name:<			cout<<"RAE_ERROR: LinkList.unlinkJustOneLink() links was already empty. Cancelled removing it.\n";
+> Token::PASSTHROUGH_HDR line: 177 rae.link.			cout<<"RAE_ERROR: LinkList.unlinkJustOneLink() links was already empty. Cancelled removing it.\n";
+
+	type:empty name:<			#endif
+> Token::PASSTHROUGH_HDR line: 178 rae.link.			#endif
+
+	type:empty name:<			return;
+> Token::PASSTHROUGH_HDR line: 179 rae.link.			return;
+
+	type:empty name:<		}
+>   Token::PASSTHROUGH_HDR line: 180 rae.link.		}
+
+	type:empty name:<		
+>    Token::PASSTHROUGH_HDR line: 181 rae.link.		
+
+	type:empty name:<		/*
+>  Token::PASSTHROUGH_HDR line: 182 rae.link.		/*
+
+	type:empty name:<		//Too C++11 for my linux install:
+> Token::PASSTHROUGH_HDR line: 183 rae.link.		//Too C++11 for my linux install:
+
+	type:empty name:<		auto it = std::find(links.begin(), links.end(), rem);
+> Token::PASSTHROUGH_HDR line: 184 rae.link.		auto it = std::find(links.begin(), links.end(), rem);
+
+	type:empty name:<		if(it != links.end())
+> Token::PASSTHROUGH_HDR line: 185 rae.link.		if(it != links.end())
+
+	type:empty name:<		{
+>   Token::PASSTHROUGH_HDR line: 186 rae.link.		{
+
+	type:empty name:<			links.erase(it);
+> Token::PASSTHROUGH_HDR line: 187 rae.link.			links.erase(it);
+
+	type:empty name:<		}
+>   Token::PASSTHROUGH_HDR line: 188 rae.link.		}
+
+	type:empty name:<		*/
+>  Token::PASSTHROUGH_HDR line: 189 rae.link.		*/
+
+	type:empty name:<		for(int i = 0; i < links.size(); i++)
+> Token::PASSTHROUGH_HDR line: 190 rae.link.		for(int i = 0; i < links.size(); i++)
+
+	type:empty name:<		{
+>   Token::PASSTHROUGH_HDR line: 191 rae.link.		{
+
+	type:empty name:<			if(links[i] == rem)
+> Token::PASSTHROUGH_HDR line: 192 rae.link.			if(links[i] == rem)
+
+	type:empty name:<			{
+>  Token::PASSTHROUGH_HDR line: 193 rae.link.			{
+
+	type:empty name:<				links.erase( links.begin() + i );
+> Token::PASSTHROUGH_HDR line: 194 rae.link.				links.erase( links.begin() + i );
+
+	type:empty name:<				break;
+> Token::PASSTHROUGH_HDR line: 195 rae.link.				break;
+
+	type:empty name:<			}
+>  Token::PASSTHROUGH_HDR line: 196 rae.link.			}
+
+	type:empty name:<		}
+>   Token::PASSTHROUGH_HDR line: 197 rae.link.		}
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 198 rae.link.	}
+
+	type:empty name:<	
+>     Token::PASSTHROUGH_HDR line: 199 rae.link.	
+
+	type:empty name:<	T* obj;
+> Token::PASSTHROUGH_HDR line: 200 rae.link.	T* obj;
+
+	type:empty name:<	vector<link<T>*> links;
+> Token::PASSTHROUGH_HDR line: 201 rae.link.	vector<link<T>*> links;
+
+	type:empty name:<};
+>    Token::PASSTHROUGH_HDR line: 202 rae.link.};
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<}//end namespace rae
+> Token::PASSTHROUGH_HDR line: 204 rae.link.}//end namespace rae
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<@end>   Token::PRAGMA_CPP_END line: 206 rae.link.@end
+	NEWLINE
+	NEWLINE
+	type:empty name:empty    Token::CLOSE_MODULE line: 207 rae.link.

@@ -1,0 +1,620 @@
+// this file is automatically created from Rae programming language module:
+//c:\Users\jonaz\Dropbox\jonas\2015\ohjelmointi\rae_render\src/cpp/main
+type:empty name:<main>   Token::MODULE line: 1 main
+	type:empty name:<main>   Token::MODULE_NAME line: 2 main.main
+	NEWLINE
+	NEWLINE
+	type:empty name:<rae_render> Token::PROJECT line: 3 main.rae_render
+		NEWLINE
+		type:empty name:<{>      Token::SCOPE_BEGIN line: 4 main.rae_render.{
+		NEWLINE
+		type:empty name:<TODO targetdir = "../"> Token::COMMENT line: 6 main.rae_render.TODO targetdir = "../"
+		NEWLINE
+		NEWLINE
+		NEWLINE
+		NEWLINE
+		type:empty name:<
+	#TODO configurations, run gcc directly and premake support...
+	defines = ["GLEW_STATIC", "NANOVG_GLEW"]
+	configuration("linux")
+		links = ["X11","Xrandr", "rt", "GL", "GLU", "pthread"]
+       
+	configuration("windows")
+		defines = "_CRT_SECURE_NO_DEPRECATE" # to use fopen on windows without warnings.
+		links = ["glu32","opengl32", "gdi32", "winmm", "user32"]
+
+	configuration("macosx")
+	linkoptions = ["-framework OpenGL", "-framework Cocoa", "-framework IOKit", "-framework CoreVideo"]
+
+	configuration("Debug")
+		defines = ["DEBUG"]
+		flags = ["Symbols"]
+		debugdir = "../"
+
+	configuration("Release")
+		defines = ["NDEBUG"]
+		flags = ["Optimize"]
+		debugdir = "../"
+	> Token::STAR_COMMENT line: 40 main.rae_render.
+	#TODO configurations, run gcc directly and premake support...
+	defines = ["GLEW_STATIC", "NANOVG_GLEW"]
+	configuration("linux")
+		links = ["X11","Xrandr", "rt", "GL", "GLU", "pthread"]
+       
+	configuration("windows")
+		defines = "_CRT_SECURE_NO_DEPRECATE" # to use fopen on windows without warnings.
+		links = ["glu32","opengl32", "gdi32", "winmm", "user32"]
+
+	configuration("macosx")
+	linkoptions = ["-framework OpenGL", "-framework Cocoa", "-framework IOKit", "-framework CoreVideo"]
+
+	configuration("Debug")
+		defines = ["DEBUG"]
+		flags = ["Symbols"]
+		debugdir = "../"
+
+	configuration("Release")
+		defines = ["NDEBUG"]
+		flags = ["Optimize"]
+		debugdir = "../"
+	
+		NEWLINE
+		NEWLINE
+		type:empty name:<TODO project things:> Token::COMMENT line: 44 main.rae_render.TODO project things:
+		NEWLINE
+		type:empty name:<import rae.3d.Mesh> Token::COMMENT line: 45 main.rae_render.import rae.3d.Mesh
+		NEWLINE
+		type:empty name:<}>      Token::SCOPE_END line: 45 main.rae_render.}
+	NEWLINE
+	NEWLINE
+	type:empty name:<
+#include <iostream>
+#include <string>
+using namespace std;
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+> Token::STAR_COMMENT line: 55 main.
+#include <iostream>
+#include <string>
+using namespace std;
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+
+	NEWLINE
+	NEWLINE
+	type:empty name:<@cpp>   Token::PRAGMA_CPP line: 59 main.@cpp
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<#ifdef __APPLE__
+> Token::PASSTHROUGH_HDR line: 60 main.#ifdef __APPLE__
+
+	type:empty name:<	#define GLFW_INCLUDE_GLCOREARB
+> Token::PASSTHROUGH_HDR line: 61 main.	#define GLFW_INCLUDE_GLCOREARB
+
+	type:empty name:<#endif
+> Token::PASSTHROUGH_HDR line: 62 main.#endif
+
+	type:empty name:<@end>   Token::PRAGMA_CPP_END line: 63 main.@end
+	NEWLINE
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 64 main.import
+		type:empty name:<GL>     Token::IMPORT_NAME line: 64 main.import.GL
+		type:empty name:<glew>   Token::IMPORT_NAME line: 65 main.import.glew
+	NEWLINE
+	NEWLINE
+	type:empty name:<@cpp>   Token::PRAGMA_CPP line: 67 main.@cpp
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<#include <GLFW/glfw3.h>
+> Token::PASSTHROUGH_HDR line: 68 main.#include <GLFW/glfw3.h>
+
+	type:empty name:<GLFWwindow* glfw_window;
+> Token::PASSTHROUGH_HDR line: 69 main.GLFWwindow* glfw_window;
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<//TODO #include "nanovg.h"
+> Token::PASSTHROUGH_HDR line: 71 main.//TODO #include "nanovg.h"
+
+	type:empty name:<//#include "nanovg_gl.h"
+> Token::PASSTHROUGH_HDR line: 72 main.//#include "nanovg_gl.h"
+
+	type:empty name:<//#include "nanovg_gl_utils.h"
+> Token::PASSTHROUGH_HDR line: 73 main.//#include "nanovg_gl_utils.h"
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<#include <glm/glm.hpp>
+> Token::PASSTHROUGH_HDR line: 75 main.#include <glm/glm.hpp>
+
+	type:empty name:<#include <glm/gtc/matrix_transform.hpp>
+> Token::PASSTHROUGH_HDR line: 76 main.#include <glm/gtc/matrix_transform.hpp>
+
+	type:empty name:<@end>   Token::PRAGMA_CPP_END line: 77 main.@end
+	NEWLINE
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 78 main.import
+		type:empty name:<rae>    Token::IMPORT_NAME line: 78 main.import.rae
+		type:empty name:<3d>     Token::IMPORT_NAME line: 78 main.import.3d
+		type:empty name:<Mesh>   Token::IMPORT_NAME line: 79 main.import.Mesh
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 79 main.import
+		type:empty name:<rae>    Token::IMPORT_NAME line: 79 main.import.rae
+		type:empty name:<3d>     Token::IMPORT_NAME line: 79 main.import.3d
+		type:empty name:<Shader> Token::IMPORT_NAME line: 80 main.import.Shader
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 80 main.import
+		type:empty name:<rae>    Token::IMPORT_NAME line: 80 main.import.rae
+		type:empty name:<3d>     Token::IMPORT_NAME line: 80 main.import.3d
+		type:empty name:<Engine> Token::IMPORT_NAME line: 81 main.import.Engine
+	NEWLINE
+	NEWLINE
+	type:empty name:< TODO
+#include "Random.hpp"
+#include "Animator.hpp"
+#include "Shader.hpp"
+#include "ComponentType.hpp"
+#include "Entity.hpp"
+#include "Transform.hpp"
+#include "Mesh.hpp"
+#include "Material.hpp"
+#include "ObjectFactory.hpp"
+#include "System.hpp"
+#include "RenderSystem.hpp"
+#include "Engine.hpp"
+using namespace Rae;
+> Token::STAR_COMMENT line: 96 main. TODO
+#include "Random.hpp"
+#include "Animator.hpp"
+#include "Shader.hpp"
+#include "ComponentType.hpp"
+#include "Entity.hpp"
+#include "Transform.hpp"
+#include "Mesh.hpp"
+#include "Material.hpp"
+#include "ObjectFactory.hpp"
+#include "System.hpp"
+#include "RenderSystem.hpp"
+#include "Engine.hpp"
+using namespace Rae;
+
+	NEWLINE
+	NEWLINE
+	type:<Engine> name:<g_engine> Token::DEFINE_REFERENCE typetype: TypeType::PTR line: 99 main.g_engine
+	type:empty name:<=>      Token::ASSIGNMENT line: 99 main.=
+	type:empty name:<null>   Token::RAE_NULL line: 100 main.null
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 100 main.extern
+	type:<GLFWwindow> name:<glfw_window> Token::DEFINE_REFERENCE typetype: TypeType::PTR line: 100 main.glfw_window
+	NEWLINE
+	NEWLINE
+	type:empty name:<@cpp>   Token::PRAGMA_CPP line: 103 main.@cpp
+	RETURN WHICH IS NOT NEWLINE.
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<void windowSizeCallback(GLFWwindow* glfw_window, int width, int height)
+> Token::PASSTHROUGH_HDR line: 105 main.void windowSizeCallback(GLFWwindow* glfw_window, int width, int height)
+
+	type:empty name:<{
+>     Token::PASSTHROUGH_HDR line: 106 main.{
+
+	type:empty name:<	if( g_engine == nullptr )
+> Token::PASSTHROUGH_HDR line: 107 main.	if( g_engine == nullptr )
+
+	type:empty name:<		return;
+> Token::PASSTHROUGH_HDR line: 108 main.		return;
+
+	type:empty name:<	g_engine->osEventResizeWindow(width, height);
+> Token::PASSTHROUGH_HDR line: 109 main.	g_engine->osEventResizeWindow(width, height);
+
+	type:empty name:<}
+>     Token::PASSTHROUGH_HDR line: 110 main.}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<void windowPixelSizeCallback(GLFWwindow* glfw_window, int width, int height)
+> Token::PASSTHROUGH_HDR line: 112 main.void windowPixelSizeCallback(GLFWwindow* glfw_window, int width, int height)
+
+	type:empty name:<{
+>     Token::PASSTHROUGH_HDR line: 113 main.{
+
+	type:empty name:<	if( g_engine == nullptr )
+> Token::PASSTHROUGH_HDR line: 114 main.	if( g_engine == nullptr )
+
+	type:empty name:<		return;
+> Token::PASSTHROUGH_HDR line: 115 main.		return;
+
+	type:empty name:<	g_engine->osEventResizeWindowPixels(width, height);
+> Token::PASSTHROUGH_HDR line: 116 main.	g_engine->osEventResizeWindowPixels(width, height);
+
+	type:empty name:<}
+>     Token::PASSTHROUGH_HDR line: 117 main.}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, int set_mods)
+> Token::PASSTHROUGH_HDR line: 119 main.void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, int set_mods)
+
+	type:empty name:<{
+>     Token::PASSTHROUGH_HDR line: 120 main.{
+
+	type:empty name:<	if( g_engine == nullptr )
+> Token::PASSTHROUGH_HDR line: 121 main.	if( g_engine == nullptr )
+
+	type:empty name:<		return;
+> Token::PASSTHROUGH_HDR line: 122 main.		return;
+
+	type:empty name:<	/*
+>   Token::PASSTHROUGH_HDR line: 123 main.	/*
+
+	type:empty name:<	double mx, my;
+> Token::PASSTHROUGH_HDR line: 124 main.	double mx, my;
+
+	type:empty name:<	glfwGetCursorPos(set_window, &mx, &my);
+> Token::PASSTHROUGH_HDR line: 125 main.	glfwGetCursorPos(set_window, &mx, &my);
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<	//cout << "GLFWMouseButtonPress. x: " << mx << " y: " << my << "\n";
+> Token::PASSTHROUGH_HDR line: 127 main.	//cout << "GLFWMouseButtonPress. x: " << mx << " y: " << my << "\n";
+
+	type:empty name:<	if(set_action == GLFW_PRESS)
+> Token::PASSTHROUGH_HDR line: 128 main.	if(set_action == GLFW_PRESS)
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 129 main.	{
+
+	type:empty name:<		g_engine->onMouseButtonPress(set_button, mx, my);
+> Token::PASSTHROUGH_HDR line: 130 main.		g_engine->onMouseButtonPress(set_button, mx, my);
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 131 main.	}
+
+	type:empty name:<	else if(set_action == GLFW_RELEASE)
+> Token::PASSTHROUGH_HDR line: 132 main.	else if(set_action == GLFW_RELEASE)
+
+	type:empty name:<	{
+>    Token::PASSTHROUGH_HDR line: 133 main.	{
+
+	type:empty name:<		//TODO release for a proper click, and add a proper event system.
+> Token::PASSTHROUGH_HDR line: 134 main.		//TODO release for a proper click, and add a proper event system.
+
+	type:empty name:<	}
+>    Token::PASSTHROUGH_HDR line: 135 main.	}
+
+	type:empty name:<	*/
+>   Token::PASSTHROUGH_HDR line: 136 main.	*/
+
+	type:empty name:<}
+>     Token::PASSTHROUGH_HDR line: 137 main.}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<#define check_gl_error() _check_gl_error(__FILE__,__LINE__)
+> Token::PASSTHROUGH_HDR line: 139 main.#define check_gl_error() _check_gl_error(__FILE__,__LINE__)
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<void _check_gl_error(const char *file, int line)
+> Token::PASSTHROUGH_HDR line: 141 main.void _check_gl_error(const char *file, int line)
+
+	type:empty name:<{
+>     Token::PASSTHROUGH_HDR line: 142 main.{
+
+	type:empty name:<        GLenum err (glGetError());
+> Token::PASSTHROUGH_HDR line: 143 main.        GLenum err (glGetError());
+
+	type:empty name:< 
+>     Token::PASSTHROUGH_HDR line: 144 main. 
+
+	type:empty name:<        while(err!=GL_NO_ERROR) {
+> Token::PASSTHROUGH_HDR line: 145 main.        while(err!=GL_NO_ERROR) {
+
+	type:empty name:<                std::string error;
+> Token::PASSTHROUGH_HDR line: 146 main.                std::string error;
+
+	type:empty name:< 
+>     Token::PASSTHROUGH_HDR line: 147 main. 
+
+	type:empty name:<                switch(err) {
+> Token::PASSTHROUGH_HDR line: 148 main.                switch(err) {
+
+	type:empty name:<                        case GL_INVALID_OPERATION:      error="INVALID_OPERATION";      break;
+> Token::PASSTHROUGH_HDR line: 149 main.                        case GL_INVALID_OPERATION:      error="INVALID_OPERATION";      break;
+
+	type:empty name:<                        case GL_INVALID_ENUM:           error="INVALID_ENUM";           break;
+> Token::PASSTHROUGH_HDR line: 150 main.                        case GL_INVALID_ENUM:           error="INVALID_ENUM";           break;
+
+	type:empty name:<                        case GL_INVALID_VALUE:          error="INVALID_VALUE";          break;
+> Token::PASSTHROUGH_HDR line: 151 main.                        case GL_INVALID_VALUE:          error="INVALID_VALUE";          break;
+
+	type:empty name:<                        case GL_OUT_OF_MEMORY:          error="OUT_OF_MEMORY";          break;
+> Token::PASSTHROUGH_HDR line: 152 main.                        case GL_OUT_OF_MEMORY:          error="OUT_OF_MEMORY";          break;
+
+	type:empty name:<                        case GL_INVALID_FRAMEBUFFER_OPERATION:  error="INVALID_FRAMEBUFFER_OPERATION";  break;
+> Token::PASSTHROUGH_HDR line: 153 main.                        case GL_INVALID_FRAMEBUFFER_OPERATION:  error="INVALID_FRAMEBUFFER_OPERATION";  break;
+
+	type:empty name:<                }
+> Token::PASSTHROUGH_HDR line: 154 main.                }
+
+	type:empty name:< 
+>     Token::PASSTHROUGH_HDR line: 155 main. 
+
+	type:empty name:<                std::cerr << "GL_" << error.c_str() << " - " << file << ":" << line << std::endl;
+> Token::PASSTHROUGH_HDR line: 156 main.                std::cerr << "GL_" << error.c_str() << " - " << file << ":" << line << std::endl;
+
+	type:empty name:<                err = glGetError();
+> Token::PASSTHROUGH_HDR line: 157 main.                err = glGetError();
+
+	type:empty name:<        }
+> Token::PASSTHROUGH_HDR line: 158 main.        }
+
+	type:empty name:<}
+>     Token::PASSTHROUGH_HDR line: 159 main.}
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<@end>   Token::PRAGMA_CPP_END line: 161 main.@end
+	NEWLINE
+	NEWLINE
+	type:empty name:< TODO
+void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, int set_mods)
+{
+	if( g_engine == nullptr )
+		return;
+
+	double mx, my;
+	glfwGetCursorPos(set_window, &mx, &my);
+
+	//cout << "GLFWMouseButtonPress. x: " << mx << " y: " << my << "\n";
+	if(set_action == GLFW_PRESS)
+	{
+		g_engine->onMouseButtonPress(set_button, mx, my);
+	}
+	else if(set_action == GLFW_RELEASE)
+	{
+		//TODO release for a proper click, and add a proper event system.
+	}
+}
+> Token::STAR_COMMENT line: 181 main. TODO
+void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, int set_mods)
+{
+	if( g_engine == nullptr )
+		return;
+
+	double mx, my;
+	glfwGetCursorPos(set_window, &mx, &my);
+
+	//cout << "GLFWMouseButtonPress. x: " << mx << " y: " << my << "\n";
+	if(set_action == GLFW_PRESS)
+	{
+		g_engine->onMouseButtonPress(set_button, mx, my);
+	}
+	else if(set_action == GLFW_RELEASE)
+	{
+		//TODO release for a proper click, and add a proper event system.
+	}
+}
+
+	NEWLINE
+	NEWLINE
+	type:empty name:<main>   Token::MAIN line: 184 main.main
+		type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_RETURN_TYPES line: 184 main.main.(
+		type:<int> name:empty    Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 184 main.main.
+		type:empty name:<)>      Token::PARENTHESIS_END_FUNC_RETURN_TYPES line: 184 main.main.)
+		type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 184 main.main.(
+		type:<array> name:<args> Token::BRACKET_DEFINE_ARRAY_BEGIN typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 184 main.main.args
+			type:<string> name:empty Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 184 main.main.args.
+			type:empty name:<]>      Token::BRACKET_DEFINE_ARRAY_END line: 184 main.main.args.]
+		type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 184 main.main.)
+		NEWLINE
+		type:empty name:<{>      Token::SCOPE_BEGIN line: 185 main.main.{
+		NEWLINE
+		type:empty name:<log>    Token::LOG line: 186 main.main.log
+		type:empty name:<(>      Token::PARENTHESIS_BEGIN_LOG line: 186 main.main.(
+		type:empty name:<"Rae Render 0.1"> Token::QUOTE line: 186 main.main."Rae Render 0.1"
+		type:empty name:<)>      Token::PARENTHESIS_END_LOG line: 186 main.main.)
+		NEWLINE
+		NEWLINE
+		type:empty name:<@cpp>   Token::PRAGMA_CPP line: 189 main.main.@cpp
+		RETURN WHICH IS NOT NEWLINE.
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	// Initialise GLFW
+> Token::PASSTHROUGH_SRC line: 191 main.main.	// Initialise GLFW
+
+		type:empty name:<	if( !glfwInit() )
+> Token::PASSTHROUGH_SRC line: 192 main.main.	if( !glfwInit() )
+
+		type:empty name:<	{
+>    Token::PASSTHROUGH_SRC line: 193 main.main.	{
+
+		type:empty name:<		fprintf( stderr, "Failed to initialize GLFW\n" );
+> Token::PASSTHROUGH_SRC line: 194 main.main.		fprintf( stderr, "Failed to initialize GLFW\n" );
+
+		type:empty name:<		return -1;
+> Token::PASSTHROUGH_SRC line: 195 main.main.		return -1;
+
+		type:empty name:<	}
+>    Token::PASSTHROUGH_SRC line: 196 main.main.	}
+
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	// Enable MSAA (multisample anti-aliasing)
+> Token::PASSTHROUGH_SRC line: 198 main.main.	// Enable MSAA (multisample anti-aliasing)
+
+		type:empty name:<	glfwWindowHint(GLFW_SAMPLES, 4);
+> Token::PASSTHROUGH_SRC line: 199 main.main.	glfwWindowHint(GLFW_SAMPLES, 4);
+
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	#ifndef _WIN32 // don't require this on win32, and works with more cards
+> Token::PASSTHROUGH_SRC line: 201 main.main.	#ifndef _WIN32 // don't require this on win32, and works with more cards
+
+		type:empty name:<	// Set OpenGL version to 2.1
+> Token::PASSTHROUGH_SRC line: 202 main.main.	// Set OpenGL version to 2.1
+
+		type:empty name:<		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+> Token::PASSTHROUGH_SRC line: 203 main.main.		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+
+		type:empty name:<		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+> Token::PASSTHROUGH_SRC line: 204 main.main.		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+
+		type:empty name:<	#endif
+> Token::PASSTHROUGH_SRC line: 205 main.main.	#endif
+
+		type:empty name:<	
+>     Token::PASSTHROUGH_SRC line: 206 main.main.	
+
+		type:empty name:<	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, 1);
+> Token::PASSTHROUGH_SRC line: 207 main.main.	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, 1);
+
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	// Create glfw_window
+> Token::PASSTHROUGH_SRC line: 209 main.main.	// Create glfw_window
+
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	GLFWmonitor* screen     = glfwGetPrimaryMonitor();
+> Token::PASSTHROUGH_SRC line: 211 main.main.	GLFWmonitor* screen     = glfwGetPrimaryMonitor();
+
+		type:empty name:<	const GLFWvidmode* mode = glfwGetVideoMode(screen);
+> Token::PASSTHROUGH_SRC line: 212 main.main.	const GLFWvidmode* mode = glfwGetVideoMode(screen);
+
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	int screenWidth = mode->width - 200;
+> Token::PASSTHROUGH_SRC line: 214 main.main.	int screenWidth = mode->width - 200;
+
+		type:empty name:<	int screenHeight = mode->height - 200;
+> Token::PASSTHROUGH_SRC line: 215 main.main.	int screenHeight = mode->height - 200;
+
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	glfw_window = glfwCreateWindow( mode->width - 200, mode->height - 200, "Rae Render", nullptr, nullptr);
+> Token::PASSTHROUGH_SRC line: 217 main.main.	glfw_window = glfwCreateWindow( mode->width - 200, mode->height - 200, "Rae Render", nullptr, nullptr);
+
+		type:empty name:<	
+>     Token::PASSTHROUGH_SRC line: 218 main.main.	
+
+		type:empty name:<	if( glfw_window == nullptr )
+> Token::PASSTHROUGH_SRC line: 219 main.main.	if( glfw_window == nullptr )
+
+		type:empty name:<	{
+>    Token::PASSTHROUGH_SRC line: 220 main.main.	{
+
+		type:empty name:<		fprintf( stderr, "Failed to open GLFW glfw_window.\n" );
+> Token::PASSTHROUGH_SRC line: 221 main.main.		fprintf( stderr, "Failed to open GLFW glfw_window.\n" );
+
+		type:empty name:<		glfwTerminate();
+> Token::PASSTHROUGH_SRC line: 222 main.main.		glfwTerminate();
+
+		type:empty name:<		return -1;
+> Token::PASSTHROUGH_SRC line: 223 main.main.		return -1;
+
+		type:empty name:<	}
+>    Token::PASSTHROUGH_SRC line: 224 main.main.	}
+
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	glfwMakeContextCurrent(glfw_window);
+> Token::PASSTHROUGH_SRC line: 226 main.main.	glfwMakeContextCurrent(glfw_window);
+
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	// Initialize GLEW
+> Token::PASSTHROUGH_SRC line: 228 main.main.	// Initialize GLEW
+
+		type:empty name:<	glewExperimental = GL_TRUE;
+> Token::PASSTHROUGH_SRC line: 229 main.main.	glewExperimental = GL_TRUE;
+
+		type:empty name:<	if (glewInit() != GLEW_OK)
+> Token::PASSTHROUGH_SRC line: 230 main.main.	if (glewInit() != GLEW_OK)
+
+		type:empty name:<	{
+>    Token::PASSTHROUGH_SRC line: 231 main.main.	{
+
+		type:empty name:<		fprintf(stderr, "Failed to initialize GLEW\n");
+> Token::PASSTHROUGH_SRC line: 232 main.main.		fprintf(stderr, "Failed to initialize GLEW\n");
+
+		type:empty name:<		return -1;
+> Token::PASSTHROUGH_SRC line: 233 main.main.		return -1;
+
+		type:empty name:<	}
+>    Token::PASSTHROUGH_SRC line: 234 main.main.	}
+
+		type:empty name:<	// GLEW generates GL error because it calls glGetString(GL_EXTENSIONS), we'll consume it here.
+> Token::PASSTHROUGH_SRC line: 235 main.main.	// GLEW generates GL error because it calls glGetString(GL_EXTENSIONS), we'll consume it here.
+
+		type:empty name:<	glGetError();
+> Token::PASSTHROUGH_SRC line: 236 main.main.	glGetError();
+
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	glfwSwapInterval(0);
+> Token::PASSTHROUGH_SRC line: 238 main.main.	glfwSwapInterval(0);
+
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	glfwSetInputMode(glfw_window, GLFW_STICKY_KEYS, GL_TRUE);
+> Token::PASSTHROUGH_SRC line: 240 main.main.	glfwSetInputMode(glfw_window, GLFW_STICKY_KEYS, GL_TRUE);
+
+		type:empty name:<@end>   Token::PRAGMA_CPP_END line: 241 main.main.@end
+		NEWLINE
+		NEWLINE
+		type:empty name:< Load it into a VBO> Token::COMMENT line: 243 main.main. Load it into a VBO
+		NEWLINE
+		NEWLINE
+		type:empty name:< TODO pass glfw_window here or something...> Token::COMMENT line: 245 main.main. TODO pass glfw_window here or something...
+		NEWLINE
+		type:<Engine> name:<engine> Token::DEFINE_REFERENCE typetype: TypeType::VAL line: 245 main.main.engine
+		type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 245 main.main.(
+		type:<GLFWwindow> name:<glfw_window> Token::USE_REFERENCE typetype: TypeType::PTR line: 245 main.main.glfw_window
+		type:empty name:<)>      Token::PARENTHESIS_END line: 245 main.main.)
+		NEWLINE
+		NEWLINE
+		type:<Engine> name:<g_engine> Token::USE_REFERENCE typetype: TypeType::PTR line: 247 main.main.g_engine
+		type:empty name:<->>     Token::POINT_TO line: 247 main.main.->
+		type:<Engine> name:<engine> Token::USE_REFERENCE typetype: TypeType::VAL line: 247 main.main.engine
+		type:empty name:< Set global access point just for GLFW callbacks.> Token::COMMENT line: 248 main.main. Set global access point just for GLFW callbacks.
+		NEWLINE
+		NEWLINE
+		type:empty name:<@cpp>   Token::PRAGMA_CPP line: 250 main.main.@cpp
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<	glfwSetWindowSizeCallback     (glfw_window, windowSizeCallback);
+> Token::PASSTHROUGH_SRC line: 251 main.main.	glfwSetWindowSizeCallback     (glfw_window, windowSizeCallback);
+
+		type:empty name:<	glfwSetFramebufferSizeCallback(glfw_window, windowPixelSizeCallback); // Support hi-dpi displays
+> Token::PASSTHROUGH_SRC line: 252 main.main.	glfwSetFramebufferSizeCallback(glfw_window, windowPixelSizeCallback); // Support hi-dpi displays
+
+		type:empty name:<	glfwSetMouseButtonCallback    (glfw_window, GLFWonMouseButton);
+> Token::PASSTHROUGH_SRC line: 253 main.main.	glfwSetMouseButtonCallback    (glfw_window, GLFWonMouseButton);
+
+		type:empty name:<@end>   Token::PRAGMA_CPP_END line: 254 main.main.@end
+		NEWLINE
+		NEWLINE
+		type:empty name:<extern> Token::EXTERN line: 255 main.main.extern
+		type:<int> name:<screenWidth> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 255 main.main.screenWidth
+			type:empty name:<=>      Token::INIT_DATA line: 255 =
+				type:empty name:<0>      Token::NUMBER line: 255 =.0
+		NEWLINE
+		type:empty name:<extern> Token::EXTERN line: 256 main.main.extern
+		type:<int> name:<screenHeight> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 256 main.main.screenHeight
+			type:empty name:<=>      Token::INIT_DATA line: 256 =
+				type:empty name:<0>      Token::NUMBER line: 256 =.0
+		type:empty name:< TODO it seems externs have to be on their own line. Fix it.> Token::COMMENT line: 257 main.main. TODO it seems externs have to be on their own line. Fix it.
+		NEWLINE
+		NEWLINE
+		type:<Engine> name:<engine> Token::USE_REFERENCE typetype: TypeType::VAL line: 258 main.main.engine
+		type:empty name:<.>      Token::REFERENCE_DOT line: 258 main.main..
+		type:empty name:<osEventResizeWindow> Token::FUNC_CALL line: 258 main.main.osEventResizeWindow
+		type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 258 main.main.(
+		type:<int> name:<screenWidth> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 258 main.main.screenWidth
+		type:empty name:<,>      Token::COMMA line: 258 main.main.,
+		type:<int> name:<screenHeight> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 258 main.main.screenHeight
+		type:empty name:<)>      Token::PARENTHESIS_END line: 258 main.main.)
+		NEWLINE
+		NEWLINE
+		type:<Engine> name:<engine> Token::USE_REFERENCE typetype: TypeType::VAL line: 260 main.main.engine
+		type:empty name:<.>      Token::REFERENCE_DOT line: 260 main.main..
+		type:empty name:<run>    Token::FUNC_CALL line: 261 main.main.run
+		NEWLINE
+		NEWLINE
+		type:empty name:<@cpp>   Token::PRAGMA_CPP line: 263 main.main.@cpp
+		RETURN WHICH IS NOT NEWLINE.
+		type:empty name:<		glfwTerminate();
+> Token::PASSTHROUGH_SRC line: 264 main.main.		glfwTerminate();
+
+		type:empty name:<@end>   Token::PRAGMA_CPP_END line: 265 main.main.@end
+		NEWLINE
+		NEWLINE
+		type:empty name:<return> Token::RETURN line: 266 main.main.return
+		type:empty name:<0>      Token::NUMBER line: 267 main.main.0
+		NEWLINE
+		type:empty name:<}>      Token::SCOPE_END line: 267 main.main.}
+	NEWLINE
+	NEWLINE
+	type:empty name:empty    Token::CLOSE_MODULE line: 269 main.

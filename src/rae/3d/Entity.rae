@@ -1,0 +1,54 @@
+module rae.3d.Entity
+
+class ComponentIndex
+{
+pub:
+	func init(int set_type, int set_id)
+	{
+		type = set_type
+		id = set_id
+	}
+
+	/*TODO operator overloading == < <= >= > from one func
+	func (int) operatorEquals (ref ComponentIndex other)
+	{
+		if(other.type == type && other.id == id)
+			return 0 # TODO or something...
+		return false # todo
+	}
+	*/
+
+	# Components are identified with 1. component type index, 2. component id index
+	int type
+	int id
+}
+
+class Entity
+{
+pub func (int) id { return m_id }
+priv:
+	func id(int set) { m_id = set }
+	int m_id
+
+pub:
+	func init(int set_id)
+	{
+	}
+
+	func free
+	{
+	}
+
+	func addComponent(int set_type, int set_id)
+	{
+		m_components.create(set_type, set_id);
+	}
+
+	# let ?
+	#func (ref[ComponentIndex]) components { return m_components }
+
+priv:	
+	[ComponentIndex] m_components
+}
+
+

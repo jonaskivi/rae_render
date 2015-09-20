@@ -1,0 +1,39 @@
+module glm.glm
+@dont_generate_code # Means that no C++ will be generated for this file
+
+# Rae bindings would look something like this:
+#func glDeleteBuffers(GLsizei n, let ptr GLuint buffers)
+
+# But it would be cool to be able to just write simplified C/C++ here.
+# Something like:
+
+@cpp_bindings
+namespace glm
+{
+	struct vec3
+	{
+		vec3(float set_x, float set_y, float set_z){}
+		float x;
+		float y;
+		float z;
+	};
+
+	struct vec2
+	{
+		vec2(float set_x, float set_y){}
+		float x;
+		float y;
+	};
+
+	struct mat4
+	{
+		mat4(float set){}
+	};
+
+	void translate(mat4 param1, vec3 param2);
+	mat4 rotate(mat4 param1, float param2, vec3 param3);
+	mat4 perspective(float fieldOfView, float aspect, float near, float far);
+	mat4 lookAt(vec3 cameraPosition, vec3 at, vec3 up);
+}
+@end
+

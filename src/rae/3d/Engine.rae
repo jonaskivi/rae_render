@@ -1,0 +1,278 @@
+module rae.3d.Engine
+
+import rae.3d.Entity
+import rae.3d.Shader
+import rae.3d.Mesh
+import GL.glew
+import glm.glm
+
+@cpp
+#ifdef __APPLE__
+	#define GLFW_INCLUDE_GLCOREARB
+#endif
+#include <GLFW/glfw3.h>
+#include <math.h>
+
+#include <glm/gtc/matrix_transform.hpp>
+@end
+
+# if we don't have bindings, we can just quickly use functions and classes by using the extern keyword.
+extern class GLFWwindow
+extern func glfwSwapBuffers
+extern func glfwPollEvents
+extern func (double)glfwGetTime()
+
+extern func (int)glfwGetKey(ptr GLFWwindow, int key)
+extern int GLFW_KEY_ESCAPE
+extern int GLFW_PRESS
+
+extern func sin
+extern func cos
+extern func tan
+
+class Engine
+{
+pub:
+
+	func init(ptr GLFWwindow set_window)
+	{
+		m_window -> set_window
+
+		shader.loadShader("shaders/basic.vert", "shaders/basic.frag")
+
+		modelViewMatrixUni = glGetUniformLocation(shader.shaderID, "modelViewProjectionMatrix")
+		viewMatrixUni      = glGetUniformLocation(shader.shaderID, "viewMatrix")
+		modelMatrixUni     = glGetUniformLocation(shader.shaderID, "modelMatrix")
+
+		shader.use
+
+		lightPositionUni   = glGetUniformLocation(shader.shaderID, "lightPosition_worldspace")
+		textureUni         = glGetUniformLocation(shader.shaderID, "textureSampler")
+		
+		mesh.generateBox
+		mesh.createVBOs
+
+		m_currentTime      = glfwGetTime
+		m_previousTime     = m_currentTime
+	}
+
+	func run
+	{
+		bool isRunning = true
+
+		loop(; isRunning == true;)
+		{
+			if (glfwGetKey( m_window, GLFW_KEY_ESCAPE ) == GLFW_PRESS)
+			{
+				isRunning = false
+			}
+
+			m_currentTime    = glfwGetTime
+			double deltaTime = m_currentTime - m_previousTime
+			m_previousTime   = m_currentTime
+
+			glViewport(0, 0, m_windowWidth, m_windowHeight)
+
+			glClearColor(0.3, 0.3, 0.3, 0.0)
+			glClear(GL_COLOR_BUFFER_BIT bitor GL_DEPTH_BUFFER_BIT bitor GL_STENCIL_BUFFER_BIT)
+			
+			glDisable(GL_BLEND)
+			glEnable(GL_DEPTH_TEST)
+
+			# TODO modelmatrix
+			#glm::mat4& modelMatrix = transform->modelMatrix();
+
+			float m_fieldOfView     = 70.0f
+			int m_windowPixelWidth  = 1920
+			int m_windowPixelHeight = 1080
+			glm.vec3 m_cameraPosition(0.0f, 0.0f, 0.0f)
+
+			float m_yawAngle = 0.0f
+			float m_pitchAngle = 0.0f
+
+			glm.vec3 up(0.0f, 1.0f, 0.0f)
+			glm.vec3 direction(
+			                    cos(m_pitchAngle) * sin(m_yawAngle),
+			                    sin(m_pitchAngle),
+			                    cos(m_pitchAngle) * cos(m_yawAngle)
+			                    )
+
+			# Right vector
+			glm.vec3 right = glm.vec3
+			(
+				sin(m_yawAngle - 3.141f / 2.0f),
+				0,
+				cos(m_yawAngle - 3.141f / 2.0f)
+			)
+
+			glm.mat4 m_projectionMatrix = glm.perspective( m_fieldOfView, cast[float](m_windowPixelWidth) / cast[float](m_windowPixelHeight), 0.1f, 500.0f);
+
+			glm.mat4 m_viewMatrix = glm.lookAt( m_cameraPosition, m_cameraPosition + direction, up )
+
+			glm.vec3 lightPos = glm.vec3(2.0f, 0.0f, 0.0f)
+			glUniform3f(lightPositionUni, lightPos.x, lightPos.y, lightPos.z)
+
+			#*
+			# Bind texture in Texture Unit 0
+			if( material != nullptr )
+			{
+				glActiveTexture(GL_TEXTURE0);
+				glBindTexture(GL_TEXTURE_2D, material->textureID());
+				# Set textureSampler to use Texture Unit 0
+				glUniform1i(textureUni, 0);
+			}
+			else glBindTexture(GL_TEXTURE_2D, 0);
+			*#
+
+			m_currentAngle += 10.0f * deltaTime
+				if(m_currentAngle > 360.0f)
+				    m_currentAngle = 0.0f
+
+			float x_coord = -9.0f;
+			float y_coord = -4.0f;
+			float z_coord =  10.0f;
+			
+			loop( int i = 0; i < 10; ++i )
+			{
+				loop( int j = 0; j < 10; ++j )
+				{
+					#glm.mat4 modelMatrix = glm.translate(glm.mat4(1.0f), glm.vec3(0.0f, 0.0f, 3.0f))
+					#modelMatrix = glm.rotate(modelMatrix, m_currentAngle, glm.vec3(0.6f, 0.7f, 0.0f))
+					glm.mat4 modelMatrix = glm.translate(glm.mat4(1.0f), glm.vec3(x_coord, y_coord, z_coord))
+					modelMatrix = glm.rotate(modelMatrix, m_currentAngle, glm.vec3(0.6f, 0.7f, 0.0f))
+
+					# The model-view-projection matrix
+					glm.mat4 combinedMatrix = m_projectionMatrix * m_viewMatrix * modelMatrix
+
+					# TODO this will be difficult. Getting a const float* from a two dimensional array, which is actually glm::mat4
+					# with operator[] overloaded.
+					#glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, combinedMatrix[0][0]);
+					#glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, modelMatrix[0][0]);
+					#glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, m_viewMatrix[0][0]);
+
+					@cpp_src
+
+					glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, &combinedMatrix[0][0]);
+					glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, &modelMatrix[0][0]);
+					glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, &m_viewMatrix[0][0]);
+
+					@end
+
+					mesh.render(shader.shaderID)
+
+					x_coord += 2.0f;
+				}
+				y_coord += 2.0f;
+				x_coord = -9.0f;
+				z_coord += 2.0f;
+			}
+
+			# render one more cube in the middle
+			glm.mat4 modelMatrix = glm.translate(glm.mat4(1.0f), glm.vec3(0.0f, 0.0f, 3.0f))
+			modelMatrix = glm.rotate(modelMatrix, m_currentAngle, glm.vec3(0.6f, 0.7f, 0.0f))
+			
+			# The model-view-projection matrix
+			glm.mat4 combinedMatrix = m_projectionMatrix * m_viewMatrix * modelMatrix
+
+			@cpp_src
+
+			glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, &combinedMatrix[0][0]);
+			glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, &modelMatrix[0][0]);
+			glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, &m_viewMatrix[0][0]);
+
+			@end
+
+			mesh.render(shader.shaderID)
+
+			glfwSwapBuffers(m_window)
+			glfwPollEvents()
+		}
+	}
+
+	func update(double time, double delta_time)
+	{
+
+	}
+
+	func osEventResizeWindow(int width, int height)
+	{
+		log("osEventResizeWindow TODO")
+		#m_renderSystem.osEventResizeWindow(width, height)
+		m_windowWidth = width
+		m_windowHeight = height
+	}
+
+	func osEventResizeWindowPixels(int width, int height)
+	{
+		log("osEventResizeWindowPixels TODO")
+		#m_renderSystem.osEventResizeWindowPixels(width, height)
+		m_windowWidth = width
+		m_windowHeight = height
+	}
+
+	func onMouseButtonPress(int set_button, double x, double y)
+	{
+		log("mouse press: x: ", x, " y: ", y)
+
+		#*TODO
+		# Have to scale input on retina screens:
+		x = x * m_renderSystem->screenPixelRatio();
+		y = y * m_renderSystem->screenPixelRatio();
+		
+		unsigned char res[4];
+
+		m_renderSystem->renderPicking( m_objectFactory.entities() );
+
+		#glGetIntegerv(GL_VIEWPORT, viewport);
+		glReadPixels((int)x, m_renderSystem->windowPixelHeight() - (int)y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, &res);
+
+		# Decode entity ID from red and green channels!
+		int pickedID = res[0] + (res[1] * 256);
+
+		#m_renderSystem->m_pickedString = std::to_string(pickedID) + " is " + std::to_string(res[0]) + " and " + std::to_string(res[1]);
+
+		if( pickedID == 0)
+		{
+			# do nothing, it's the background.
+		}
+		else if( pickedID == 1)
+		{
+			createRandomCubeEntity(); # Hmm, we have no proper event handling yet, so entity 1 is the Add Object button!
+		}
+		else
+		{
+			m_objectFactory.destroyEntity( pickedID );
+		}
+		*#
+	}
+
+priv:
+
+	ptr GLFWwindow m_window
+
+	# timing
+	double m_previousTime
+	double m_currentTime
+
+	# TODO
+	#RenderSystem m_renderSystem
+
+	float m_currentAngle
+
+	Shader shader
+	Mesh mesh
+
+	#temp
+	uint modelViewMatrixUni;
+	uint viewMatrixUni;
+	uint modelMatrixUni;
+	uint lightPositionUni;
+	uint textureUni;
+
+	#temp window size stuff:
+
+	int m_windowWidth  = 640
+	int m_windowHeight = 480
+
+}
+

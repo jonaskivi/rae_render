@@ -1,0 +1,1105 @@
+// this file is automatically created from Rae programming language module:
+//c:\Users\jonaz\Dropbox\jonas\2015\ohjelmointi\rae_render\src/cpp/rae/3d/Engine
+type:empty name:<rae.3d.Engine> Token::MODULE line: 1 rae.3d.Engine
+	type:empty name:<rae>    Token::MODULE_DIR line: 1 rae.3d.Engine.rae
+	type:empty name:<3d>     Token::MODULE_DIR line: 1 rae.3d.Engine.3d
+	type:empty name:<Engine> Token::MODULE_NAME line: 2 rae.3d.Engine.Engine
+	NEWLINE
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 3 rae.3d.Engine.import
+		type:empty name:<rae>    Token::IMPORT_NAME line: 3 rae.3d.Engine.import.rae
+		type:empty name:<3d>     Token::IMPORT_NAME line: 3 rae.3d.Engine.import.3d
+		type:empty name:<Entity> Token::IMPORT_NAME line: 4 rae.3d.Engine.import.Entity
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 4 rae.3d.Engine.import
+		type:empty name:<rae>    Token::IMPORT_NAME line: 4 rae.3d.Engine.import.rae
+		type:empty name:<3d>     Token::IMPORT_NAME line: 4 rae.3d.Engine.import.3d
+		type:empty name:<Shader> Token::IMPORT_NAME line: 5 rae.3d.Engine.import.Shader
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 5 rae.3d.Engine.import
+		type:empty name:<rae>    Token::IMPORT_NAME line: 5 rae.3d.Engine.import.rae
+		type:empty name:<3d>     Token::IMPORT_NAME line: 5 rae.3d.Engine.import.3d
+		type:empty name:<Mesh>   Token::IMPORT_NAME line: 6 rae.3d.Engine.import.Mesh
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 6 rae.3d.Engine.import
+		type:empty name:<GL>     Token::IMPORT_NAME line: 6 rae.3d.Engine.import.GL
+		type:empty name:<glew>   Token::IMPORT_NAME line: 7 rae.3d.Engine.import.glew
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 7 rae.3d.Engine.import
+		type:empty name:<glm>    Token::IMPORT_NAME line: 7 rae.3d.Engine.import.glm
+		type:empty name:<glm>    Token::IMPORT_NAME line: 8 rae.3d.Engine.import.glm
+	NEWLINE
+	NEWLINE
+	type:empty name:<@cpp>   Token::PRAGMA_CPP line: 10 rae.3d.Engine.@cpp
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<#ifdef __APPLE__
+> Token::PASSTHROUGH_HDR line: 11 rae.3d.Engine.#ifdef __APPLE__
+
+	type:empty name:<	#define GLFW_INCLUDE_GLCOREARB
+> Token::PASSTHROUGH_HDR line: 12 rae.3d.Engine.	#define GLFW_INCLUDE_GLCOREARB
+
+	type:empty name:<#endif
+> Token::PASSTHROUGH_HDR line: 13 rae.3d.Engine.#endif
+
+	type:empty name:<#include <GLFW/glfw3.h>
+> Token::PASSTHROUGH_HDR line: 14 rae.3d.Engine.#include <GLFW/glfw3.h>
+
+	type:empty name:<#include <math.h>
+> Token::PASSTHROUGH_HDR line: 15 rae.3d.Engine.#include <math.h>
+
+	RETURN WHICH IS NOT NEWLINE.
+	type:empty name:<#include <glm/gtc/matrix_transform.hpp>
+> Token::PASSTHROUGH_HDR line: 17 rae.3d.Engine.#include <glm/gtc/matrix_transform.hpp>
+
+	type:empty name:<@end>   Token::PRAGMA_CPP_END line: 18 rae.3d.Engine.@end
+	NEWLINE
+	NEWLINE
+	type:empty name:< if we don't have bindings, we can just quickly use functions and classes by using the extern keyword.> Token::COMMENT line: 20 rae.3d.Engine. if we don't have bindings, we can just quickly use functions and classes by using the extern keyword.
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 20 rae.3d.Engine.extern
+	type:<GLFWwindow> name:<GLFWwindow> Token::CLASS line: 21 rae.3d.Engine.GLFWwindow
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 21 rae.3d.Engine.extern
+	type:empty name:<glfwSwapBuffers> Token::FUNC line: 21 rae.3d.Engine.glfwSwapBuffers
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 22 rae.3d.Engine.extern
+	type:empty name:<glfwPollEvents> Token::FUNC line: 22 rae.3d.Engine.glfwPollEvents
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 23 rae.3d.Engine.extern
+	type:empty name:<glfwGetTime> Token::FUNC line: 23 rae.3d.Engine.glfwGetTime
+	type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_RETURN_TYPES line: 23 rae.3d.Engine.(
+	type:<double> name:empty Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 23 rae.3d.Engine.
+	type:empty name:<)>      Token::PARENTHESIS_END_FUNC_RETURN_TYPES line: 23 rae.3d.Engine.)
+	type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 23 rae.3d.Engine.(
+	type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 23 rae.3d.Engine.)
+	NEWLINE
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 25 rae.3d.Engine.extern
+	type:empty name:<glfwGetKey> Token::FUNC line: 25 rae.3d.Engine.glfwGetKey
+	type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_RETURN_TYPES line: 25 rae.3d.Engine.(
+	type:<int> name:empty    Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 25 rae.3d.Engine.
+	type:empty name:<)>      Token::PARENTHESIS_END_FUNC_RETURN_TYPES line: 25 rae.3d.Engine.)
+	type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 25 rae.3d.Engine.(
+	type:<GLFWwindow> name:empty Token::DEFINE_REFERENCE typetype: TypeType::PTR line: 25 rae.3d.Engine.
+	type:empty name:<,>      Token::COMMA line: 25 rae.3d.Engine.,
+	type:<int> name:<key>    Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 25 rae.3d.Engine.key
+	type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 25 rae.3d.Engine.)
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 26 rae.3d.Engine.extern
+	type:<int> name:<GLFW_KEY_ESCAPE> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 26 rae.3d.Engine.GLFW_KEY_ESCAPE
+		type:empty name:<=>      Token::INIT_DATA line: 26 =
+			type:empty name:<0>      Token::NUMBER line: 26 =.0
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 27 rae.3d.Engine.extern
+	type:<int> name:<GLFW_PRESS> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 27 rae.3d.Engine.GLFW_PRESS
+		type:empty name:<=>      Token::INIT_DATA line: 27 =
+			type:empty name:<0>      Token::NUMBER line: 27 =.0
+	NEWLINE
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 29 rae.3d.Engine.extern
+	type:empty name:<sin>    Token::FUNC line: 29 rae.3d.Engine.sin
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 30 rae.3d.Engine.extern
+	type:empty name:<cos>    Token::FUNC line: 30 rae.3d.Engine.cos
+	NEWLINE
+	type:empty name:<extern> Token::EXTERN line: 31 rae.3d.Engine.extern
+	type:empty name:<tan>    Token::FUNC line: 31 rae.3d.Engine.tan
+	NEWLINE
+	NEWLINE
+	type:<Engine> name:<Engine> Token::CLASS line: 34 rae.3d.Engine.Engine
+		NEWLINE
+		type:empty name:<{>      Token::SCOPE_BEGIN line: 34 rae.3d.Engine.Engine.{
+		NEWLINE
+		type:empty name:<free>   Token::DESTRUCTOR line: 279 rae.3d.Engine.Engine.free
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 279 rae.3d.Engine.Engine.free.(
+			type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 279 rae.3d.Engine.Engine.free.)
+			type:empty name:empty    Token::NEWLINE line: 279 rae.3d.Engine.Engine.free.
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 279 rae.3d.Engine.Engine.free.{
+			type:empty name:empty    Token::NEWLINE_BEFORE_SCOPE_END line: 279 rae.3d.Engine.Engine.free.
+			type:empty name:<}>      Token::SCOPE_END line: 279 rae.3d.Engine.Engine.free.}
+		NEWLINE
+		type:empty name:<pub>    Token::VISIBILITY_DEFAULT line: 35 rae.3d.Engine.Engine.pub
+		NEWLINE
+		NEWLINE
+		type:empty name:<init>   Token::CONSTRUCTOR line: 37 rae.3d.Engine.Engine.init
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 37 rae.3d.Engine.Engine.init.(
+			type:<GLFWwindow> name:<set_window> Token::DEFINE_REFERENCE typetype: TypeType::PTR line: 37 rae.3d.Engine.Engine.init.set_window
+			type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 37 rae.3d.Engine.Engine.init.)
+			NEWLINE
+			type:<double> name:<m_previousTime> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 256 rae.3d.Engine.Engine.m_previousTime
+				type:empty name:<=>      Token::INIT_DATA line: 256 =
+					type:empty name:<0.0>    Token::NUMBER line: 256 =.0.0
+			NEWLINE
+			type:<double> name:<m_currentTime> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 257 rae.3d.Engine.Engine.m_currentTime
+				type:empty name:<=>      Token::INIT_DATA line: 257 =
+					type:empty name:<0.0>    Token::NUMBER line: 257 =.0.0
+			NEWLINE
+			type:<float> name:<m_currentAngle> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 262 rae.3d.Engine.Engine.m_currentAngle
+				type:empty name:<=>      Token::INIT_DATA line: 262 =
+					type:empty name:<0.0f>   Token::NUMBER line: 262 =.0.0f
+			NEWLINE
+			type:<uint> name:<modelViewMatrixUni> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 268 rae.3d.Engine.Engine.modelViewMatrixUni
+				type:empty name:<=>      Token::INIT_DATA line: 268 =
+					type:empty name:<0>      Token::NUMBER line: 268 =.0
+			NEWLINE
+			type:<uint> name:<viewMatrixUni> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 269 rae.3d.Engine.Engine.viewMatrixUni
+				type:empty name:<=>      Token::INIT_DATA line: 269 =
+					type:empty name:<0>      Token::NUMBER line: 269 =.0
+			NEWLINE
+			type:<uint> name:<modelMatrixUni> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 270 rae.3d.Engine.Engine.modelMatrixUni
+				type:empty name:<=>      Token::INIT_DATA line: 270 =
+					type:empty name:<0>      Token::NUMBER line: 270 =.0
+			NEWLINE
+			type:<uint> name:<lightPositionUni> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 271 rae.3d.Engine.Engine.lightPositionUni
+				type:empty name:<=>      Token::INIT_DATA line: 271 =
+					type:empty name:<0>      Token::NUMBER line: 271 =.0
+			NEWLINE
+			type:<uint> name:<textureUni> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 272 rae.3d.Engine.Engine.textureUni
+				type:empty name:<=>      Token::INIT_DATA line: 272 =
+					type:empty name:<0>      Token::NUMBER line: 272 =.0
+			NEWLINE
+			type:<int> name:<m_windowWidth> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 276 rae.3d.Engine.Engine.m_windowWidth
+				type:empty name:<=>      Token::INIT_DATA line: 276 rae.3d.Engine.Engine.=
+					type:empty name:<640>    Token::NUMBER line: 277 rae.3d.Engine.Engine.=.640
+			NEWLINE
+			type:<int> name:<m_windowHeight> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 277 rae.3d.Engine.Engine.m_windowHeight
+				type:empty name:<=>      Token::INIT_DATA line: 277 rae.3d.Engine.Engine.=
+					type:empty name:<480>    Token::NUMBER line: 278 rae.3d.Engine.Engine.=.480
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 38 rae.3d.Engine.Engine.init.{
+			NEWLINE
+			type:<GLFWwindow> name:<m_window> Token::USE_REFERENCE typetype: TypeType::PTR line: 39 rae.3d.Engine.Engine.init.m_window
+			type:empty name:<->>     Token::POINT_TO line: 39 rae.3d.Engine.Engine.init.->
+			type:<GLFWwindow> name:<set_window> Token::USE_REFERENCE typetype: TypeType::PTR line: 40 rae.3d.Engine.Engine.init.set_window
+			NEWLINE
+			NEWLINE
+			type:<Shader> name:<shader> Token::USE_REFERENCE typetype: TypeType::VAL line: 41 rae.3d.Engine.Engine.init.shader
+			type:empty name:<.>      Token::REFERENCE_DOT line: 41 rae.3d.Engine.Engine.init..
+			type:empty name:<loadShader> Token::FUNC_CALL line: 41 rae.3d.Engine.Engine.init.loadShader
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 41 rae.3d.Engine.Engine.init.(
+			type:empty name:<"shaders/basic.vert"> Token::QUOTE line: 41 rae.3d.Engine.Engine.init."shaders/basic.vert"
+			type:empty name:<,>      Token::COMMA line: 41 rae.3d.Engine.Engine.init.,
+			type:empty name:<"shaders/basic.frag"> Token::QUOTE line: 41 rae.3d.Engine.Engine.init."shaders/basic.frag"
+			type:empty name:<)>      Token::PARENTHESIS_END line: 41 rae.3d.Engine.Engine.init.)
+			NEWLINE
+			NEWLINE
+			type:<uint> name:<modelViewMatrixUni> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 43 rae.3d.Engine.Engine.init.modelViewMatrixUni
+			type:empty name:<=>      Token::ASSIGNMENT line: 43 rae.3d.Engine.Engine.init.=
+			type:empty name:<glGetUniformLocation> Token::FUNC_CALL line: 43 rae.3d.Engine.Engine.init.glGetUniformLocation
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 43 rae.3d.Engine.Engine.init.(
+			type:<Shader> name:<shader> Token::USE_REFERENCE typetype: TypeType::VAL line: 43 rae.3d.Engine.Engine.init.shader
+			type:empty name:<.>      Token::REFERENCE_DOT line: 43 rae.3d.Engine.Engine.init..
+			type:empty name:<shaderID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 43 rae.3d.Engine.Engine.init.shaderID
+			type:empty name:<,>      Token::COMMA line: 43 rae.3d.Engine.Engine.init.,
+			type:empty name:<"modelViewProjectionMatrix"> Token::QUOTE line: 43 rae.3d.Engine.Engine.init."modelViewProjectionMatrix"
+			type:empty name:<)>      Token::PARENTHESIS_END line: 43 rae.3d.Engine.Engine.init.)
+			NEWLINE
+			type:<uint> name:<viewMatrixUni> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 44 rae.3d.Engine.Engine.init.viewMatrixUni
+			type:empty name:<=>      Token::ASSIGNMENT line: 44 rae.3d.Engine.Engine.init.=
+			type:empty name:<glGetUniformLocation> Token::FUNC_CALL line: 44 rae.3d.Engine.Engine.init.glGetUniformLocation
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 44 rae.3d.Engine.Engine.init.(
+			type:<Shader> name:<shader> Token::USE_REFERENCE typetype: TypeType::VAL line: 44 rae.3d.Engine.Engine.init.shader
+			type:empty name:<.>      Token::REFERENCE_DOT line: 44 rae.3d.Engine.Engine.init..
+			type:empty name:<shaderID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 44 rae.3d.Engine.Engine.init.shaderID
+			type:empty name:<,>      Token::COMMA line: 44 rae.3d.Engine.Engine.init.,
+			type:empty name:<"viewMatrix"> Token::QUOTE line: 44 rae.3d.Engine.Engine.init."viewMatrix"
+			type:empty name:<)>      Token::PARENTHESIS_END line: 44 rae.3d.Engine.Engine.init.)
+			NEWLINE
+			type:<uint> name:<modelMatrixUni> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 45 rae.3d.Engine.Engine.init.modelMatrixUni
+			type:empty name:<=>      Token::ASSIGNMENT line: 45 rae.3d.Engine.Engine.init.=
+			type:empty name:<glGetUniformLocation> Token::FUNC_CALL line: 45 rae.3d.Engine.Engine.init.glGetUniformLocation
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 45 rae.3d.Engine.Engine.init.(
+			type:<Shader> name:<shader> Token::USE_REFERENCE typetype: TypeType::VAL line: 45 rae.3d.Engine.Engine.init.shader
+			type:empty name:<.>      Token::REFERENCE_DOT line: 45 rae.3d.Engine.Engine.init..
+			type:empty name:<shaderID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 45 rae.3d.Engine.Engine.init.shaderID
+			type:empty name:<,>      Token::COMMA line: 45 rae.3d.Engine.Engine.init.,
+			type:empty name:<"modelMatrix"> Token::QUOTE line: 45 rae.3d.Engine.Engine.init."modelMatrix"
+			type:empty name:<)>      Token::PARENTHESIS_END line: 45 rae.3d.Engine.Engine.init.)
+			NEWLINE
+			NEWLINE
+			type:<Shader> name:<shader> Token::USE_REFERENCE typetype: TypeType::VAL line: 47 rae.3d.Engine.Engine.init.shader
+			type:empty name:<.>      Token::REFERENCE_DOT line: 47 rae.3d.Engine.Engine.init..
+			type:empty name:<use>    Token::FUNC_CALL line: 48 rae.3d.Engine.Engine.init.use
+			NEWLINE
+			NEWLINE
+			type:<uint> name:<lightPositionUni> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 49 rae.3d.Engine.Engine.init.lightPositionUni
+			type:empty name:<=>      Token::ASSIGNMENT line: 49 rae.3d.Engine.Engine.init.=
+			type:empty name:<glGetUniformLocation> Token::FUNC_CALL line: 49 rae.3d.Engine.Engine.init.glGetUniformLocation
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 49 rae.3d.Engine.Engine.init.(
+			type:<Shader> name:<shader> Token::USE_REFERENCE typetype: TypeType::VAL line: 49 rae.3d.Engine.Engine.init.shader
+			type:empty name:<.>      Token::REFERENCE_DOT line: 49 rae.3d.Engine.Engine.init..
+			type:empty name:<shaderID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 49 rae.3d.Engine.Engine.init.shaderID
+			type:empty name:<,>      Token::COMMA line: 49 rae.3d.Engine.Engine.init.,
+			type:empty name:<"lightPosition_worldspace"> Token::QUOTE line: 49 rae.3d.Engine.Engine.init."lightPosition_worldspace"
+			type:empty name:<)>      Token::PARENTHESIS_END line: 49 rae.3d.Engine.Engine.init.)
+			NEWLINE
+			type:<uint> name:<textureUni> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 50 rae.3d.Engine.Engine.init.textureUni
+			type:empty name:<=>      Token::ASSIGNMENT line: 50 rae.3d.Engine.Engine.init.=
+			type:empty name:<glGetUniformLocation> Token::FUNC_CALL line: 50 rae.3d.Engine.Engine.init.glGetUniformLocation
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 50 rae.3d.Engine.Engine.init.(
+			type:<Shader> name:<shader> Token::USE_REFERENCE typetype: TypeType::VAL line: 50 rae.3d.Engine.Engine.init.shader
+			type:empty name:<.>      Token::REFERENCE_DOT line: 50 rae.3d.Engine.Engine.init..
+			type:empty name:<shaderID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 50 rae.3d.Engine.Engine.init.shaderID
+			type:empty name:<,>      Token::COMMA line: 50 rae.3d.Engine.Engine.init.,
+			type:empty name:<"textureSampler"> Token::QUOTE line: 50 rae.3d.Engine.Engine.init."textureSampler"
+			type:empty name:<)>      Token::PARENTHESIS_END line: 50 rae.3d.Engine.Engine.init.)
+			NEWLINE
+			NEWLINE
+			type:<Mesh> name:<mesh>  Token::USE_REFERENCE typetype: TypeType::VAL line: 52 rae.3d.Engine.Engine.init.mesh
+			type:empty name:<.>      Token::REFERENCE_DOT line: 52 rae.3d.Engine.Engine.init..
+			type:empty name:<generateBox> Token::FUNC_CALL line: 53 rae.3d.Engine.Engine.init.generateBox
+			NEWLINE
+			type:<Mesh> name:<mesh>  Token::USE_REFERENCE typetype: TypeType::VAL line: 53 rae.3d.Engine.Engine.init.mesh
+			type:empty name:<.>      Token::REFERENCE_DOT line: 53 rae.3d.Engine.Engine.init..
+			type:empty name:<createVBOs> Token::FUNC_CALL line: 54 rae.3d.Engine.Engine.init.createVBOs
+			NEWLINE
+			NEWLINE
+			type:<double> name:<m_currentTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 55 rae.3d.Engine.Engine.init.m_currentTime
+			type:empty name:<=>      Token::ASSIGNMENT line: 55 rae.3d.Engine.Engine.init.=
+			type:empty name:<glfwGetTime> Token::FUNC_CALL line: 56 rae.3d.Engine.Engine.init.glfwGetTime
+			NEWLINE
+			type:<double> name:<m_previousTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 56 rae.3d.Engine.Engine.init.m_previousTime
+			type:empty name:<=>      Token::ASSIGNMENT line: 56 rae.3d.Engine.Engine.init.=
+			type:<double> name:<m_currentTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 57 rae.3d.Engine.Engine.init.m_currentTime
+			NEWLINE
+			type:empty name:<}>      Token::SCOPE_END line: 57 rae.3d.Engine.Engine.init.}
+		NEWLINE
+		NEWLINE
+		type:empty name:<run>    Token::FUNC line: 59 rae.3d.Engine.Engine.run
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 60 rae.3d.Engine.Engine.run.{
+			NEWLINE
+			type:<bool> name:<isRunning> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 61 rae.3d.Engine.Engine.run.isRunning
+				type:empty name:<=>      Token::INIT_DATA line: 61 rae.3d.Engine.Engine.run.=
+					type:empty name:<true>   Token::TRUE_TRUE line: 62 rae.3d.Engine.Engine.run.=.true
+			type:empty name:<=>      Token::INIT_DATA line: 61 rae.3d.Engine.Engine.run.=
+				type:empty name:<true>   Token::TRUE_TRUE line: 62 rae.3d.Engine.Engine.run.=.true
+			NEWLINE
+			NEWLINE
+			type:empty name:<loop>   Token::FOR line: 63 rae.3d.Engine.Engine.run.loop
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 63 rae.3d.Engine.Engine.run.(
+			type:empty name:<;>      Token::SEMICOLON line: 63 rae.3d.Engine.Engine.run.;
+			type:<bool> name:<isRunning> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 63 rae.3d.Engine.Engine.run.isRunning
+			type:empty name:<==>     Token::EQUALS line: 63 rae.3d.Engine.Engine.run.==
+			type:empty name:<true>   Token::TRUE_TRUE line: 63 rae.3d.Engine.Engine.run.true
+			type:empty name:<;>      Token::SEMICOLON line: 63 rae.3d.Engine.Engine.run.;
+			type:empty name:<)>      Token::PARENTHESIS_END line: 63 rae.3d.Engine.Engine.run.)
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 64 rae.3d.Engine.Engine.run.{
+				NEWLINE
+				type:empty name:<if>     Token::IF line: 65 rae.3d.Engine.Engine.run.{.if
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 65 rae.3d.Engine.Engine.run.{.(
+				type:empty name:<glfwGetKey> Token::FUNC_CALL line: 65 rae.3d.Engine.Engine.run.{.glfwGetKey
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 65 rae.3d.Engine.Engine.run.{.(
+				type:<GLFWwindow> name:<m_window> Token::USE_REFERENCE typetype: TypeType::PTR line: 65 rae.3d.Engine.Engine.run.{.m_window
+				type:empty name:<,>      Token::COMMA line: 65 rae.3d.Engine.Engine.run.{.,
+				type:<int> name:<GLFW_KEY_ESCAPE> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 65 rae.3d.Engine.Engine.run.{.GLFW_KEY_ESCAPE
+				type:empty name:<)>      Token::PARENTHESIS_END line: 65 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<==>     Token::EQUALS line: 65 rae.3d.Engine.Engine.run.{.==
+				type:<int> name:<GLFW_PRESS> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 65 rae.3d.Engine.Engine.run.{.GLFW_PRESS
+				type:empty name:<)>      Token::PARENTHESIS_END line: 65 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:empty name:<{>      Token::SCOPE_BEGIN line: 66 rae.3d.Engine.Engine.run.{.{
+					NEWLINE
+					type:<bool> name:<isRunning> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 67 rae.3d.Engine.Engine.run.{.{.isRunning
+					type:empty name:<=>      Token::ASSIGNMENT line: 67 rae.3d.Engine.Engine.run.{.{.=
+					type:empty name:<false>  Token::FALSE_FALSE line: 68 rae.3d.Engine.Engine.run.{.{.false
+					NEWLINE
+					type:empty name:<}>      Token::SCOPE_END line: 68 rae.3d.Engine.Engine.run.{.{.}
+				NEWLINE
+				NEWLINE
+				type:<double> name:<m_currentTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 70 rae.3d.Engine.Engine.run.{.m_currentTime
+				type:empty name:<=>      Token::ASSIGNMENT line: 70 rae.3d.Engine.Engine.run.{.=
+				type:empty name:<glfwGetTime> Token::FUNC_CALL line: 71 rae.3d.Engine.Engine.run.{.glfwGetTime
+				NEWLINE
+				type:<double> name:<deltaTime> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 71 rae.3d.Engine.Engine.run.{.deltaTime
+					type:empty name:<=>      Token::INIT_DATA line: 71 rae.3d.Engine.Engine.run.{.=
+						type:<double> name:<m_currentTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 71 rae.3d.Engine.Engine.run.{.=.m_currentTime
+						type:empty name:<->      Token::MINUS line: 71 rae.3d.Engine.Engine.run.{.=.-
+						type:<double> name:<m_previousTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 72 rae.3d.Engine.Engine.run.{.=.m_previousTime
+				type:empty name:<=>      Token::INIT_DATA line: 71 rae.3d.Engine.Engine.run.{.=
+					type:<double> name:<m_currentTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 71 rae.3d.Engine.Engine.run.{.=.m_currentTime
+					type:empty name:<->      Token::MINUS line: 71 rae.3d.Engine.Engine.run.{.=.-
+					type:<double> name:<m_previousTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 72 rae.3d.Engine.Engine.run.{.=.m_previousTime
+				NEWLINE
+				type:<double> name:<m_previousTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 72 rae.3d.Engine.Engine.run.{.m_previousTime
+				type:empty name:<=>      Token::ASSIGNMENT line: 72 rae.3d.Engine.Engine.run.{.=
+				type:<double> name:<m_currentTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 73 rae.3d.Engine.Engine.run.{.m_currentTime
+				NEWLINE
+				NEWLINE
+				type:empty name:<glViewport> Token::FUNC_CALL line: 74 rae.3d.Engine.Engine.run.{.glViewport
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 74 rae.3d.Engine.Engine.run.{.(
+				type:empty name:<0>      Token::NUMBER line: 74 rae.3d.Engine.Engine.run.{.0
+				type:empty name:<,>      Token::COMMA line: 74 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0>      Token::NUMBER line: 74 rae.3d.Engine.Engine.run.{.0
+				type:empty name:<,>      Token::COMMA line: 74 rae.3d.Engine.Engine.run.{.,
+				type:<int> name:<m_windowWidth> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 74 rae.3d.Engine.Engine.run.{.m_windowWidth
+				type:empty name:<,>      Token::COMMA line: 74 rae.3d.Engine.Engine.run.{.,
+				type:<int> name:<m_windowHeight> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 74 rae.3d.Engine.Engine.run.{.m_windowHeight
+				type:empty name:<)>      Token::PARENTHESIS_END line: 74 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				NEWLINE
+				type:empty name:<glClearColor> Token::FUNC_CALL line: 76 rae.3d.Engine.Engine.run.{.glClearColor
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 76 rae.3d.Engine.Engine.run.{.(
+				type:empty name:<0.3>    Token::FLOAT_NUMBER line: 76 rae.3d.Engine.Engine.run.{.0.3
+				type:empty name:<,>      Token::COMMA line: 76 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.3>    Token::FLOAT_NUMBER line: 76 rae.3d.Engine.Engine.run.{.0.3
+				type:empty name:<,>      Token::COMMA line: 76 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.3>    Token::FLOAT_NUMBER line: 76 rae.3d.Engine.Engine.run.{.0.3
+				type:empty name:<,>      Token::COMMA line: 76 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.0>    Token::FLOAT_NUMBER line: 76 rae.3d.Engine.Engine.run.{.0.0
+				type:empty name:<)>      Token::PARENTHESIS_END line: 76 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:empty name:<glClear> Token::FUNC_CALL line: 77 rae.3d.Engine.Engine.run.{.glClear
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 77 rae.3d.Engine.Engine.run.{.(
+				type:<GL_COLOR_BUFFER_BIT> name:<GL_COLOR_BUFFER_BIT> Token::USE_REFERENCE typetype: TypeType::VAL line: 77 rae.3d.Engine.Engine.run.{.GL_COLOR_BUFFER_BIT
+				type:empty name:<bitor>  Token::BITWISE_OR line: 77 rae.3d.Engine.Engine.run.{.bitor
+				type:<GL_DEPTH_BUFFER_BIT> name:<GL_DEPTH_BUFFER_BIT> Token::USE_REFERENCE typetype: TypeType::VAL line: 77 rae.3d.Engine.Engine.run.{.GL_DEPTH_BUFFER_BIT
+				type:empty name:<bitor>  Token::BITWISE_OR line: 77 rae.3d.Engine.Engine.run.{.bitor
+				type:<GL_STENCIL_BUFFER_BIT> name:<GL_STENCIL_BUFFER_BIT> Token::USE_REFERENCE typetype: TypeType::VAL line: 77 rae.3d.Engine.Engine.run.{.GL_STENCIL_BUFFER_BIT
+				type:empty name:<)>      Token::PARENTHESIS_END line: 77 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				NEWLINE
+				type:empty name:<glDisable> Token::FUNC_CALL line: 79 rae.3d.Engine.Engine.run.{.glDisable
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 79 rae.3d.Engine.Engine.run.{.(
+				type:<GL_BLEND> name:<GL_BLEND> Token::USE_REFERENCE typetype: TypeType::VAL line: 79 rae.3d.Engine.Engine.run.{.GL_BLEND
+				type:empty name:<)>      Token::PARENTHESIS_END line: 79 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:empty name:<glEnable> Token::FUNC_CALL line: 80 rae.3d.Engine.Engine.run.{.glEnable
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 80 rae.3d.Engine.Engine.run.{.(
+				type:<GL_DEPTH_TEST> name:<GL_DEPTH_TEST> Token::USE_REFERENCE typetype: TypeType::VAL line: 80 rae.3d.Engine.Engine.run.{.GL_DEPTH_TEST
+				type:empty name:<)>      Token::PARENTHESIS_END line: 80 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				NEWLINE
+				type:empty name:< TODO modelmatrix> Token::COMMENT line: 83 rae.3d.Engine.Engine.run.{. TODO modelmatrix
+				NEWLINE
+				type:empty name:<glm::mat4& modelMatrix = transform->modelMatrix();> Token::COMMENT line: 84 rae.3d.Engine.Engine.run.{.glm::mat4& modelMatrix = transform->modelMatrix();
+				NEWLINE
+				NEWLINE
+				type:<float> name:<m_fieldOfView> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 85 rae.3d.Engine.Engine.run.{.m_fieldOfView
+					type:empty name:<=>      Token::INIT_DATA line: 85 rae.3d.Engine.Engine.run.{.=
+						type:empty name:<70.0f>  Token::FLOAT_NUMBER line: 85 rae.3d.Engine.Engine.run.{.=.70.0f
+				type:empty name:<=>      Token::INIT_DATA line: 85 rae.3d.Engine.Engine.run.{.=
+					type:empty name:<70.0f>  Token::FLOAT_NUMBER line: 85 rae.3d.Engine.Engine.run.{.=.70.0f
+				NEWLINE
+				type:<int> name:<m_windowPixelWidth> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 86 rae.3d.Engine.Engine.run.{.m_windowPixelWidth
+					type:empty name:<=>      Token::INIT_DATA line: 86 rae.3d.Engine.Engine.run.{.=
+						type:empty name:<1920>   Token::NUMBER line: 87 rae.3d.Engine.Engine.run.{.=.1920
+				type:empty name:<=>      Token::INIT_DATA line: 86 rae.3d.Engine.Engine.run.{.=
+					type:empty name:<1920>   Token::NUMBER line: 87 rae.3d.Engine.Engine.run.{.=.1920
+				NEWLINE
+				type:<int> name:<m_windowPixelHeight> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 87 rae.3d.Engine.Engine.run.{.m_windowPixelHeight
+					type:empty name:<=>      Token::INIT_DATA line: 87 rae.3d.Engine.Engine.run.{.=
+						type:empty name:<1080>   Token::NUMBER line: 88 rae.3d.Engine.Engine.run.{.=.1080
+				type:empty name:<=>      Token::INIT_DATA line: 87 rae.3d.Engine.Engine.run.{.=
+					type:empty name:<1080>   Token::NUMBER line: 88 rae.3d.Engine.Engine.run.{.=.1080
+				NEWLINE
+				type:<vec3> name:<m_cameraPosition> Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 88 rae.3d.Engine.Engine.run.{.m_cameraPosition
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 88 rae.3d.Engine.Engine.run.{.(
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 88 rae.3d.Engine.Engine.run.{.0.0f
+				type:empty name:<,>      Token::COMMA line: 88 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 88 rae.3d.Engine.Engine.run.{.0.0f
+				type:empty name:<,>      Token::COMMA line: 88 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 88 rae.3d.Engine.Engine.run.{.0.0f
+				type:empty name:<)>      Token::PARENTHESIS_END line: 88 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				NEWLINE
+				type:<float> name:<m_yawAngle> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 90 rae.3d.Engine.Engine.run.{.m_yawAngle
+					type:empty name:<=>      Token::INIT_DATA line: 90 rae.3d.Engine.Engine.run.{.=
+						type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 90 rae.3d.Engine.Engine.run.{.=.0.0f
+				type:empty name:<=>      Token::INIT_DATA line: 90 rae.3d.Engine.Engine.run.{.=
+					type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 90 rae.3d.Engine.Engine.run.{.=.0.0f
+				NEWLINE
+				type:<float> name:<m_pitchAngle> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 91 rae.3d.Engine.Engine.run.{.m_pitchAngle
+					type:empty name:<=>      Token::INIT_DATA line: 91 rae.3d.Engine.Engine.run.{.=
+						type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 91 rae.3d.Engine.Engine.run.{.=.0.0f
+				type:empty name:<=>      Token::INIT_DATA line: 91 rae.3d.Engine.Engine.run.{.=
+					type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 91 rae.3d.Engine.Engine.run.{.=.0.0f
+				NEWLINE
+				NEWLINE
+				type:<vec3> name:<up>    Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 93 rae.3d.Engine.Engine.run.{.up
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 93 rae.3d.Engine.Engine.run.{.(
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 93 rae.3d.Engine.Engine.run.{.0.0f
+				type:empty name:<,>      Token::COMMA line: 93 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 93 rae.3d.Engine.Engine.run.{.1.0f
+				type:empty name:<,>      Token::COMMA line: 93 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 93 rae.3d.Engine.Engine.run.{.0.0f
+				type:empty name:<)>      Token::PARENTHESIS_END line: 93 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:<vec3> name:<direction> Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 94 rae.3d.Engine.Engine.run.{.direction
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 94 rae.3d.Engine.Engine.run.{.(
+				NEWLINE
+				type:empty name:<cos>    Token::FUNC_CALL line: 95 rae.3d.Engine.Engine.run.{.cos
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 95 rae.3d.Engine.Engine.run.{.(
+				type:<float> name:<m_pitchAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 95 rae.3d.Engine.Engine.run.{.m_pitchAngle
+				type:empty name:<)>      Token::PARENTHESIS_END line: 95 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<*>      Token::MULTIPLY line: 95 rae.3d.Engine.Engine.run.{.*
+				type:empty name:<sin>    Token::FUNC_CALL line: 95 rae.3d.Engine.Engine.run.{.sin
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 95 rae.3d.Engine.Engine.run.{.(
+				type:<float> name:<m_yawAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 95 rae.3d.Engine.Engine.run.{.m_yawAngle
+				type:empty name:<)>      Token::PARENTHESIS_END line: 95 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<,>      Token::COMMA line: 95 rae.3d.Engine.Engine.run.{.,
+				NEWLINE
+				type:empty name:<sin>    Token::FUNC_CALL line: 96 rae.3d.Engine.Engine.run.{.sin
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 96 rae.3d.Engine.Engine.run.{.(
+				type:<float> name:<m_pitchAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 96 rae.3d.Engine.Engine.run.{.m_pitchAngle
+				type:empty name:<)>      Token::PARENTHESIS_END line: 96 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<,>      Token::COMMA line: 96 rae.3d.Engine.Engine.run.{.,
+				NEWLINE
+				type:empty name:<cos>    Token::FUNC_CALL line: 97 rae.3d.Engine.Engine.run.{.cos
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 97 rae.3d.Engine.Engine.run.{.(
+				type:<float> name:<m_pitchAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 97 rae.3d.Engine.Engine.run.{.m_pitchAngle
+				type:empty name:<)>      Token::PARENTHESIS_END line: 97 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<*>      Token::MULTIPLY line: 97 rae.3d.Engine.Engine.run.{.*
+				type:empty name:<cos>    Token::FUNC_CALL line: 97 rae.3d.Engine.Engine.run.{.cos
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 97 rae.3d.Engine.Engine.run.{.(
+				type:<float> name:<m_yawAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 97 rae.3d.Engine.Engine.run.{.m_yawAngle
+				type:empty name:<)>      Token::PARENTHESIS_END line: 97 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:empty name:<)>      Token::PARENTHESIS_END line: 98 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				NEWLINE
+				type:empty name:< Right vector> Token::COMMENT line: 101 rae.3d.Engine.Engine.run.{. Right vector
+				NEWLINE
+				type:<vec3> name:<right> Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 101 rae.3d.Engine.Engine.run.{.right
+				type:empty name:<=>      Token::ASSIGNMENT line: 101 rae.3d.Engine.Engine.run.{.=
+				RETURN WHICH IS NOT NEWLINE.
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 102 rae.3d.Engine.Engine.run.{.(
+				NEWLINE
+				type:empty name:<sin>    Token::FUNC_CALL line: 103 rae.3d.Engine.Engine.run.{.sin
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 103 rae.3d.Engine.Engine.run.{.(
+				type:<float> name:<m_yawAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 103 rae.3d.Engine.Engine.run.{.m_yawAngle
+				type:empty name:<->      Token::MINUS line: 103 rae.3d.Engine.Engine.run.{.-
+				type:empty name:<3.141f> Token::FLOAT_NUMBER line: 103 rae.3d.Engine.Engine.run.{.3.141f
+				type:empty name:</>      Token::DIVIDE line: 103 rae.3d.Engine.Engine.run.{./
+				type:empty name:<2.0f>   Token::FLOAT_NUMBER line: 103 rae.3d.Engine.Engine.run.{.2.0f
+				type:empty name:<)>      Token::PARENTHESIS_END line: 103 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<,>      Token::COMMA line: 103 rae.3d.Engine.Engine.run.{.,
+				NEWLINE
+				type:empty name:<0>      Token::NUMBER line: 104 rae.3d.Engine.Engine.run.{.0
+				type:empty name:<,>      Token::COMMA line: 104 rae.3d.Engine.Engine.run.{.,
+				NEWLINE
+				type:empty name:<cos>    Token::FUNC_CALL line: 105 rae.3d.Engine.Engine.run.{.cos
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 105 rae.3d.Engine.Engine.run.{.(
+				type:<float> name:<m_yawAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 105 rae.3d.Engine.Engine.run.{.m_yawAngle
+				type:empty name:<->      Token::MINUS line: 105 rae.3d.Engine.Engine.run.{.-
+				type:empty name:<3.141f> Token::FLOAT_NUMBER line: 105 rae.3d.Engine.Engine.run.{.3.141f
+				type:empty name:</>      Token::DIVIDE line: 105 rae.3d.Engine.Engine.run.{./
+				type:empty name:<2.0f>   Token::FLOAT_NUMBER line: 105 rae.3d.Engine.Engine.run.{.2.0f
+				type:empty name:<)>      Token::PARENTHESIS_END line: 105 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:empty name:<)>      Token::PARENTHESIS_END line: 106 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				NEWLINE
+				type:<mat4> name:<m_projectionMatrix> Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 108 rae.3d.Engine.Engine.run.{.m_projectionMatrix
+				type:empty name:<=>      Token::ASSIGNMENT line: 108 rae.3d.Engine.Engine.run.{.=
+				type:empty name:<perspective> Token::FUNC_CALL usenamespace: glm:: line: 108 rae.3d.Engine.Engine.run.{.perspective
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 108 rae.3d.Engine.Engine.run.{.(
+				type:<float> name:<m_fieldOfView> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 108 rae.3d.Engine.Engine.run.{.m_fieldOfView
+				type:empty name:<,>      Token::COMMA line: 108 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<cast>   Token::CAST line: 108 rae.3d.Engine.Engine.run.{.cast
+				type:empty name:<[>      Token::BRACKET_CAST_BEGIN line: 108 rae.3d.Engine.Engine.run.{.[
+					type:<float> name:empty  Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 108 rae.3d.Engine.Engine.run.{.[.
+					type:empty name:<]>      Token::BRACKET_CAST_END line: 108 rae.3d.Engine.Engine.run.{.[.]
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 108 rae.3d.Engine.Engine.run.{.(
+				type:<int> name:<m_windowPixelWidth> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 108 rae.3d.Engine.Engine.run.{.m_windowPixelWidth
+				type:empty name:<)>      Token::PARENTHESIS_END line: 108 rae.3d.Engine.Engine.run.{.)
+				type:empty name:</>      Token::DIVIDE line: 108 rae.3d.Engine.Engine.run.{./
+				type:empty name:<cast>   Token::CAST line: 108 rae.3d.Engine.Engine.run.{.cast
+				type:empty name:<[>      Token::BRACKET_CAST_BEGIN line: 108 rae.3d.Engine.Engine.run.{.[
+					type:<float> name:empty  Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 108 rae.3d.Engine.Engine.run.{.[.
+					type:empty name:<]>      Token::BRACKET_CAST_END line: 108 rae.3d.Engine.Engine.run.{.[.]
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 108 rae.3d.Engine.Engine.run.{.(
+				type:<int> name:<m_windowPixelHeight> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 108 rae.3d.Engine.Engine.run.{.m_windowPixelHeight
+				type:empty name:<)>      Token::PARENTHESIS_END line: 108 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<,>      Token::COMMA line: 108 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.1f>   Token::FLOAT_NUMBER line: 108 rae.3d.Engine.Engine.run.{.0.1f
+				type:empty name:<,>      Token::COMMA line: 108 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<500.0f> Token::FLOAT_NUMBER line: 108 rae.3d.Engine.Engine.run.{.500.0f
+				type:empty name:<)>      Token::PARENTHESIS_END line: 108 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<;>      Token::SEMICOLON line: 108 rae.3d.Engine.Engine.run.{.;
+				NEWLINE
+				NEWLINE
+				type:<mat4> name:<m_viewMatrix> Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 110 rae.3d.Engine.Engine.run.{.m_viewMatrix
+				type:empty name:<=>      Token::ASSIGNMENT line: 110 rae.3d.Engine.Engine.run.{.=
+				type:empty name:<lookAt> Token::FUNC_CALL usenamespace: glm:: line: 110 rae.3d.Engine.Engine.run.{.lookAt
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 110 rae.3d.Engine.Engine.run.{.(
+				type:<vec3> name:<m_cameraPosition> Token::USE_REFERENCE typetype: TypeType::VAL line: 110 rae.3d.Engine.Engine.run.{.m_cameraPosition
+				type:empty name:<,>      Token::COMMA line: 110 rae.3d.Engine.Engine.run.{.,
+				type:<vec3> name:<m_cameraPosition> Token::USE_REFERENCE typetype: TypeType::VAL line: 110 rae.3d.Engine.Engine.run.{.m_cameraPosition
+				type:empty name:<+>      Token::PLUS line: 110 rae.3d.Engine.Engine.run.{.+
+				type:<vec3> name:<direction> Token::USE_REFERENCE typetype: TypeType::VAL line: 110 rae.3d.Engine.Engine.run.{.direction
+				type:empty name:<,>      Token::COMMA line: 110 rae.3d.Engine.Engine.run.{.,
+				type:<vec3> name:<up>    Token::USE_REFERENCE typetype: TypeType::VAL line: 110 rae.3d.Engine.Engine.run.{.up
+				type:empty name:<)>      Token::PARENTHESIS_END line: 110 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				NEWLINE
+				type:<vec3> name:<lightPos> Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 112 rae.3d.Engine.Engine.run.{.lightPos
+				type:empty name:<=>      Token::ASSIGNMENT line: 112 rae.3d.Engine.Engine.run.{.=
+				type:<vec3> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 112 rae.3d.Engine.Engine.run.{.
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 112 rae.3d.Engine.Engine.run.{.(
+				type:empty name:<2.0f>   Token::FLOAT_NUMBER line: 112 rae.3d.Engine.Engine.run.{.2.0f
+				type:empty name:<,>      Token::COMMA line: 112 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 112 rae.3d.Engine.Engine.run.{.0.0f
+				type:empty name:<,>      Token::COMMA line: 112 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 112 rae.3d.Engine.Engine.run.{.0.0f
+				type:empty name:<)>      Token::PARENTHESIS_END line: 112 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:empty name:<glUniform3f> Token::FUNC_CALL line: 113 rae.3d.Engine.Engine.run.{.glUniform3f
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 113 rae.3d.Engine.Engine.run.{.(
+				type:<uint> name:<lightPositionUni> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 113 rae.3d.Engine.Engine.run.{.lightPositionUni
+				type:empty name:<,>      Token::COMMA line: 113 rae.3d.Engine.Engine.run.{.,
+				type:<vec3> name:<lightPos> Token::USE_REFERENCE typetype: TypeType::VAL line: 113 rae.3d.Engine.Engine.run.{.lightPos
+				type:empty name:<.>      Token::REFERENCE_DOT line: 113 rae.3d.Engine.Engine.run.{..
+				type:<float> name:<x>    Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 113 rae.3d.Engine.Engine.run.{.x
+				type:empty name:<,>      Token::COMMA line: 113 rae.3d.Engine.Engine.run.{.,
+				type:<vec3> name:<lightPos> Token::USE_REFERENCE typetype: TypeType::VAL line: 113 rae.3d.Engine.Engine.run.{.lightPos
+				type:empty name:<.>      Token::REFERENCE_DOT line: 113 rae.3d.Engine.Engine.run.{..
+				type:<float> name:<y>    Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 113 rae.3d.Engine.Engine.run.{.y
+				type:empty name:<,>      Token::COMMA line: 113 rae.3d.Engine.Engine.run.{.,
+				type:<vec3> name:<lightPos> Token::USE_REFERENCE typetype: TypeType::VAL line: 113 rae.3d.Engine.Engine.run.{.lightPos
+				type:empty name:<.>      Token::REFERENCE_DOT line: 113 rae.3d.Engine.Engine.run.{..
+				type:<float> name:<z>    Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 113 rae.3d.Engine.Engine.run.{.z
+				type:empty name:<)>      Token::PARENTHESIS_END line: 113 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				NEWLINE
+				type:empty name:<
+			# Bind texture in Texture Unit 0
+			if( material != nullptr )
+			{
+				glActiveTexture(GL_TEXTURE0);
+				glBindTexture(GL_TEXTURE_2D, material->textureID());
+				# Set textureSampler to use Texture Unit 0
+				glUniform1i(textureUni, 0);
+			}
+			else glBindTexture(GL_TEXTURE_2D, 0);
+			> Token::STAR_COMMENT line: 125 rae.3d.Engine.Engine.run.{.
+			# Bind texture in Texture Unit 0
+			if( material != nullptr )
+			{
+				glActiveTexture(GL_TEXTURE0);
+				glBindTexture(GL_TEXTURE_2D, material->textureID());
+				# Set textureSampler to use Texture Unit 0
+				glUniform1i(textureUni, 0);
+			}
+			else glBindTexture(GL_TEXTURE_2D, 0);
+			
+				NEWLINE
+				NEWLINE
+				type:<float> name:<m_currentAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 128 rae.3d.Engine.Engine.run.{.m_currentAngle
+				type:empty name:<+=>     Token::PLUS_ASSIGN line: 128 rae.3d.Engine.Engine.run.{.+=
+				type:empty name:<10.0f>  Token::FLOAT_NUMBER line: 128 rae.3d.Engine.Engine.run.{.10.0f
+				type:empty name:<*>      Token::MULTIPLY line: 128 rae.3d.Engine.Engine.run.{.*
+				type:<double> name:<deltaTime> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 129 rae.3d.Engine.Engine.run.{.deltaTime
+				NEWLINE
+				type:empty name:<if>     Token::IF line: 129 rae.3d.Engine.Engine.run.{.if
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 129 rae.3d.Engine.Engine.run.{.(
+				type:<float> name:<m_currentAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 129 rae.3d.Engine.Engine.run.{.m_currentAngle
+				type:empty name:<>>      Token::GREATER_THAN line: 129 rae.3d.Engine.Engine.run.{.>
+				type:empty name:<360.0f> Token::FLOAT_NUMBER line: 129 rae.3d.Engine.Engine.run.{.360.0f
+				type:empty name:<)>      Token::PARENTHESIS_END line: 129 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:<float> name:<m_currentAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 130 rae.3d.Engine.Engine.run.{.m_currentAngle
+				type:empty name:<=>      Token::ASSIGNMENT line: 130 rae.3d.Engine.Engine.run.{.=
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 130 rae.3d.Engine.Engine.run.{.0.0f
+				NEWLINE
+				NEWLINE
+				type:<float> name:<x_coord> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 132 rae.3d.Engine.Engine.run.{.x_coord
+					type:empty name:<=>      Token::INIT_DATA line: 132 rae.3d.Engine.Engine.run.{.=
+						type:empty name:<->      Token::MINUS line: 132 rae.3d.Engine.Engine.run.{.=.-
+						type:empty name:<9.0f>   Token::FLOAT_NUMBER line: 132 rae.3d.Engine.Engine.run.{.=.9.0f
+				type:empty name:<=>      Token::INIT_DATA line: 132 rae.3d.Engine.Engine.run.{.=
+					type:empty name:<->      Token::MINUS line: 132 rae.3d.Engine.Engine.run.{.=.-
+					type:empty name:<9.0f>   Token::FLOAT_NUMBER line: 132 rae.3d.Engine.Engine.run.{.=.9.0f
+				type:empty name:<;>      Token::SEMICOLON line: 132 rae.3d.Engine.Engine.run.{.;
+				NEWLINE
+				type:<float> name:<y_coord> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 133 rae.3d.Engine.Engine.run.{.y_coord
+					type:empty name:<=>      Token::INIT_DATA line: 133 rae.3d.Engine.Engine.run.{.=
+						type:empty name:<->      Token::MINUS line: 133 rae.3d.Engine.Engine.run.{.=.-
+						type:empty name:<4.0f>   Token::FLOAT_NUMBER line: 133 rae.3d.Engine.Engine.run.{.=.4.0f
+				type:empty name:<=>      Token::INIT_DATA line: 133 rae.3d.Engine.Engine.run.{.=
+					type:empty name:<->      Token::MINUS line: 133 rae.3d.Engine.Engine.run.{.=.-
+					type:empty name:<4.0f>   Token::FLOAT_NUMBER line: 133 rae.3d.Engine.Engine.run.{.=.4.0f
+				type:empty name:<;>      Token::SEMICOLON line: 133 rae.3d.Engine.Engine.run.{.;
+				NEWLINE
+				type:<float> name:<z_coord> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 134 rae.3d.Engine.Engine.run.{.z_coord
+					type:empty name:<=>      Token::INIT_DATA line: 134 rae.3d.Engine.Engine.run.{.=
+						type:empty name:<10.0f>  Token::FLOAT_NUMBER line: 134 rae.3d.Engine.Engine.run.{.=.10.0f
+				type:empty name:<=>      Token::INIT_DATA line: 134 rae.3d.Engine.Engine.run.{.=
+					type:empty name:<10.0f>  Token::FLOAT_NUMBER line: 134 rae.3d.Engine.Engine.run.{.=.10.0f
+				type:empty name:<;>      Token::SEMICOLON line: 134 rae.3d.Engine.Engine.run.{.;
+				NEWLINE
+				NEWLINE
+				type:empty name:<loop>   Token::FOR line: 136 rae.3d.Engine.Engine.run.{.loop
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 136 rae.3d.Engine.Engine.run.{.(
+				type:<int> name:<i>      Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 136 rae.3d.Engine.Engine.run.{.i
+					type:empty name:<=>      Token::INIT_DATA line: 136 rae.3d.Engine.Engine.run.{.=
+						type:empty name:<0>      Token::NUMBER line: 136 rae.3d.Engine.Engine.run.{.=.0
+				type:empty name:<=>      Token::INIT_DATA line: 136 rae.3d.Engine.Engine.run.{.=
+					type:empty name:<0>      Token::NUMBER line: 136 rae.3d.Engine.Engine.run.{.=.0
+				type:empty name:<;>      Token::SEMICOLON line: 136 rae.3d.Engine.Engine.run.{.;
+				type:<int> name:<i>      Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 136 rae.3d.Engine.Engine.run.{.i
+				type:empty name:<<>      Token::LESS_THAN line: 136 rae.3d.Engine.Engine.run.{.<
+				type:empty name:<10>     Token::NUMBER line: 136 rae.3d.Engine.Engine.run.{.10
+				type:empty name:<;>      Token::SEMICOLON line: 136 rae.3d.Engine.Engine.run.{.;
+				type:empty name:<+>      Token::OPERATOR_INCREMENT line: 136 rae.3d.Engine.Engine.run.{.+
+				type:<int> name:<i>      Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 136 rae.3d.Engine.Engine.run.{.i
+				type:empty name:<)>      Token::PARENTHESIS_END line: 136 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:empty name:<{>      Token::SCOPE_BEGIN line: 137 rae.3d.Engine.Engine.run.{.{
+					NEWLINE
+					type:empty name:<loop>   Token::FOR line: 138 rae.3d.Engine.Engine.run.{.{.loop
+					type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 138 rae.3d.Engine.Engine.run.{.{.(
+					type:<int> name:<j>      Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 138 rae.3d.Engine.Engine.run.{.{.j
+						type:empty name:<=>      Token::INIT_DATA line: 138 rae.3d.Engine.Engine.run.{.{.=
+							type:empty name:<0>      Token::NUMBER line: 138 rae.3d.Engine.Engine.run.{.{.=.0
+					type:empty name:<=>      Token::INIT_DATA line: 138 rae.3d.Engine.Engine.run.{.{.=
+						type:empty name:<0>      Token::NUMBER line: 138 rae.3d.Engine.Engine.run.{.{.=.0
+					type:empty name:<;>      Token::SEMICOLON line: 138 rae.3d.Engine.Engine.run.{.{.;
+					type:<int> name:<j>      Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 138 rae.3d.Engine.Engine.run.{.{.j
+					type:empty name:<<>      Token::LESS_THAN line: 138 rae.3d.Engine.Engine.run.{.{.<
+					type:empty name:<10>     Token::NUMBER line: 138 rae.3d.Engine.Engine.run.{.{.10
+					type:empty name:<;>      Token::SEMICOLON line: 138 rae.3d.Engine.Engine.run.{.{.;
+					type:empty name:<+>      Token::OPERATOR_INCREMENT line: 138 rae.3d.Engine.Engine.run.{.{.+
+					type:<int> name:<j>      Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 138 rae.3d.Engine.Engine.run.{.{.j
+					type:empty name:<)>      Token::PARENTHESIS_END line: 138 rae.3d.Engine.Engine.run.{.{.)
+					NEWLINE
+					type:empty name:<{>      Token::SCOPE_BEGIN line: 139 rae.3d.Engine.Engine.run.{.{.{
+						NEWLINE
+						type:empty name:<glm.mat4 modelMatrix = glm.translate(glm.mat4(1.0f), glm.vec3(0.0f, 0.0f, 3.0f))> Token::COMMENT line: 141 rae.3d.Engine.Engine.run.{.{.{.glm.mat4 modelMatrix = glm.translate(glm.mat4(1.0f), glm.vec3(0.0f, 0.0f, 3.0f))
+						NEWLINE
+						type:empty name:<modelMatrix = glm.rotate(modelMatrix, m_currentAngle, glm.vec3(0.6f, 0.7f, 0.0f))> Token::COMMENT line: 142 rae.3d.Engine.Engine.run.{.{.{.modelMatrix = glm.rotate(modelMatrix, m_currentAngle, glm.vec3(0.6f, 0.7f, 0.0f))
+						NEWLINE
+						type:<mat4> name:<modelMatrix> Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 142 rae.3d.Engine.Engine.run.{.{.{.modelMatrix
+						type:empty name:<=>      Token::ASSIGNMENT line: 142 rae.3d.Engine.Engine.run.{.{.{.=
+						type:empty name:<translate> Token::FUNC_CALL usenamespace: glm:: line: 142 rae.3d.Engine.Engine.run.{.{.{.translate
+						type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 142 rae.3d.Engine.Engine.run.{.{.{.(
+						type:<mat4> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 142 rae.3d.Engine.Engine.run.{.{.{.
+						type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 142 rae.3d.Engine.Engine.run.{.{.{.(
+						type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 142 rae.3d.Engine.Engine.run.{.{.{.1.0f
+						type:empty name:<)>      Token::PARENTHESIS_END line: 142 rae.3d.Engine.Engine.run.{.{.{.)
+						type:empty name:<,>      Token::COMMA line: 142 rae.3d.Engine.Engine.run.{.{.{.,
+						type:<vec3> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 142 rae.3d.Engine.Engine.run.{.{.{.
+						type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 142 rae.3d.Engine.Engine.run.{.{.{.(
+						type:<float> name:<x_coord> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 142 rae.3d.Engine.Engine.run.{.{.{.x_coord
+						type:empty name:<,>      Token::COMMA line: 142 rae.3d.Engine.Engine.run.{.{.{.,
+						type:<float> name:<y_coord> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 142 rae.3d.Engine.Engine.run.{.{.{.y_coord
+						type:empty name:<,>      Token::COMMA line: 142 rae.3d.Engine.Engine.run.{.{.{.,
+						type:<float> name:<z_coord> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 142 rae.3d.Engine.Engine.run.{.{.{.z_coord
+						type:empty name:<)>      Token::PARENTHESIS_END line: 142 rae.3d.Engine.Engine.run.{.{.{.)
+						type:empty name:<)>      Token::PARENTHESIS_END line: 142 rae.3d.Engine.Engine.run.{.{.{.)
+						NEWLINE
+						type:<mat4> name:<modelMatrix> Token::USE_REFERENCE typetype: TypeType::VAL line: 143 rae.3d.Engine.Engine.run.{.{.{.modelMatrix
+						type:empty name:<=>      Token::ASSIGNMENT line: 143 rae.3d.Engine.Engine.run.{.{.{.=
+						type:empty name:<rotate> Token::FUNC_CALL usenamespace: glm:: line: 143 rae.3d.Engine.Engine.run.{.{.{.rotate
+						type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 143 rae.3d.Engine.Engine.run.{.{.{.(
+						type:<mat4> name:<modelMatrix> Token::USE_REFERENCE typetype: TypeType::VAL line: 143 rae.3d.Engine.Engine.run.{.{.{.modelMatrix
+						type:empty name:<,>      Token::COMMA line: 143 rae.3d.Engine.Engine.run.{.{.{.,
+						type:<float> name:<m_currentAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 143 rae.3d.Engine.Engine.run.{.{.{.m_currentAngle
+						type:empty name:<,>      Token::COMMA line: 143 rae.3d.Engine.Engine.run.{.{.{.,
+						type:<vec3> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 143 rae.3d.Engine.Engine.run.{.{.{.
+						type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 143 rae.3d.Engine.Engine.run.{.{.{.(
+						type:empty name:<0.6f>   Token::FLOAT_NUMBER line: 143 rae.3d.Engine.Engine.run.{.{.{.0.6f
+						type:empty name:<,>      Token::COMMA line: 143 rae.3d.Engine.Engine.run.{.{.{.,
+						type:empty name:<0.7f>   Token::FLOAT_NUMBER line: 143 rae.3d.Engine.Engine.run.{.{.{.0.7f
+						type:empty name:<,>      Token::COMMA line: 143 rae.3d.Engine.Engine.run.{.{.{.,
+						type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 143 rae.3d.Engine.Engine.run.{.{.{.0.0f
+						type:empty name:<)>      Token::PARENTHESIS_END line: 143 rae.3d.Engine.Engine.run.{.{.{.)
+						type:empty name:<)>      Token::PARENTHESIS_END line: 143 rae.3d.Engine.Engine.run.{.{.{.)
+						NEWLINE
+						NEWLINE
+						type:empty name:< The model-view-projection matrix> Token::COMMENT line: 146 rae.3d.Engine.Engine.run.{.{.{. The model-view-projection matrix
+						NEWLINE
+						type:<mat4> name:<combinedMatrix> Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 146 rae.3d.Engine.Engine.run.{.{.{.combinedMatrix
+						type:empty name:<=>      Token::ASSIGNMENT line: 146 rae.3d.Engine.Engine.run.{.{.{.=
+						type:<mat4> name:<m_projectionMatrix> Token::USE_REFERENCE typetype: TypeType::VAL line: 146 rae.3d.Engine.Engine.run.{.{.{.m_projectionMatrix
+						type:empty name:<*>      Token::MULTIPLY line: 146 rae.3d.Engine.Engine.run.{.{.{.*
+						type:<mat4> name:<m_viewMatrix> Token::USE_REFERENCE typetype: TypeType::VAL line: 146 rae.3d.Engine.Engine.run.{.{.{.m_viewMatrix
+						type:empty name:<*>      Token::MULTIPLY line: 146 rae.3d.Engine.Engine.run.{.{.{.*
+						type:<mat4> name:<modelMatrix> Token::USE_REFERENCE typetype: TypeType::VAL line: 147 rae.3d.Engine.Engine.run.{.{.{.modelMatrix
+						NEWLINE
+						NEWLINE
+						type:empty name:< TODO this will be difficult. Getting a const float* from a two dimensional array, which is actually glm::mat4> Token::COMMENT line: 149 rae.3d.Engine.Engine.run.{.{.{. TODO this will be difficult. Getting a const float* from a two dimensional array, which is actually glm::mat4
+						NEWLINE
+						type:empty name:< with operator[] overloaded.> Token::COMMENT line: 150 rae.3d.Engine.Engine.run.{.{.{. with operator[] overloaded.
+						NEWLINE
+						type:empty name:<glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, combinedMatrix[0][0]);> Token::COMMENT line: 151 rae.3d.Engine.Engine.run.{.{.{.glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, combinedMatrix[0][0]);
+						NEWLINE
+						type:empty name:<glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, modelMatrix[0][0]);> Token::COMMENT line: 152 rae.3d.Engine.Engine.run.{.{.{.glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, modelMatrix[0][0]);
+						NEWLINE
+						type:empty name:<glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, m_viewMatrix[0][0]);> Token::COMMENT line: 153 rae.3d.Engine.Engine.run.{.{.{.glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, m_viewMatrix[0][0]);
+						NEWLINE
+						NEWLINE
+						type:empty name:<@cpp_src> Token::PRAGMA_CPP_SRC line: 155 rae.3d.Engine.Engine.run.{.{.{.@cpp_src
+						RETURN WHICH IS NOT NEWLINE.
+						RETURN WHICH IS NOT NEWLINE.
+						type:empty name:<					glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, &combinedMatrix[0][0]);
+> Token::PASSTHROUGH_SRC line: 157 rae.3d.Engine.Engine.run.{.{.{.					glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, &combinedMatrix[0][0]);
+
+						type:empty name:<					glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, &modelMatrix[0][0]);
+> Token::PASSTHROUGH_SRC line: 158 rae.3d.Engine.Engine.run.{.{.{.					glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, &modelMatrix[0][0]);
+
+						type:empty name:<					glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, &m_viewMatrix[0][0]);
+> Token::PASSTHROUGH_SRC line: 159 rae.3d.Engine.Engine.run.{.{.{.					glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, &m_viewMatrix[0][0]);
+
+						RETURN WHICH IS NOT NEWLINE.
+						type:empty name:<					>  Token::PASSTHROUGH_SRC line: 160 rae.3d.Engine.Engine.run.{.{.{.					
+						type:empty name:<@end>   Token::PRAGMA_CPP_END line: 161 rae.3d.Engine.Engine.run.{.{.{.@end
+						NEWLINE
+						NEWLINE
+						type:<Mesh> name:<mesh>  Token::USE_REFERENCE typetype: TypeType::VAL line: 162 rae.3d.Engine.Engine.run.{.{.{.mesh
+						type:empty name:<.>      Token::REFERENCE_DOT line: 162 rae.3d.Engine.Engine.run.{.{.{..
+						type:empty name:<render> Token::FUNC_CALL line: 162 rae.3d.Engine.Engine.run.{.{.{.render
+						type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 162 rae.3d.Engine.Engine.run.{.{.{.(
+						type:<Shader> name:<shader> Token::USE_REFERENCE typetype: TypeType::VAL line: 162 rae.3d.Engine.Engine.run.{.{.{.shader
+						type:empty name:<.>      Token::REFERENCE_DOT line: 162 rae.3d.Engine.Engine.run.{.{.{..
+						type:empty name:<shaderID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 162 rae.3d.Engine.Engine.run.{.{.{.shaderID
+						type:empty name:<)>      Token::PARENTHESIS_END line: 162 rae.3d.Engine.Engine.run.{.{.{.)
+						NEWLINE
+						NEWLINE
+						type:<float> name:<x_coord> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 164 rae.3d.Engine.Engine.run.{.{.{.x_coord
+						type:empty name:<+=>     Token::PLUS_ASSIGN line: 164 rae.3d.Engine.Engine.run.{.{.{.+=
+						type:empty name:<2.0f>   Token::FLOAT_NUMBER line: 164 rae.3d.Engine.Engine.run.{.{.{.2.0f
+						type:empty name:<;>      Token::SEMICOLON line: 164 rae.3d.Engine.Engine.run.{.{.{.;
+						NEWLINE
+						type:empty name:<}>      Token::SCOPE_END line: 165 rae.3d.Engine.Engine.run.{.{.{.}
+					NEWLINE
+					type:<float> name:<y_coord> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 166 rae.3d.Engine.Engine.run.{.{.y_coord
+					type:empty name:<+=>     Token::PLUS_ASSIGN line: 166 rae.3d.Engine.Engine.run.{.{.+=
+					type:empty name:<2.0f>   Token::FLOAT_NUMBER line: 166 rae.3d.Engine.Engine.run.{.{.2.0f
+					type:empty name:<;>      Token::SEMICOLON line: 166 rae.3d.Engine.Engine.run.{.{.;
+					NEWLINE
+					type:<float> name:<x_coord> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 167 rae.3d.Engine.Engine.run.{.{.x_coord
+					type:empty name:<=>      Token::ASSIGNMENT line: 167 rae.3d.Engine.Engine.run.{.{.=
+					type:empty name:<->      Token::MINUS line: 167 rae.3d.Engine.Engine.run.{.{.-
+					type:empty name:<9.0f>   Token::FLOAT_NUMBER line: 167 rae.3d.Engine.Engine.run.{.{.9.0f
+					type:empty name:<;>      Token::SEMICOLON line: 167 rae.3d.Engine.Engine.run.{.{.;
+					NEWLINE
+					type:<float> name:<z_coord> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 168 rae.3d.Engine.Engine.run.{.{.z_coord
+					type:empty name:<+=>     Token::PLUS_ASSIGN line: 168 rae.3d.Engine.Engine.run.{.{.+=
+					type:empty name:<2.0f>   Token::FLOAT_NUMBER line: 168 rae.3d.Engine.Engine.run.{.{.2.0f
+					type:empty name:<;>      Token::SEMICOLON line: 168 rae.3d.Engine.Engine.run.{.{.;
+					NEWLINE
+					type:empty name:<}>      Token::SCOPE_END line: 169 rae.3d.Engine.Engine.run.{.{.}
+				NEWLINE
+				NEWLINE
+				type:empty name:< render one more cube in the middle> Token::COMMENT line: 172 rae.3d.Engine.Engine.run.{. render one more cube in the middle
+				NEWLINE
+				type:<mat4> name:<modelMatrix> Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 172 rae.3d.Engine.Engine.run.{.modelMatrix
+				type:empty name:<=>      Token::ASSIGNMENT line: 172 rae.3d.Engine.Engine.run.{.=
+				type:empty name:<translate> Token::FUNC_CALL usenamespace: glm:: line: 172 rae.3d.Engine.Engine.run.{.translate
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 172 rae.3d.Engine.Engine.run.{.(
+				type:<mat4> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 172 rae.3d.Engine.Engine.run.{.
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 172 rae.3d.Engine.Engine.run.{.(
+				type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 172 rae.3d.Engine.Engine.run.{.1.0f
+				type:empty name:<)>      Token::PARENTHESIS_END line: 172 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<,>      Token::COMMA line: 172 rae.3d.Engine.Engine.run.{.,
+				type:<vec3> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 172 rae.3d.Engine.Engine.run.{.
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 172 rae.3d.Engine.Engine.run.{.(
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 172 rae.3d.Engine.Engine.run.{.0.0f
+				type:empty name:<,>      Token::COMMA line: 172 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 172 rae.3d.Engine.Engine.run.{.0.0f
+				type:empty name:<,>      Token::COMMA line: 172 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<3.0f>   Token::FLOAT_NUMBER line: 172 rae.3d.Engine.Engine.run.{.3.0f
+				type:empty name:<)>      Token::PARENTHESIS_END line: 172 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<)>      Token::PARENTHESIS_END line: 172 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:<mat4> name:<modelMatrix> Token::USE_REFERENCE typetype: TypeType::VAL line: 173 rae.3d.Engine.Engine.run.{.modelMatrix
+				type:empty name:<=>      Token::ASSIGNMENT line: 173 rae.3d.Engine.Engine.run.{.=
+				type:empty name:<rotate> Token::FUNC_CALL usenamespace: glm:: line: 173 rae.3d.Engine.Engine.run.{.rotate
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 173 rae.3d.Engine.Engine.run.{.(
+				type:<mat4> name:<modelMatrix> Token::USE_REFERENCE typetype: TypeType::VAL line: 173 rae.3d.Engine.Engine.run.{.modelMatrix
+				type:empty name:<,>      Token::COMMA line: 173 rae.3d.Engine.Engine.run.{.,
+				type:<float> name:<m_currentAngle> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 173 rae.3d.Engine.Engine.run.{.m_currentAngle
+				type:empty name:<,>      Token::COMMA line: 173 rae.3d.Engine.Engine.run.{.,
+				type:<vec3> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 173 rae.3d.Engine.Engine.run.{.
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 173 rae.3d.Engine.Engine.run.{.(
+				type:empty name:<0.6f>   Token::FLOAT_NUMBER line: 173 rae.3d.Engine.Engine.run.{.0.6f
+				type:empty name:<,>      Token::COMMA line: 173 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.7f>   Token::FLOAT_NUMBER line: 173 rae.3d.Engine.Engine.run.{.0.7f
+				type:empty name:<,>      Token::COMMA line: 173 rae.3d.Engine.Engine.run.{.,
+				type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 173 rae.3d.Engine.Engine.run.{.0.0f
+				type:empty name:<)>      Token::PARENTHESIS_END line: 173 rae.3d.Engine.Engine.run.{.)
+				type:empty name:<)>      Token::PARENTHESIS_END line: 173 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				NEWLINE
+				type:empty name:< The model-view-projection matrix> Token::COMMENT line: 176 rae.3d.Engine.Engine.run.{. The model-view-projection matrix
+				NEWLINE
+				type:<mat4> name:<combinedMatrix> Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 176 rae.3d.Engine.Engine.run.{.combinedMatrix
+				type:empty name:<=>      Token::ASSIGNMENT line: 176 rae.3d.Engine.Engine.run.{.=
+				type:<mat4> name:<m_projectionMatrix> Token::USE_REFERENCE typetype: TypeType::VAL line: 176 rae.3d.Engine.Engine.run.{.m_projectionMatrix
+				type:empty name:<*>      Token::MULTIPLY line: 176 rae.3d.Engine.Engine.run.{.*
+				type:<mat4> name:<m_viewMatrix> Token::USE_REFERENCE typetype: TypeType::VAL line: 176 rae.3d.Engine.Engine.run.{.m_viewMatrix
+				type:empty name:<*>      Token::MULTIPLY line: 176 rae.3d.Engine.Engine.run.{.*
+				type:<mat4> name:<modelMatrix> Token::USE_REFERENCE typetype: TypeType::VAL line: 177 rae.3d.Engine.Engine.run.{.modelMatrix
+				NEWLINE
+				NEWLINE
+				type:empty name:<@cpp_src> Token::PRAGMA_CPP_SRC line: 179 rae.3d.Engine.Engine.run.{.@cpp_src
+				RETURN WHICH IS NOT NEWLINE.
+				RETURN WHICH IS NOT NEWLINE.
+				type:empty name:<			glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, &combinedMatrix[0][0]);
+> Token::PASSTHROUGH_SRC line: 181 rae.3d.Engine.Engine.run.{.			glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, &combinedMatrix[0][0]);
+
+				type:empty name:<			glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, &modelMatrix[0][0]);
+> Token::PASSTHROUGH_SRC line: 182 rae.3d.Engine.Engine.run.{.			glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, &modelMatrix[0][0]);
+
+				type:empty name:<			glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, &m_viewMatrix[0][0]);
+> Token::PASSTHROUGH_SRC line: 183 rae.3d.Engine.Engine.run.{.			glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, &m_viewMatrix[0][0]);
+
+				RETURN WHICH IS NOT NEWLINE.
+				type:empty name:<			>    Token::PASSTHROUGH_SRC line: 184 rae.3d.Engine.Engine.run.{.			
+				type:empty name:<@end>   Token::PRAGMA_CPP_END line: 185 rae.3d.Engine.Engine.run.{.@end
+				NEWLINE
+				NEWLINE
+				type:<Mesh> name:<mesh>  Token::USE_REFERENCE typetype: TypeType::VAL line: 186 rae.3d.Engine.Engine.run.{.mesh
+				type:empty name:<.>      Token::REFERENCE_DOT line: 186 rae.3d.Engine.Engine.run.{..
+				type:empty name:<render> Token::FUNC_CALL line: 186 rae.3d.Engine.Engine.run.{.render
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 186 rae.3d.Engine.Engine.run.{.(
+				type:<Shader> name:<shader> Token::USE_REFERENCE typetype: TypeType::VAL line: 186 rae.3d.Engine.Engine.run.{.shader
+				type:empty name:<.>      Token::REFERENCE_DOT line: 186 rae.3d.Engine.Engine.run.{..
+				type:empty name:<shaderID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 186 rae.3d.Engine.Engine.run.{.shaderID
+				type:empty name:<)>      Token::PARENTHESIS_END line: 186 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				NEWLINE
+				type:empty name:<glfwSwapBuffers> Token::FUNC_CALL line: 188 rae.3d.Engine.Engine.run.{.glfwSwapBuffers
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 188 rae.3d.Engine.Engine.run.{.(
+				type:<GLFWwindow> name:<m_window> Token::USE_REFERENCE typetype: TypeType::PTR line: 188 rae.3d.Engine.Engine.run.{.m_window
+				type:empty name:<)>      Token::PARENTHESIS_END line: 188 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:empty name:<glfwPollEvents> Token::FUNC_CALL line: 189 rae.3d.Engine.Engine.run.{.glfwPollEvents
+				type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 189 rae.3d.Engine.Engine.run.{.(
+				type:empty name:<)>      Token::PARENTHESIS_END line: 189 rae.3d.Engine.Engine.run.{.)
+				NEWLINE
+				type:empty name:<}>      Token::SCOPE_END line: 190 rae.3d.Engine.Engine.run.{.}
+			NEWLINE
+			type:empty name:<}>      Token::SCOPE_END line: 191 rae.3d.Engine.Engine.run.}
+		NEWLINE
+		NEWLINE
+		type:empty name:<update> Token::FUNC line: 193 rae.3d.Engine.Engine.update
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 193 rae.3d.Engine.Engine.update.(
+			type:<double> name:<time> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 193 rae.3d.Engine.Engine.update.time
+			type:empty name:<,>      Token::COMMA line: 193 rae.3d.Engine.Engine.update.,
+			type:<double> name:<delta_time> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 193 rae.3d.Engine.Engine.update.delta_time
+			type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 193 rae.3d.Engine.Engine.update.)
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 194 rae.3d.Engine.Engine.update.{
+			NEWLINE
+			NEWLINE
+			type:empty name:<}>      Token::SCOPE_END line: 196 rae.3d.Engine.Engine.update.}
+		NEWLINE
+		NEWLINE
+		type:empty name:<osEventResizeWindow> Token::FUNC line: 198 rae.3d.Engine.Engine.osEventResizeWindow
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 198 rae.3d.Engine.Engine.osEventResizeWindow.(
+			type:<int> name:<width>  Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 198 rae.3d.Engine.Engine.osEventResizeWindow.width
+			type:empty name:<,>      Token::COMMA line: 198 rae.3d.Engine.Engine.osEventResizeWindow.,
+			type:<int> name:<height> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 198 rae.3d.Engine.Engine.osEventResizeWindow.height
+			type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 198 rae.3d.Engine.Engine.osEventResizeWindow.)
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 199 rae.3d.Engine.Engine.osEventResizeWindow.{
+			NEWLINE
+			type:empty name:<log>    Token::LOG line: 200 rae.3d.Engine.Engine.osEventResizeWindow.log
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_LOG line: 200 rae.3d.Engine.Engine.osEventResizeWindow.(
+			type:empty name:<"osEventResizeWindow TODO"> Token::QUOTE line: 200 rae.3d.Engine.Engine.osEventResizeWindow."osEventResizeWindow TODO"
+			type:empty name:<)>      Token::PARENTHESIS_END_LOG line: 200 rae.3d.Engine.Engine.osEventResizeWindow.)
+			NEWLINE
+			type:empty name:<m_renderSystem.osEventResizeWindow(width, height)> Token::COMMENT line: 202 rae.3d.Engine.Engine.osEventResizeWindow.m_renderSystem.osEventResizeWindow(width, height)
+			NEWLINE
+			type:<int> name:<m_windowWidth> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 202 rae.3d.Engine.Engine.osEventResizeWindow.m_windowWidth
+			type:empty name:<=>      Token::ASSIGNMENT line: 202 rae.3d.Engine.Engine.osEventResizeWindow.=
+			type:<int> name:<width>  Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 203 rae.3d.Engine.Engine.osEventResizeWindow.width
+			NEWLINE
+			type:<int> name:<m_windowHeight> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 203 rae.3d.Engine.Engine.osEventResizeWindow.m_windowHeight
+			type:empty name:<=>      Token::ASSIGNMENT line: 203 rae.3d.Engine.Engine.osEventResizeWindow.=
+			type:<int> name:<height> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 204 rae.3d.Engine.Engine.osEventResizeWindow.height
+			NEWLINE
+			type:empty name:<}>      Token::SCOPE_END line: 204 rae.3d.Engine.Engine.osEventResizeWindow.}
+		NEWLINE
+		NEWLINE
+		type:empty name:<osEventResizeWindowPixels> Token::FUNC line: 206 rae.3d.Engine.Engine.osEventResizeWindowPixels
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 206 rae.3d.Engine.Engine.osEventResizeWindowPixels.(
+			type:<int> name:<width>  Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 206 rae.3d.Engine.Engine.osEventResizeWindowPixels.width
+			type:empty name:<,>      Token::COMMA line: 206 rae.3d.Engine.Engine.osEventResizeWindowPixels.,
+			type:<int> name:<height> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 206 rae.3d.Engine.Engine.osEventResizeWindowPixels.height
+			type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 206 rae.3d.Engine.Engine.osEventResizeWindowPixels.)
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 207 rae.3d.Engine.Engine.osEventResizeWindowPixels.{
+			NEWLINE
+			type:empty name:<log>    Token::LOG line: 208 rae.3d.Engine.Engine.osEventResizeWindowPixels.log
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_LOG line: 208 rae.3d.Engine.Engine.osEventResizeWindowPixels.(
+			type:empty name:<"osEventResizeWindowPixels TODO"> Token::QUOTE line: 208 rae.3d.Engine.Engine.osEventResizeWindowPixels."osEventResizeWindowPixels TODO"
+			type:empty name:<)>      Token::PARENTHESIS_END_LOG line: 208 rae.3d.Engine.Engine.osEventResizeWindowPixels.)
+			NEWLINE
+			type:empty name:<m_renderSystem.osEventResizeWindowPixels(width, height)> Token::COMMENT line: 210 rae.3d.Engine.Engine.osEventResizeWindowPixels.m_renderSystem.osEventResizeWindowPixels(width, height)
+			NEWLINE
+			type:<int> name:<m_windowWidth> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 210 rae.3d.Engine.Engine.osEventResizeWindowPixels.m_windowWidth
+			type:empty name:<=>      Token::ASSIGNMENT line: 210 rae.3d.Engine.Engine.osEventResizeWindowPixels.=
+			type:<int> name:<width>  Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 211 rae.3d.Engine.Engine.osEventResizeWindowPixels.width
+			NEWLINE
+			type:<int> name:<m_windowHeight> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 211 rae.3d.Engine.Engine.osEventResizeWindowPixels.m_windowHeight
+			type:empty name:<=>      Token::ASSIGNMENT line: 211 rae.3d.Engine.Engine.osEventResizeWindowPixels.=
+			type:<int> name:<height> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 212 rae.3d.Engine.Engine.osEventResizeWindowPixels.height
+			NEWLINE
+			type:empty name:<}>      Token::SCOPE_END line: 212 rae.3d.Engine.Engine.osEventResizeWindowPixels.}
+		NEWLINE
+		NEWLINE
+		type:empty name:<onMouseButtonPress> Token::FUNC line: 214 rae.3d.Engine.Engine.onMouseButtonPress
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 214 rae.3d.Engine.Engine.onMouseButtonPress.(
+			type:<int> name:<set_button> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 214 rae.3d.Engine.Engine.onMouseButtonPress.set_button
+			type:empty name:<,>      Token::COMMA line: 214 rae.3d.Engine.Engine.onMouseButtonPress.,
+			type:<double> name:<x>   Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 214 rae.3d.Engine.Engine.onMouseButtonPress.x
+			type:empty name:<,>      Token::COMMA line: 214 rae.3d.Engine.Engine.onMouseButtonPress.,
+			type:<double> name:<y>   Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 214 rae.3d.Engine.Engine.onMouseButtonPress.y
+			type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 214 rae.3d.Engine.Engine.onMouseButtonPress.)
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 215 rae.3d.Engine.Engine.onMouseButtonPress.{
+			NEWLINE
+			type:empty name:<log>    Token::LOG line: 216 rae.3d.Engine.Engine.onMouseButtonPress.log
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_LOG line: 216 rae.3d.Engine.Engine.onMouseButtonPress.(
+			type:empty name:<"mouse press: x: "> Token::QUOTE line: 216 rae.3d.Engine.Engine.onMouseButtonPress."mouse press: x: "
+			type:empty name:<,>      Token::LOG_SEPARATOR line: 216 rae.3d.Engine.Engine.onMouseButtonPress.,
+			type:<double> name:<x>   Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 216 rae.3d.Engine.Engine.onMouseButtonPress.x
+			type:empty name:<,>      Token::LOG_SEPARATOR line: 216 rae.3d.Engine.Engine.onMouseButtonPress.,
+			type:empty name:<" y: "> Token::QUOTE line: 216 rae.3d.Engine.Engine.onMouseButtonPress." y: "
+			type:empty name:<,>      Token::LOG_SEPARATOR line: 216 rae.3d.Engine.Engine.onMouseButtonPress.,
+			type:<double> name:<y>   Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 216 rae.3d.Engine.Engine.onMouseButtonPress.y
+			type:empty name:<)>      Token::PARENTHESIS_END_LOG line: 216 rae.3d.Engine.Engine.onMouseButtonPress.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<TODO
+		# Have to scale input on retina screens:
+		x = x * m_renderSystem->screenPixelRatio();
+		y = y * m_renderSystem->screenPixelRatio();
+		
+		unsigned char res[4];
+
+		m_renderSystem->renderPicking( m_objectFactory.entities() );
+
+		#glGetIntegerv(GL_VIEWPORT, viewport);
+		glReadPixels((int)x, m_renderSystem->windowPixelHeight() - (int)y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, &res);
+
+		# Decode entity ID from red and green channels!
+		int pickedID = res[0] + (res[1] * 256);
+
+		#m_renderSystem->m_pickedString = std::to_string(pickedID) + " is " + std::to_string(res[0]) + " and " + std::to_string(res[1]);
+
+		if( pickedID == 0)
+		{
+			# do nothing, it's the background.
+		}
+		else if( pickedID == 1)
+		{
+			createRandomCubeEntity(); # Hmm, we have no proper event handling yet, so entity 1 is the Add Object button!
+		}
+		else
+		{
+			m_objectFactory.destroyEntity( pickedID );
+		}
+		> Token::STAR_COMMENT line: 247 rae.3d.Engine.Engine.onMouseButtonPress.TODO
+		# Have to scale input on retina screens:
+		x = x * m_renderSystem->screenPixelRatio();
+		y = y * m_renderSystem->screenPixelRatio();
+		
+		unsigned char res[4];
+
+		m_renderSystem->renderPicking( m_objectFactory.entities() );
+
+		#glGetIntegerv(GL_VIEWPORT, viewport);
+		glReadPixels((int)x, m_renderSystem->windowPixelHeight() - (int)y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, &res);
+
+		# Decode entity ID from red and green channels!
+		int pickedID = res[0] + (res[1] * 256);
+
+		#m_renderSystem->m_pickedString = std::to_string(pickedID) + " is " + std::to_string(res[0]) + " and " + std::to_string(res[1]);
+
+		if( pickedID == 0)
+		{
+			# do nothing, it's the background.
+		}
+		else if( pickedID == 1)
+		{
+			createRandomCubeEntity(); # Hmm, we have no proper event handling yet, so entity 1 is the Add Object button!
+		}
+		else
+		{
+			m_objectFactory.destroyEntity( pickedID );
+		}
+		
+			NEWLINE
+			type:empty name:<}>      Token::SCOPE_END line: 249 rae.3d.Engine.Engine.onMouseButtonPress.}
+		NEWLINE
+		NEWLINE
+		type:empty name:<priv>   Token::VISIBILITY_DEFAULT line: 251 rae.3d.Engine.Engine.priv
+		NEWLINE
+		NEWLINE
+		type:<GLFWwindow> name:<m_window> Token::DEFINE_REFERENCE typetype: TypeType::PTR line: 253 rae.3d.Engine.Engine.m_window
+		NEWLINE
+		NEWLINE
+		type:empty name:< timing> Token::COMMENT line: 256 rae.3d.Engine.Engine. timing
+		NEWLINE
+		type:<double> name:<m_previousTime> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 256 rae.3d.Engine.Engine.m_previousTime
+			type:empty name:<=>      Token::INIT_DATA line: 256 =
+				type:empty name:<0.0>    Token::NUMBER line: 256 =.0.0
+		NEWLINE
+		type:<double> name:<m_currentTime> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 257 rae.3d.Engine.Engine.m_currentTime
+			type:empty name:<=>      Token::INIT_DATA line: 257 =
+				type:empty name:<0.0>    Token::NUMBER line: 257 =.0.0
+		NEWLINE
+		NEWLINE
+		type:empty name:< TODO>  Token::COMMENT line: 260 rae.3d.Engine.Engine. TODO
+		NEWLINE
+		type:empty name:<RenderSystem m_renderSystem> Token::COMMENT line: 261 rae.3d.Engine.Engine.RenderSystem m_renderSystem
+		NEWLINE
+		NEWLINE
+		type:<float> name:<m_currentAngle> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 262 rae.3d.Engine.Engine.m_currentAngle
+			type:empty name:<=>      Token::INIT_DATA line: 262 =
+				type:empty name:<0.0f>   Token::NUMBER line: 262 =.0.0f
+		NEWLINE
+		NEWLINE
+		type:<Shader> name:<shader> Token::DEFINE_REFERENCE typetype: TypeType::VAL line: 264 rae.3d.Engine.Engine.shader
+		NEWLINE
+		type:<Mesh> name:<mesh>  Token::DEFINE_REFERENCE typetype: TypeType::VAL line: 265 rae.3d.Engine.Engine.mesh
+		NEWLINE
+		NEWLINE
+		type:empty name:<temp>   Token::COMMENT line: 268 rae.3d.Engine.Engine.temp
+		NEWLINE
+		type:<uint> name:<modelViewMatrixUni> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 268 rae.3d.Engine.Engine.modelViewMatrixUni
+			type:empty name:<=>      Token::INIT_DATA line: 268 =
+				type:empty name:<0>      Token::NUMBER line: 268 =.0
+		NEWLINE
+		type:<uint> name:<viewMatrixUni> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 269 rae.3d.Engine.Engine.viewMatrixUni
+			type:empty name:<=>      Token::INIT_DATA line: 269 =
+				type:empty name:<0>      Token::NUMBER line: 269 =.0
+		NEWLINE
+		type:<uint> name:<modelMatrixUni> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 270 rae.3d.Engine.Engine.modelMatrixUni
+			type:empty name:<=>      Token::INIT_DATA line: 270 =
+				type:empty name:<0>      Token::NUMBER line: 270 =.0
+		NEWLINE
+		type:<uint> name:<lightPositionUni> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 271 rae.3d.Engine.Engine.lightPositionUni
+			type:empty name:<=>      Token::INIT_DATA line: 271 =
+				type:empty name:<0>      Token::NUMBER line: 271 =.0
+		NEWLINE
+		type:<uint> name:<textureUni> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 272 rae.3d.Engine.Engine.textureUni
+			type:empty name:<=>      Token::INIT_DATA line: 272 =
+				type:empty name:<0>      Token::NUMBER line: 272 =.0
+		NEWLINE
+		NEWLINE
+		type:empty name:<temp window size stuff:> Token::COMMENT line: 275 rae.3d.Engine.Engine.temp window size stuff:
+		NEWLINE
+		NEWLINE
+		type:<int> name:<m_windowWidth> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 276 rae.3d.Engine.Engine.m_windowWidth
+			type:empty name:<=>      Token::INIT_DATA line: 276 rae.3d.Engine.Engine.=
+				type:empty name:<640>    Token::NUMBER line: 277 rae.3d.Engine.Engine.=.640
+		type:empty name:<=>      Token::INIT_DATA line: 276 rae.3d.Engine.Engine.=
+			type:empty name:<640>    Token::NUMBER line: 277 rae.3d.Engine.Engine.=.640
+		NEWLINE
+		type:<int> name:<m_windowHeight> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 277 rae.3d.Engine.Engine.m_windowHeight
+			type:empty name:<=>      Token::INIT_DATA line: 277 rae.3d.Engine.Engine.=
+				type:empty name:<480>    Token::NUMBER line: 278 rae.3d.Engine.Engine.=.480
+		type:empty name:<=>      Token::INIT_DATA line: 277 rae.3d.Engine.Engine.=
+			type:empty name:<480>    Token::NUMBER line: 278 rae.3d.Engine.Engine.=.480
+		NEWLINE
+		NEWLINE
+		type:empty name:<}>      Token::SCOPE_END line: 279 rae.3d.Engine.Engine.}
+	NEWLINE
+	NEWLINE
+	type:empty name:empty    Token::CLOSE_MODULE line: 281 rae.3d.Engine.

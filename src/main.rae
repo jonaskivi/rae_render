@@ -1,0 +1,264 @@
+module main
+
+project rae_render
+{
+	#TODO targetdir = "../"
+
+	importdirs =
+	[
+		"external/glew/include",
+		"external/glfw/include",
+		"external/nanovg/src",
+		"external/glm",
+		"external/glm/glm",
+		"external/"
+		"bindings/"
+	]
+	
+	#*
+	#TODO configurations, run gcc directly and premake support...
+	defines = ["GLEW_STATIC", "NANOVG_GLEW"]
+	configuration("linux")
+		links = ["X11","Xrandr", "rt", "GL", "GLU", "pthread"]
+       
+	configuration("windows")
+		defines = "_CRT_SECURE_NO_DEPRECATE" # to use fopen on windows without warnings.
+		links = ["glu32","opengl32", "gdi32", "winmm", "user32"]
+
+	configuration("macosx")
+	linkoptions = ["-framework OpenGL", "-framework Cocoa", "-framework IOKit", "-framework CoreVideo"]
+
+	configuration("Debug")
+		defines = ["DEBUG"]
+		flags = ["Symbols"]
+		debugdir = "../"
+
+	configuration("Release")
+		defines = ["NDEBUG"]
+		flags = ["Optimize"]
+		debugdir = "../"
+	*#
+
+	#TODO project things:
+	#import rae.3d.Mesh
+}
+
+#*
+#include <iostream>
+#include <string>
+using namespace std;
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+*#
+
+@cpp
+#ifdef __APPLE__
+	#define GLFW_INCLUDE_GLCOREARB
+#endif
+@end
+
+import GL.glew
+
+@cpp
+#include <GLFW/glfw3.h>
+GLFWwindow* glfw_window;
+
+//TODO #include "nanovg.h"
+//#include "nanovg_gl.h"
+//#include "nanovg_gl_utils.h"
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+@end
+
+import rae.3d.Mesh
+import rae.3d.Shader
+import rae.3d.Engine
+
+#* TODO
+#include "Random.hpp"
+#include "Animator.hpp"
+#include "Shader.hpp"
+#include "ComponentType.hpp"
+#include "Entity.hpp"
+#include "Transform.hpp"
+#include "Mesh.hpp"
+#include "Material.hpp"
+#include "ObjectFactory.hpp"
+#include "System.hpp"
+#include "RenderSystem.hpp"
+#include "Engine.hpp"
+using namespace Rae;
+*#
+
+ptr Engine g_engine = null
+extern ptr GLFWwindow glfw_window
+
+@cpp
+
+void windowSizeCallback(GLFWwindow* glfw_window, int width, int height)
+{
+	if( g_engine == nullptr )
+		return;
+	g_engine->osEventResizeWindow(width, height);
+}
+
+void windowPixelSizeCallback(GLFWwindow* glfw_window, int width, int height)
+{
+	if( g_engine == nullptr )
+		return;
+	g_engine->osEventResizeWindowPixels(width, height);
+}
+
+void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, int set_mods)
+{
+	if( g_engine == nullptr )
+		return;
+	/*
+	double mx, my;
+	glfwGetCursorPos(set_window, &mx, &my);
+
+	//cout << "GLFWMouseButtonPress. x: " << mx << " y: " << my << "\n";
+	if(set_action == GLFW_PRESS)
+	{
+		g_engine->onMouseButtonPress(set_button, mx, my);
+	}
+	else if(set_action == GLFW_RELEASE)
+	{
+		//TODO release for a proper click, and add a proper event system.
+	}
+	*/
+}
+
+#define check_gl_error() _check_gl_error(__FILE__,__LINE__)
+
+void _check_gl_error(const char *file, int line)
+{
+        GLenum err (glGetError());
+ 
+        while(err!=GL_NO_ERROR) {
+                std::string error;
+ 
+                switch(err) {
+                        case GL_INVALID_OPERATION:      error="INVALID_OPERATION";      break;
+                        case GL_INVALID_ENUM:           error="INVALID_ENUM";           break;
+                        case GL_INVALID_VALUE:          error="INVALID_VALUE";          break;
+                        case GL_OUT_OF_MEMORY:          error="OUT_OF_MEMORY";          break;
+                        case GL_INVALID_FRAMEBUFFER_OPERATION:  error="INVALID_FRAMEBUFFER_OPERATION";  break;
+                }
+ 
+                std::cerr << "GL_" << error.c_str() << " - " << file << ":" << line << std::endl;
+                err = glGetError();
+        }
+}
+
+@end
+
+#* TODO
+void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, int set_mods)
+{
+	if( g_engine == nullptr )
+		return;
+
+	double mx, my;
+	glfwGetCursorPos(set_window, &mx, &my);
+
+	//cout << "GLFWMouseButtonPress. x: " << mx << " y: " << my << "\n";
+	if(set_action == GLFW_PRESS)
+	{
+		g_engine->onMouseButtonPress(set_button, mx, my);
+	}
+	else if(set_action == GLFW_RELEASE)
+	{
+		//TODO release for a proper click, and add a proper event system.
+	}
+}
+*#
+
+func (int) main ([string] args)
+{
+	log("Rae Render 0.1")
+
+	@cpp
+
+	// Initialise GLFW
+	if( !glfwInit() )
+	{
+		fprintf( stderr, "Failed to initialize GLFW\n" );
+		return -1;
+	}
+
+	// Enable MSAA (multisample anti-aliasing)
+	glfwWindowHint(GLFW_SAMPLES, 4);
+
+	#ifndef _WIN32 // don't require this on win32, and works with more cards
+	// Set OpenGL version to 2.1
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+	#endif
+	
+	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, 1);
+
+	// Create glfw_window
+
+	GLFWmonitor* screen     = glfwGetPrimaryMonitor();
+	const GLFWvidmode* mode = glfwGetVideoMode(screen);
+
+	int screenWidth = mode->width - 200;
+	int screenHeight = mode->height - 200;
+
+	glfw_window = glfwCreateWindow( mode->width - 200, mode->height - 200, "Rae Render", nullptr, nullptr);
+	
+	if( glfw_window == nullptr )
+	{
+		fprintf( stderr, "Failed to open GLFW glfw_window.\n" );
+		glfwTerminate();
+		return -1;
+	}
+
+	glfwMakeContextCurrent(glfw_window);
+
+	// Initialize GLEW
+	glewExperimental = GL_TRUE;
+	if (glewInit() != GLEW_OK)
+	{
+		fprintf(stderr, "Failed to initialize GLEW\n");
+		return -1;
+	}
+	// GLEW generates GL error because it calls glGetString(GL_EXTENSIONS), we'll consume it here.
+	glGetError();
+
+	glfwSwapInterval(0);
+
+	glfwSetInputMode(glfw_window, GLFW_STICKY_KEYS, GL_TRUE);
+	@end
+
+	# Load it into a VBO
+
+	# TODO pass glfw_window here or something...
+	Engine engine(glfw_window)
+	
+	g_engine -> engine # Set global access point just for GLFW callbacks.
+
+	@cpp
+	glfwSetWindowSizeCallback     (glfw_window, windowSizeCallback);
+	glfwSetFramebufferSizeCallback(glfw_window, windowPixelSizeCallback); // Support hi-dpi displays
+	glfwSetMouseButtonCallback    (glfw_window, GLFWonMouseButton);
+	@end
+
+	extern int screenWidth 
+	extern int screenHeight # TODO it seems externs have to be on their own line. Fix it.
+
+	engine.osEventResizeWindow(screenWidth, screenHeight)
+
+	engine.run
+
+	@cpp
+		glfwTerminate();
+	@end
+
+	return 0
+}
+

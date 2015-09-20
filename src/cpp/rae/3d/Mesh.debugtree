@@ -1,0 +1,2101 @@
+// this file is automatically created from Rae programming language module:
+//c:\Users\jonaz\Dropbox\jonas\2015\ohjelmointi\rae_render\src/cpp/rae/3d/Mesh
+type:empty name:<rae.3d.Mesh> Token::MODULE line: 1 rae.3d.Mesh
+	type:empty name:<rae>    Token::MODULE_DIR line: 1 rae.3d.Mesh.rae
+	type:empty name:<3d>     Token::MODULE_DIR line: 1 rae.3d.Mesh.3d
+	type:empty name:<Mesh>   Token::MODULE_NAME line: 2 rae.3d.Mesh.Mesh
+	NEWLINE
+	NEWLINE
+	type:empty name:<TODO import cpp.glm.glm> Token::COMMENT line: 4 rae.3d.Mesh.TODO import cpp.glm.glm
+	NEWLINE
+	type:empty name:<using glm> Token::COMMENT line: 5 rae.3d.Mesh.using glm
+	NEWLINE
+	type:empty name:<TODO import cpp.GL.glew> Token::COMMENT line: 6 rae.3d.Mesh.TODO import cpp.GL.glew
+	NEWLINE
+	NEWLINE
+	type:empty name:< using keyword is TODO> Token::COMMENT line: 8 rae.3d.Mesh. using keyword is TODO
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 8 rae.3d.Mesh.import
+		type:empty name:<glm>    Token::IMPORT_NAME line: 8 rae.3d.Mesh.import.glm
+		type:empty name:<glm>    Token::IMPORT_NAME line: 8 rae.3d.Mesh.import.glm
+	type:empty name:< using glm> Token::COMMENT line: 9 rae.3d.Mesh. using glm
+	NEWLINE
+	NEWLINE
+	type:empty name:<TODO private import:> Token::COMMENT line: 11 rae.3d.Mesh.TODO private import:
+	NEWLINE
+	type:empty name:< priv import GL.glew> Token::COMMENT line: 12 rae.3d.Mesh. priv import GL.glew
+	NEWLINE
+	type:empty name:<import> Token::IMPORT line: 12 rae.3d.Mesh.import
+		type:empty name:<GL>     Token::IMPORT_NAME line: 12 rae.3d.Mesh.import.GL
+		type:empty name:<glew>   Token::IMPORT_NAME line: 13 rae.3d.Mesh.import.glew
+	NEWLINE
+	NEWLINE
+	type:<Mesh> name:<Mesh>  Token::CLASS line: 15 rae.3d.Mesh.Mesh
+		NEWLINE
+		type:empty name:<{>      Token::SCOPE_BEGIN line: 15 rae.3d.Mesh.Mesh.{
+		NEWLINE
+		type:empty name:<init>   Token::CONSTRUCTOR line: 473 rae.3d.Mesh.Mesh.init
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_RETURN_TYPES line: 473 rae.3d.Mesh.Mesh.init.(
+			type:empty name:<)>      Token::PARENTHESIS_END_FUNC_RETURN_TYPES line: 473 rae.3d.Mesh.Mesh.init.)
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 473 rae.3d.Mesh.Mesh.init.(
+			type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 473 rae.3d.Mesh.Mesh.init.)
+			NEWLINE
+			type:<uint> name:<vertexBufferID> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 469 rae.3d.Mesh.Mesh.vertexBufferID
+				type:empty name:<=>      Token::INIT_DATA line: 469 =
+					type:empty name:<0>      Token::NUMBER line: 469 =.0
+			NEWLINE
+			type:<uint> name:<uvBufferID> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 470 rae.3d.Mesh.Mesh.uvBufferID
+				type:empty name:<=>      Token::INIT_DATA line: 470 =
+					type:empty name:<0>      Token::NUMBER line: 470 =.0
+			NEWLINE
+			type:<uint> name:<normalBufferID> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 471 rae.3d.Mesh.Mesh.normalBufferID
+				type:empty name:<=>      Token::INIT_DATA line: 471 =
+					type:empty name:<0>      Token::NUMBER line: 471 =.0
+			NEWLINE
+			type:<uint> name:<indexBufferID> Token::AUTO_INIT typetype: TypeType::BUILT_IN_TYPE line: 472 rae.3d.Mesh.Mesh.indexBufferID
+				type:empty name:<=>      Token::INIT_DATA line: 472 =
+					type:empty name:<0>      Token::NUMBER line: 472 =.0
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 473 rae.3d.Mesh.Mesh.init.{
+			NEWLINE
+			type:empty name:<}>      Token::SCOPE_END line: 473 rae.3d.Mesh.Mesh.init.}
+		NEWLINE
+		type:empty name:<free>   Token::DESTRUCTOR line: 473 rae.3d.Mesh.Mesh.free
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 473 rae.3d.Mesh.Mesh.free.(
+			type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 473 rae.3d.Mesh.Mesh.free.)
+			type:empty name:empty    Token::NEWLINE line: 473 rae.3d.Mesh.Mesh.free.
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 473 rae.3d.Mesh.Mesh.free.{
+			type:empty name:empty    Token::NEWLINE_BEFORE_SCOPE_END line: 473 rae.3d.Mesh.Mesh.free.
+			type:empty name:<}>      Token::SCOPE_END line: 473 rae.3d.Mesh.Mesh.free.}
+		NEWLINE
+		type:empty name:<pub>    Token::VISIBILITY_DEFAULT line: 16 rae.3d.Mesh.Mesh.pub
+		NEWLINE
+		NEWLINE
+		type:empty name:<
+	func init()
+	{
+		id = 32
+	}
+
+	func init(int set_id)
+	{
+		id = set_id
+	}
+	
+	func free
+	{
+		#Semicolons don't work at the moment, so don't use them
+
+		glDeleteBuffers(1, vertexBufferID) # in C++: glDeleteBuffers(1, &vertexBufferID);
+		glDeleteBuffers(1, uvBufferID)
+		glDeleteBuffers(1, normalBufferID)
+		glDeleteBuffers(1, indexBufferID)
+	}
+
+	int id
+
+> Token::PLUS_COMMENT line: 41 rae.3d.Mesh.Mesh.
+	func init()
+	{
+		id = 32
+	}
+
+	func init(int set_id)
+	{
+		id = set_id
+	}
+	
+	func free
+	{
+		#Semicolons don't work at the moment, so don't use them
+
+		glDeleteBuffers(1, vertexBufferID) # in C++: glDeleteBuffers(1, &vertexBufferID);
+		glDeleteBuffers(1, uvBufferID)
+		glDeleteBuffers(1, normalBufferID)
+		glDeleteBuffers(1, indexBufferID)
+	}
+
+	int id
+
+
+		NEWLINE
+		NEWLINE
+		type:empty name:<
+	prop int id { get; set : priv }
+
+	prop int id2
+	{
+		get
+		set : priv
+	}
+
+	prop int id3
+	{
+		get return id3
+		set id3 = set : priv
+	}
+
+	prop int id4
+	{
+		get
+		{
+			return id4 + something
+		}
+		set
+		{
+			id4 = cos(set)
+		}
+	}
+	> Token::STAR_COMMENT line: 70 rae.3d.Mesh.Mesh.
+	prop int id { get; set : priv }
+
+	prop int id2
+	{
+		get
+		set : priv
+	}
+
+	prop int id3
+	{
+		get return id3
+		set id3 = set : priv
+	}
+
+	prop int id4
+	{
+		get
+		{
+			return id4 + something
+		}
+		set
+		{
+			id4 = cos(set)
+		}
+	}
+	
+		NEWLINE
+		NEWLINE
+		type:empty name:<generateBox> Token::FUNC line: 73 rae.3d.Mesh.Mesh.generateBox
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 74 rae.3d.Mesh.Mesh.generateBox.{
+			NEWLINE
+			type:empty name:<log>    Token::LOG line: 75 rae.3d.Mesh.Mesh.generateBox.log
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_LOG line: 75 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<"Generating Mesh."> Token::QUOTE line: 75 rae.3d.Mesh.Mesh.generateBox."Generating Mesh."
+			type:empty name:<)>      Token::PARENTHESIS_END_LOG line: 75 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			NEWLINE
+			type:<float> name:<boxSize> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 77 rae.3d.Mesh.Mesh.generateBox.boxSize
+				type:empty name:<=>      Token::INIT_DATA line: 77 rae.3d.Mesh.Mesh.generateBox.=
+					type:empty name:<0.5f>   Token::FLOAT_NUMBER line: 77 rae.3d.Mesh.Mesh.generateBox.=.0.5f
+			type:empty name:<=>      Token::INIT_DATA line: 77 rae.3d.Mesh.Mesh.generateBox.=
+				type:empty name:<0.5f>   Token::FLOAT_NUMBER line: 77 rae.3d.Mesh.Mesh.generateBox.=.0.5f
+			type:empty name:< Actually half of the box size> Token::COMMENT line: 78 rae.3d.Mesh.Mesh.generateBox. Actually half of the box size
+			NEWLINE
+			NEWLINE
+			type:empty name:< C++11 needed here:
+		vertices =
+		[
+			glm.vec3(-boxSize,  boxSize,  boxSize), # 0
+			glm.vec3( boxSize,  boxSize,  boxSize), # 1
+			glm.vec3( boxSize,  boxSize, -boxSize), # 2
+			glm.vec3(-boxSize,  boxSize, -boxSize), # 3
+
+			glm.vec3(-boxSize, -boxSize,  boxSize), # 4
+			glm.vec3(-boxSize, -boxSize, -boxSize), # 5
+			glm.vec3( boxSize, -boxSize, -boxSize), # 6
+			glm.vec3( boxSize, -boxSize,  boxSize), # 7
+
+			glm.vec3(-boxSize, -boxSize, -boxSize), # 8
+			glm.vec3(-boxSize,  boxSize, -boxSize), # 9
+			glm.vec3( boxSize,  boxSize, -boxSize), # 10
+			glm.vec3( boxSize, -boxSize, -boxSize), # 11
+			
+			glm.vec3( boxSize, -boxSize,  boxSize), # 12
+			glm.vec3( boxSize,  boxSize,  boxSize), # 13
+			glm.vec3(-boxSize,  boxSize,  boxSize), # 14
+			glm.vec3(-boxSize, -boxSize,  boxSize), # 15
+
+			glm.vec3(-boxSize, -boxSize,  boxSize), # 16
+			glm.vec3(-boxSize,  boxSize,  boxSize), # 17
+			glm.vec3(-boxSize,  boxSize, -boxSize), # 18
+			glm.vec3(-boxSize, -boxSize, -boxSize), # 19
+			
+			glm.vec3( boxSize, -boxSize, -boxSize), # 20
+			glm.vec3( boxSize,  boxSize, -boxSize), # 21
+			glm.vec3( boxSize,  boxSize,  boxSize), # 22
+			glm.vec3( boxSize, -boxSize,  boxSize) # 23
+		]
+
+		uvs =
+		[
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f ), # 3
+			
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f ), # 3
+
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f ), # 3
+
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f ), # 3
+
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f ), # 3
+
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f )  # 3
+		]
+		> Token::STAR_COMMENT line: 145 rae.3d.Mesh.Mesh.generateBox. C++11 needed here:
+		vertices =
+		[
+			glm.vec3(-boxSize,  boxSize,  boxSize), # 0
+			glm.vec3( boxSize,  boxSize,  boxSize), # 1
+			glm.vec3( boxSize,  boxSize, -boxSize), # 2
+			glm.vec3(-boxSize,  boxSize, -boxSize), # 3
+
+			glm.vec3(-boxSize, -boxSize,  boxSize), # 4
+			glm.vec3(-boxSize, -boxSize, -boxSize), # 5
+			glm.vec3( boxSize, -boxSize, -boxSize), # 6
+			glm.vec3( boxSize, -boxSize,  boxSize), # 7
+
+			glm.vec3(-boxSize, -boxSize, -boxSize), # 8
+			glm.vec3(-boxSize,  boxSize, -boxSize), # 9
+			glm.vec3( boxSize,  boxSize, -boxSize), # 10
+			glm.vec3( boxSize, -boxSize, -boxSize), # 11
+			
+			glm.vec3( boxSize, -boxSize,  boxSize), # 12
+			glm.vec3( boxSize,  boxSize,  boxSize), # 13
+			glm.vec3(-boxSize,  boxSize,  boxSize), # 14
+			glm.vec3(-boxSize, -boxSize,  boxSize), # 15
+
+			glm.vec3(-boxSize, -boxSize,  boxSize), # 16
+			glm.vec3(-boxSize,  boxSize,  boxSize), # 17
+			glm.vec3(-boxSize,  boxSize, -boxSize), # 18
+			glm.vec3(-boxSize, -boxSize, -boxSize), # 19
+			
+			glm.vec3( boxSize, -boxSize, -boxSize), # 20
+			glm.vec3( boxSize,  boxSize, -boxSize), # 21
+			glm.vec3( boxSize,  boxSize,  boxSize), # 22
+			glm.vec3( boxSize, -boxSize,  boxSize) # 23
+		]
+
+		uvs =
+		[
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f ), # 3
+			
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f ), # 3
+
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f ), # 3
+
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f ), # 3
+
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f ), # 3
+
+			glm.vec2( 1.0f,  0.0f ), # 0
+			glm.vec2( 1.0f,  1.0f ), # 1
+			glm.vec2( 0.0f,  1.0f ), # 2
+			glm.vec2( 0.0f,  0.0f )  # 3
+		]
+		
+			NEWLINE
+			NEWLINE
+			type:empty name:< *--------*> Token::COMMENT line: 149 rae.3d.Mesh.Mesh.generateBox. *--------*
+			NEWLINE
+			type:empty name:< |\      /|> Token::COMMENT line: 150 rae.3d.Mesh.Mesh.generateBox. |\      /|
+			NEWLINE
+			type:empty name:< | *----* |> Token::COMMENT line: 151 rae.3d.Mesh.Mesh.generateBox. | *----* |
+			NEWLINE
+			type:empty name:< | |    | |> Token::COMMENT line: 152 rae.3d.Mesh.Mesh.generateBox. | |    | |
+			NEWLINE
+			type:empty name:< | *----* |> Token::COMMENT line: 153 rae.3d.Mesh.Mesh.generateBox. | *----* |
+			NEWLINE
+			type:empty name:< |/      \|> Token::COMMENT line: 154 rae.3d.Mesh.Mesh.generateBox. |/      \|
+			NEWLINE
+			type:empty name:< *--------*> Token::COMMENT line: 155 rae.3d.Mesh.Mesh.generateBox. *--------*
+			NEWLINE
+			NEWLINE
+			type:empty name:< 0--------1> Token::COMMENT line: 157 rae.3d.Mesh.Mesh.generateBox. 0--------1
+			NEWLINE
+			type:empty name:<  \      /> Token::COMMENT line: 158 rae.3d.Mesh.Mesh.generateBox.  \      /
+			NEWLINE
+			type:empty name:<   3----2 > Token::COMMENT line: 159 rae.3d.Mesh.Mesh.generateBox.   3----2 
+			NEWLINE
+			type:empty name:<       > Token::COMMENT line: 160 rae.3d.Mesh.Mesh.generateBox.       
+			NEWLINE
+			type:empty name:<   5----6 > Token::COMMENT line: 161 rae.3d.Mesh.Mesh.generateBox.   5----6 
+			NEWLINE
+			type:empty name:<  /      \> Token::COMMENT line: 162 rae.3d.Mesh.Mesh.generateBox.  /      \
+			NEWLINE
+			type:empty name:< 4--------7> Token::COMMENT line: 163 rae.3d.Mesh.Mesh.generateBox. 4--------7
+			NEWLINE
+			NEWLINE
+			type:empty name:< 14------13> Token::COMMENT line: 165 rae.3d.Mesh.Mesh.generateBox. 14------13
+			NEWLINE
+			type:empty name:< |        |> Token::COMMENT line: 166 rae.3d.Mesh.Mesh.generateBox. |        |
+			NEWLINE
+			type:empty name:< | 9---10 |> Token::COMMENT line: 167 rae.3d.Mesh.Mesh.generateBox. | 9---10 |
+			NEWLINE
+			type:empty name:< | |    | |> Token::COMMENT line: 168 rae.3d.Mesh.Mesh.generateBox. | |    | |
+			NEWLINE
+			type:empty name:< | 8---11 |> Token::COMMENT line: 169 rae.3d.Mesh.Mesh.generateBox. | 8---11 |
+			NEWLINE
+			type:empty name:< |        |> Token::COMMENT line: 170 rae.3d.Mesh.Mesh.generateBox. |        |
+			NEWLINE
+			type:empty name:< 15------12> Token::COMMENT line: 171 rae.3d.Mesh.Mesh.generateBox. 15------12
+			NEWLINE
+			NEWLINE
+			type:empty name:< 17       22> Token::COMMENT line: 173 rae.3d.Mesh.Mesh.generateBox. 17       22
+			NEWLINE
+			type:empty name:< |\      /|> Token::COMMENT line: 174 rae.3d.Mesh.Mesh.generateBox. |\      /|
+			NEWLINE
+			type:empty name:< | 18   21|> Token::COMMENT line: 175 rae.3d.Mesh.Mesh.generateBox. | 18   21|
+			NEWLINE
+			type:empty name:< | |    | |> Token::COMMENT line: 176 rae.3d.Mesh.Mesh.generateBox. | |    | |
+			NEWLINE
+			type:empty name:< | 19   20|> Token::COMMENT line: 177 rae.3d.Mesh.Mesh.generateBox. | 19   20|
+			NEWLINE
+			type:empty name:< |/      \|> Token::COMMENT line: 178 rae.3d.Mesh.Mesh.generateBox. |/      \|
+			NEWLINE
+			type:empty name:< 16      23> Token::COMMENT line: 179 rae.3d.Mesh.Mesh.generateBox. 16      23
+			NEWLINE
+			NEWLINE
+			type:empty name:< C++11 needed here:
+		normals =
+		[
+			glm.vec3( 0.0f,  1.0f,  0.0f), # 0
+			glm.vec3( 0.0f,  1.0f,  0.0f), # 1
+			glm.vec3( 0.0f,  1.0f,  0.0f), # 2
+			glm.vec3( 0.0f,  1.0f,  0.0f), # 3
+			
+			glm.vec3( 0.0f,  -1.0f,  0.0f), # 0
+			glm.vec3( 0.0f,  -1.0f,  0.0f), # 1
+			glm.vec3( 0.0f,  -1.0f,  0.0f), # 2
+			glm.vec3( 0.0f,  -1.0f,  0.0f), # 3
+
+			glm.vec3( 0.0f,  0.0f,  -1.0f), # 0
+			glm.vec3( 0.0f,  0.0f,  -1.0f), # 1
+			glm.vec3( 0.0f,  0.0f,  -1.0f), # 2
+			glm.vec3( 0.0f,  0.0f,  -1.0f), # 3
+
+			glm.vec3( 0.0f,  0.0f,  1.0f), # 0
+			glm.vec3( 0.0f,  0.0f,  1.0f), # 1
+			glm.vec3( 0.0f,  0.0f,  1.0f), # 2
+			glm.vec3( 0.0f,  0.0f,  1.0f), # 3
+
+			glm.vec3( -1.0f,  0.0f,  0.0f), # 0
+			glm.vec3( -1.0f,  0.0f,  0.0f), # 1
+			glm.vec3( -1.0f,  0.0f,  0.0f), # 2
+			glm.vec3( -1.0f,  0.0f,  0.0f), # 3
+
+			glm.vec3( 1.0f,  0.0f,  0.0f), # 0
+			glm.vec3( 1.0f,  0.0f,  0.0f), # 1
+			glm.vec3( 1.0f,  0.0f,  0.0f), # 2
+			glm.vec3( 1.0f,  0.0f,  0.0f) # 3
+		]
+
+		
+		
+		indices =
+		[
+			#roof
+			0, 1, 2,
+			0, 2, 3,
+			
+			#floor
+			4, 5, 6, 
+			4, 6, 7, 
+			
+			#back
+			8, 9, 10,
+			8, 10, 11,
+
+			#front
+			12, 13, 14,
+			12, 14, 15,
+
+			#left
+			16, 17, 18,
+			16, 18, 19,
+
+			#right
+			20, 21, 22,
+			20, 22, 23
+		]
+		> Token::STAR_COMMENT line: 242 rae.3d.Mesh.Mesh.generateBox. C++11 needed here:
+		normals =
+		[
+			glm.vec3( 0.0f,  1.0f,  0.0f), # 0
+			glm.vec3( 0.0f,  1.0f,  0.0f), # 1
+			glm.vec3( 0.0f,  1.0f,  0.0f), # 2
+			glm.vec3( 0.0f,  1.0f,  0.0f), # 3
+			
+			glm.vec3( 0.0f,  -1.0f,  0.0f), # 0
+			glm.vec3( 0.0f,  -1.0f,  0.0f), # 1
+			glm.vec3( 0.0f,  -1.0f,  0.0f), # 2
+			glm.vec3( 0.0f,  -1.0f,  0.0f), # 3
+
+			glm.vec3( 0.0f,  0.0f,  -1.0f), # 0
+			glm.vec3( 0.0f,  0.0f,  -1.0f), # 1
+			glm.vec3( 0.0f,  0.0f,  -1.0f), # 2
+			glm.vec3( 0.0f,  0.0f,  -1.0f), # 3
+
+			glm.vec3( 0.0f,  0.0f,  1.0f), # 0
+			glm.vec3( 0.0f,  0.0f,  1.0f), # 1
+			glm.vec3( 0.0f,  0.0f,  1.0f), # 2
+			glm.vec3( 0.0f,  0.0f,  1.0f), # 3
+
+			glm.vec3( -1.0f,  0.0f,  0.0f), # 0
+			glm.vec3( -1.0f,  0.0f,  0.0f), # 1
+			glm.vec3( -1.0f,  0.0f,  0.0f), # 2
+			glm.vec3( -1.0f,  0.0f,  0.0f), # 3
+
+			glm.vec3( 1.0f,  0.0f,  0.0f), # 0
+			glm.vec3( 1.0f,  0.0f,  0.0f), # 1
+			glm.vec3( 1.0f,  0.0f,  0.0f), # 2
+			glm.vec3( 1.0f,  0.0f,  0.0f) # 3
+		]
+
+		
+		
+		indices =
+		[
+			#roof
+			0, 1, 2,
+			0, 2, 3,
+			
+			#floor
+			4, 5, 6, 
+			4, 6, 7, 
+			
+			#back
+			8, 9, 10,
+			8, 10, 11,
+
+			#front
+			12, 13, 14,
+			12, 14, 15,
+
+			#left
+			16, 17, 18,
+			16, 18, 19,
+
+			#right
+			20, 21, 22,
+			20, 22, 23
+		]
+		
+			NEWLINE
+			NEWLINE
+			type:empty name:<The visual studio 2012 version:> Token::COMMENT line: 246 rae.3d.Mesh.Mesh.generateBox.The visual studio 2012 version:
+			NEWLINE
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 247 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 247 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 247 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 247 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 247 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 247 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 247 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 247 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 247 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 247 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 247 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 248 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 248 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 248 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 248 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 248 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 248 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 248 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 248 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 248 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 248 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 248 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 249 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 249 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 249 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 249 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 249 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 249 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 249 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 249 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 249 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 249 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 249 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 249 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 250 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 250 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 250 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 250 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 250 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 250 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 250 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 250 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 250 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 250 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 250 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 250 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 250 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 251 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 251 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 251 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 251 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 251 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 251 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 251 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 251 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 251 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 251 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 251 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 251 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 251 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 4>     Token::COMMENT line: 252 rae.3d.Mesh.Mesh.generateBox. 4
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 252 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 252 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 252 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 252 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 252 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 252 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 252 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 252 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 252 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 252 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 252 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 252 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 252 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 5>     Token::COMMENT line: 253 rae.3d.Mesh.Mesh.generateBox. 5
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 253 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 253 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 253 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 253 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 253 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 253 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 253 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 253 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 253 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 253 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 253 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 253 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 6>     Token::COMMENT line: 254 rae.3d.Mesh.Mesh.generateBox. 6
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 254 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 254 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 254 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 254 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 254 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 254 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 254 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 254 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 254 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 254 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 254 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 7>     Token::COMMENT line: 255 rae.3d.Mesh.Mesh.generateBox. 7
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 255 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 255 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 255 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 255 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 255 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 255 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 255 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 255 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 255 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 255 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 255 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 255 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 255 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 8>     Token::COMMENT line: 256 rae.3d.Mesh.Mesh.generateBox. 8
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 256 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 256 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 256 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 256 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 256 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 256 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 256 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 256 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 256 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 256 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 256 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 256 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 9>     Token::COMMENT line: 257 rae.3d.Mesh.Mesh.generateBox. 9
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 257 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 257 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 257 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 257 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 257 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 257 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 257 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 257 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 257 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 257 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 257 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 10>    Token::COMMENT line: 258 rae.3d.Mesh.Mesh.generateBox. 10
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 258 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 258 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 258 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 258 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 258 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 258 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 258 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 258 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 258 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 258 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 258 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 258 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 11>    Token::COMMENT line: 259 rae.3d.Mesh.Mesh.generateBox. 11
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 259 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 259 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 259 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 259 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 259 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 259 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 259 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 259 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 259 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 259 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 259 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 12>    Token::COMMENT line: 260 rae.3d.Mesh.Mesh.generateBox. 12
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 260 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 260 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 260 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 260 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 260 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 260 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 260 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 260 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 260 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 260 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 13>    Token::COMMENT line: 261 rae.3d.Mesh.Mesh.generateBox. 13
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 261 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 261 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 261 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 261 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 261 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 261 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 261 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 261 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 261 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 261 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 261 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 14>    Token::COMMENT line: 262 rae.3d.Mesh.Mesh.generateBox. 14
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 262 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 262 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 262 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 262 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 262 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 262 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 262 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 262 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 262 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 262 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 262 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 262 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 15>    Token::COMMENT line: 263 rae.3d.Mesh.Mesh.generateBox. 15
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 263 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 263 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 263 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 263 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 263 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 263 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 263 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 263 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 263 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 263 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 263 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 263 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 16>    Token::COMMENT line: 264 rae.3d.Mesh.Mesh.generateBox. 16
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 264 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 264 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 264 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 264 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 264 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 264 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 264 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 264 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 264 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 264 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 264 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 17>    Token::COMMENT line: 265 rae.3d.Mesh.Mesh.generateBox. 17
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 265 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 265 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 265 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 265 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 265 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 265 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 265 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 265 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 265 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 265 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 265 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 265 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 18>    Token::COMMENT line: 266 rae.3d.Mesh.Mesh.generateBox. 18
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 266 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 266 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 266 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 266 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 266 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 266 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 266 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 266 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 266 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 266 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 266 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 266 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 266 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 19>    Token::COMMENT line: 267 rae.3d.Mesh.Mesh.generateBox. 19
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 267 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 267 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 267 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 267 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 267 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 267 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 267 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 267 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 267 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 267 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 267 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 267 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 20>    Token::COMMENT line: 268 rae.3d.Mesh.Mesh.generateBox. 20
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 268 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 268 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 268 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 268 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 268 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 268 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 268 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 268 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 268 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 268 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 268 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 21>    Token::COMMENT line: 269 rae.3d.Mesh.Mesh.generateBox. 21
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 269 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 269 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 269 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 269 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 269 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 269 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 269 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 269 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 269 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 269 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 22>    Token::COMMENT line: 270 rae.3d.Mesh.Mesh.generateBox. 22
+			NEWLINE
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 270 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 270 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 270 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 270 rae.3d.Mesh.Mesh.generateBox.(
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 270 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 270 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 270 rae.3d.Mesh.Mesh.generateBox.-
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 270 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<,>      Token::COMMA line: 270 rae.3d.Mesh.Mesh.generateBox.,
+			type:<float> name:<boxSize> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 270 rae.3d.Mesh.Mesh.generateBox.boxSize
+			type:empty name:<)>      Token::PARENTHESIS_END line: 270 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 23>    Token::COMMENT line: 271 rae.3d.Mesh.Mesh.generateBox. 23
+			NEWLINE
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 272 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 272 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 272 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 272 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 272 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 272 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 272 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 272 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 273 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 273 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 273 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 273 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 273 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 273 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 273 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 273 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 273 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 274 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 274 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 274 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 274 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 274 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 274 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 274 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 274 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 274 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 275 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 275 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 275 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 275 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 275 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 275 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 275 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 275 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 275 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 276 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 276 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 276 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 276 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 276 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 276 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 276 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 276 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 276 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 277 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 277 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 277 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 277 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 277 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 277 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 277 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 277 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 277 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 278 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 278 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 278 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 278 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 278 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 278 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 278 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 278 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 278 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 279 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 279 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 279 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 279 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 279 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 279 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 279 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 279 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 279 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 280 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 280 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 280 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 280 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 280 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 280 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 280 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 280 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 280 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 281 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 281 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 281 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 281 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 281 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 281 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 281 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 281 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 281 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 282 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 282 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 282 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 282 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 282 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 282 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 282 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 282 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 282 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 283 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 283 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 283 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 283 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 283 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 283 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 283 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 283 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 283 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 284 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 284 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 284 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 284 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 284 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 284 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 284 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 284 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 284 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 285 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 285 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 285 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 285 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 285 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 285 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 285 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 285 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 285 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 286 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 286 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 286 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 286 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 286 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 286 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 286 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 286 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 286 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 287 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 287 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 287 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 287 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 287 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 287 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 287 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 287 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 287 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 288 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 288 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 288 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 288 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 288 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 288 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 288 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 288 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 288 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 289 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 289 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 289 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 289 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 289 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 289 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 289 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 289 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 289 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 290 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 290 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 290 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 290 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 290 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 290 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 290 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 290 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 290 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 291 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 291 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 291 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 291 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 291 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 291 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 291 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 291 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 291 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 292 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 292 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 292 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 292 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 292 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 292 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 292 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 292 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 292 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 293 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 293 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 293 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 293 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 293 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 293 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 293 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 293 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 293 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 294 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 294 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 294 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 294 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 294 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 294 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 294 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 294 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 294 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 295 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 295 rae.3d.Mesh.Mesh.generateBox.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 295 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 295 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 295 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 295 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 295 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 295 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 295 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 296 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			NEWLINE
+			type:empty name:< *--------*> Token::COMMENT line: 298 rae.3d.Mesh.Mesh.generateBox. *--------*
+			NEWLINE
+			type:empty name:< |\      /|> Token::COMMENT line: 299 rae.3d.Mesh.Mesh.generateBox. |\      /|
+			NEWLINE
+			type:empty name:< | *----* |> Token::COMMENT line: 300 rae.3d.Mesh.Mesh.generateBox. | *----* |
+			NEWLINE
+			type:empty name:< | |    | |> Token::COMMENT line: 301 rae.3d.Mesh.Mesh.generateBox. | |    | |
+			NEWLINE
+			type:empty name:< | *----* |> Token::COMMENT line: 302 rae.3d.Mesh.Mesh.generateBox. | *----* |
+			NEWLINE
+			type:empty name:< |/      \|> Token::COMMENT line: 303 rae.3d.Mesh.Mesh.generateBox. |/      \|
+			NEWLINE
+			type:empty name:< *--------*> Token::COMMENT line: 304 rae.3d.Mesh.Mesh.generateBox. *--------*
+			NEWLINE
+			NEWLINE
+			type:empty name:< 0--------1> Token::COMMENT line: 306 rae.3d.Mesh.Mesh.generateBox. 0--------1
+			NEWLINE
+			type:empty name:<  \      /> Token::COMMENT line: 307 rae.3d.Mesh.Mesh.generateBox.  \      /
+			NEWLINE
+			type:empty name:<   3----2 > Token::COMMENT line: 308 rae.3d.Mesh.Mesh.generateBox.   3----2 
+			NEWLINE
+			type:empty name:<       > Token::COMMENT line: 309 rae.3d.Mesh.Mesh.generateBox.       
+			NEWLINE
+			type:empty name:<   5----6 > Token::COMMENT line: 310 rae.3d.Mesh.Mesh.generateBox.   5----6 
+			NEWLINE
+			type:empty name:<  /      \> Token::COMMENT line: 311 rae.3d.Mesh.Mesh.generateBox.  /      \
+			NEWLINE
+			type:empty name:< 4--------7> Token::COMMENT line: 312 rae.3d.Mesh.Mesh.generateBox. 4--------7
+			NEWLINE
+			NEWLINE
+			type:empty name:< 14------13> Token::COMMENT line: 314 rae.3d.Mesh.Mesh.generateBox. 14------13
+			NEWLINE
+			type:empty name:< |        |> Token::COMMENT line: 315 rae.3d.Mesh.Mesh.generateBox. |        |
+			NEWLINE
+			type:empty name:< | 9---10 |> Token::COMMENT line: 316 rae.3d.Mesh.Mesh.generateBox. | 9---10 |
+			NEWLINE
+			type:empty name:< | |    | |> Token::COMMENT line: 317 rae.3d.Mesh.Mesh.generateBox. | |    | |
+			NEWLINE
+			type:empty name:< | 8---11 |> Token::COMMENT line: 318 rae.3d.Mesh.Mesh.generateBox. | 8---11 |
+			NEWLINE
+			type:empty name:< |        |> Token::COMMENT line: 319 rae.3d.Mesh.Mesh.generateBox. |        |
+			NEWLINE
+			type:empty name:< 15------12> Token::COMMENT line: 320 rae.3d.Mesh.Mesh.generateBox. 15------12
+			NEWLINE
+			NEWLINE
+			type:empty name:< 17       22> Token::COMMENT line: 322 rae.3d.Mesh.Mesh.generateBox. 17       22
+			NEWLINE
+			type:empty name:< |\      /|> Token::COMMENT line: 323 rae.3d.Mesh.Mesh.generateBox. |\      /|
+			NEWLINE
+			type:empty name:< | 18   21|> Token::COMMENT line: 324 rae.3d.Mesh.Mesh.generateBox. | 18   21|
+			NEWLINE
+			type:empty name:< | |    | |> Token::COMMENT line: 325 rae.3d.Mesh.Mesh.generateBox. | |    | |
+			NEWLINE
+			type:empty name:< | 19   20|> Token::COMMENT line: 326 rae.3d.Mesh.Mesh.generateBox. | 19   20|
+			NEWLINE
+			type:empty name:< |/      \|> Token::COMMENT line: 327 rae.3d.Mesh.Mesh.generateBox. |/      \|
+			NEWLINE
+			type:empty name:< 16      23> Token::COMMENT line: 328 rae.3d.Mesh.Mesh.generateBox. 16      23
+			NEWLINE
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 329 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 329 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 329 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 329 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 329 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 329 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 329 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 329 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 329 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 329 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 330 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 330 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 330 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 330 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 330 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 330 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 330 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 330 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 330 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 330 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 330 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 331 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 331 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 331 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 331 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 331 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 331 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 331 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 331 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 331 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 331 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 331 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 332 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 332 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 332 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 332 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 332 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 332 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 332 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 332 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 332 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 332 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 332 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 333 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 333 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 333 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 333 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 333 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 333 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 333 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 333 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 333 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 333 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 333 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 333 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 334 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 334 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 334 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 334 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 334 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 334 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 334 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 334 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 334 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 334 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 334 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 334 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 335 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 335 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 335 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 335 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 335 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 335 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 335 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 335 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 335 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 335 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 335 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 335 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 336 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 336 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 336 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 336 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 336 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 336 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 336 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 336 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 336 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 336 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 336 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 336 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 337 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 337 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 337 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 337 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 337 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 337 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 337 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 337 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 337 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 337 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 337 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 337 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 338 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 338 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 338 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 338 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 338 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 338 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 338 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 338 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 338 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 338 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 338 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 338 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 339 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 339 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 339 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 339 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 339 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 339 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 339 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 339 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 339 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 339 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 339 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 339 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 340 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 340 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 340 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 340 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 340 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 340 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 340 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 340 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 340 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<->      Token::MINUS line: 340 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 340 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 340 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 341 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 341 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 341 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 341 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 341 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 341 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 341 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 341 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 341 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 341 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 341 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 342 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 342 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 342 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 342 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 342 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 342 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 342 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 342 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 342 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 342 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 342 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 343 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 343 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 343 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 343 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 343 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 343 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 343 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 343 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 343 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 343 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 343 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 344 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 344 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 344 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 344 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 344 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 344 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 344 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 344 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 344 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 344 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 344 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 345 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 345 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 345 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 345 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 345 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 345 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 345 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 345 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 345 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 345 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 345 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 345 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 346 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 346 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 346 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 346 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 346 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 346 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 346 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 346 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 346 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 346 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 346 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 346 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 347 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 347 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 347 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 347 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 347 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 347 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 347 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 347 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 347 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 347 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 347 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 347 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 348 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 348 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 348 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 348 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 348 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<->      Token::MINUS line: 348 rae.3d.Mesh.Mesh.generateBox.-
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 348 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 348 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 348 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 348 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 348 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 348 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 349 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 349 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 349 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 349 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 349 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 349 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 349 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 349 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 349 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 349 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 349 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 0>     Token::COMMENT line: 350 rae.3d.Mesh.Mesh.generateBox. 0
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 350 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 350 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 350 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 350 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 350 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 350 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 350 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 350 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 350 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 350 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 1>     Token::COMMENT line: 351 rae.3d.Mesh.Mesh.generateBox. 1
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 351 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 351 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 351 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 351 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 351 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 351 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 351 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 351 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 351 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 351 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 2>     Token::COMMENT line: 352 rae.3d.Mesh.Mesh.generateBox. 2
+			NEWLINE
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 352 rae.3d.Mesh.Mesh.generateBox.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 352 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<emplace_back> Token::FUNC_CALL line: 352 rae.3d.Mesh.Mesh.generateBox.emplace_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 352 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1.0f>   Token::FLOAT_NUMBER line: 352 rae.3d.Mesh.Mesh.generateBox.1.0f
+			type:empty name:<,>      Token::COMMA line: 352 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 352 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<,>      Token::COMMA line: 352 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<0.0f>   Token::FLOAT_NUMBER line: 352 rae.3d.Mesh.Mesh.generateBox.0.0f
+			type:empty name:<)>      Token::PARENTHESIS_END line: 352 rae.3d.Mesh.Mesh.generateBox.)
+			type:empty name:< 3>     Token::COMMENT line: 353 rae.3d.Mesh.Mesh.generateBox. 3
+			NEWLINE
+			NEWLINE
+			NEWLINE
+			type:empty name:<roof>   Token::COMMENT line: 356 rae.3d.Mesh.Mesh.generateBox.roof
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 356 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 356 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 356 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 356 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0>      Token::NUMBER line: 356 rae.3d.Mesh.Mesh.generateBox.0
+			type:empty name:<)>      Token::PARENTHESIS_END line: 356 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 357 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 357 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 357 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 357 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<1>      Token::NUMBER line: 357 rae.3d.Mesh.Mesh.generateBox.1
+			type:empty name:<)>      Token::PARENTHESIS_END line: 357 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 358 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 358 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 358 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 358 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<2>      Token::NUMBER line: 358 rae.3d.Mesh.Mesh.generateBox.2
+			type:empty name:<)>      Token::PARENTHESIS_END line: 358 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 359 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 359 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 359 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 359 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<0>      Token::NUMBER line: 359 rae.3d.Mesh.Mesh.generateBox.0
+			type:empty name:<)>      Token::PARENTHESIS_END line: 359 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 360 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 360 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 360 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 360 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<2>      Token::NUMBER line: 360 rae.3d.Mesh.Mesh.generateBox.2
+			type:empty name:<)>      Token::PARENTHESIS_END line: 360 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 361 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 361 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 361 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 361 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<3>      Token::NUMBER line: 361 rae.3d.Mesh.Mesh.generateBox.3
+			type:empty name:<)>      Token::PARENTHESIS_END line: 361 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<floor>  Token::COMMENT line: 364 rae.3d.Mesh.Mesh.generateBox.floor
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 364 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 364 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 364 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 364 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<4>      Token::NUMBER line: 364 rae.3d.Mesh.Mesh.generateBox.4
+			type:empty name:<)>      Token::PARENTHESIS_END line: 364 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 365 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 365 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 365 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 365 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<5>      Token::NUMBER line: 365 rae.3d.Mesh.Mesh.generateBox.5
+			type:empty name:<)>      Token::PARENTHESIS_END line: 365 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 366 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 366 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 366 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 366 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<6>      Token::NUMBER line: 366 rae.3d.Mesh.Mesh.generateBox.6
+			type:empty name:<)>      Token::PARENTHESIS_END line: 366 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 367 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 367 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 367 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 367 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<4>      Token::NUMBER line: 367 rae.3d.Mesh.Mesh.generateBox.4
+			type:empty name:<)>      Token::PARENTHESIS_END line: 367 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 368 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 368 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 368 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 368 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<6>      Token::NUMBER line: 368 rae.3d.Mesh.Mesh.generateBox.6
+			type:empty name:<)>      Token::PARENTHESIS_END line: 368 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 369 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 369 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 369 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 369 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<7>      Token::NUMBER line: 369 rae.3d.Mesh.Mesh.generateBox.7
+			type:empty name:<)>      Token::PARENTHESIS_END line: 369 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<back>   Token::COMMENT line: 372 rae.3d.Mesh.Mesh.generateBox.back
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 372 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 372 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 372 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 372 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<8>      Token::NUMBER line: 372 rae.3d.Mesh.Mesh.generateBox.8
+			type:empty name:<)>      Token::PARENTHESIS_END line: 372 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 373 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 373 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 373 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 373 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<9>      Token::NUMBER line: 373 rae.3d.Mesh.Mesh.generateBox.9
+			type:empty name:<)>      Token::PARENTHESIS_END line: 373 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 374 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 374 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 374 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 374 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<10>     Token::NUMBER line: 374 rae.3d.Mesh.Mesh.generateBox.10
+			type:empty name:<)>      Token::PARENTHESIS_END line: 374 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 375 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 375 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 375 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 375 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<8>      Token::NUMBER line: 375 rae.3d.Mesh.Mesh.generateBox.8
+			type:empty name:<)>      Token::PARENTHESIS_END line: 375 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 376 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 376 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 376 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 376 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<10>     Token::NUMBER line: 376 rae.3d.Mesh.Mesh.generateBox.10
+			type:empty name:<)>      Token::PARENTHESIS_END line: 376 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 377 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 377 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 377 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 377 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<11>     Token::NUMBER line: 377 rae.3d.Mesh.Mesh.generateBox.11
+			type:empty name:<)>      Token::PARENTHESIS_END line: 377 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<front>  Token::COMMENT line: 380 rae.3d.Mesh.Mesh.generateBox.front
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 380 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 380 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 380 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 380 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<12>     Token::NUMBER line: 380 rae.3d.Mesh.Mesh.generateBox.12
+			type:empty name:<)>      Token::PARENTHESIS_END line: 380 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 381 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 381 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 381 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 381 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<13>     Token::NUMBER line: 381 rae.3d.Mesh.Mesh.generateBox.13
+			type:empty name:<)>      Token::PARENTHESIS_END line: 381 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 382 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 382 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 382 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 382 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<14>     Token::NUMBER line: 382 rae.3d.Mesh.Mesh.generateBox.14
+			type:empty name:<)>      Token::PARENTHESIS_END line: 382 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 383 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 383 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 383 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 383 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<12>     Token::NUMBER line: 383 rae.3d.Mesh.Mesh.generateBox.12
+			type:empty name:<)>      Token::PARENTHESIS_END line: 383 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 384 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 384 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 384 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 384 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<14>     Token::NUMBER line: 384 rae.3d.Mesh.Mesh.generateBox.14
+			type:empty name:<)>      Token::PARENTHESIS_END line: 384 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 385 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 385 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 385 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 385 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<15>     Token::NUMBER line: 385 rae.3d.Mesh.Mesh.generateBox.15
+			type:empty name:<)>      Token::PARENTHESIS_END line: 385 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<left>   Token::COMMENT line: 388 rae.3d.Mesh.Mesh.generateBox.left
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 388 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 388 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 388 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 388 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<16>     Token::NUMBER line: 388 rae.3d.Mesh.Mesh.generateBox.16
+			type:empty name:<)>      Token::PARENTHESIS_END line: 388 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 389 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 389 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 389 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 389 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<17>     Token::NUMBER line: 389 rae.3d.Mesh.Mesh.generateBox.17
+			type:empty name:<)>      Token::PARENTHESIS_END line: 389 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 390 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 390 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 390 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 390 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<18>     Token::NUMBER line: 390 rae.3d.Mesh.Mesh.generateBox.18
+			type:empty name:<)>      Token::PARENTHESIS_END line: 390 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 391 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 391 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 391 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 391 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<16>     Token::NUMBER line: 391 rae.3d.Mesh.Mesh.generateBox.16
+			type:empty name:<)>      Token::PARENTHESIS_END line: 391 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 392 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 392 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 392 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 392 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<18>     Token::NUMBER line: 392 rae.3d.Mesh.Mesh.generateBox.18
+			type:empty name:<)>      Token::PARENTHESIS_END line: 392 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 393 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 393 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 393 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 393 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<19>     Token::NUMBER line: 393 rae.3d.Mesh.Mesh.generateBox.19
+			type:empty name:<)>      Token::PARENTHESIS_END line: 393 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<right>  Token::COMMENT line: 396 rae.3d.Mesh.Mesh.generateBox.right
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 396 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 396 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 396 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 396 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<20>     Token::NUMBER line: 396 rae.3d.Mesh.Mesh.generateBox.20
+			type:empty name:<)>      Token::PARENTHESIS_END line: 396 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 397 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 397 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 397 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 397 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<21>     Token::NUMBER line: 397 rae.3d.Mesh.Mesh.generateBox.21
+			type:empty name:<)>      Token::PARENTHESIS_END line: 397 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 398 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 398 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 398 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 398 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<22>     Token::NUMBER line: 398 rae.3d.Mesh.Mesh.generateBox.22
+			type:empty name:<)>      Token::PARENTHESIS_END line: 398 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 399 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 399 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 399 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 399 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<20>     Token::NUMBER line: 399 rae.3d.Mesh.Mesh.generateBox.20
+			type:empty name:<)>      Token::PARENTHESIS_END line: 399 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 400 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 400 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 400 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 400 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<22>     Token::NUMBER line: 400 rae.3d.Mesh.Mesh.generateBox.22
+			type:empty name:<)>      Token::PARENTHESIS_END line: 400 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 401 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 401 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<push_back> Token::FUNC_CALL line: 401 rae.3d.Mesh.Mesh.generateBox.push_back
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 401 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<23>     Token::NUMBER line: 401 rae.3d.Mesh.Mesh.generateBox.23
+			type:empty name:<)>      Token::PARENTHESIS_END line: 401 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<log>    Token::LOG line: 403 rae.3d.Mesh.Mesh.generateBox.log
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_LOG line: 403 rae.3d.Mesh.Mesh.generateBox.(
+			type:empty name:<"size of: vertices: "> Token::QUOTE line: 403 rae.3d.Mesh.Mesh.generateBox."size of: vertices: "
+			type:empty name:<,>      Token::LOG_SEPARATOR line: 403 rae.3d.Mesh.Mesh.generateBox.,
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 403 rae.3d.Mesh.Mesh.generateBox.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 403 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<size>   Token::FUNC_CALL line: 403 rae.3d.Mesh.Mesh.generateBox.size
+			type:empty name:<,>      Token::LOG_SEPARATOR line: 403 rae.3d.Mesh.Mesh.generateBox.,
+			type:empty name:<" size of indices: "> Token::QUOTE line: 403 rae.3d.Mesh.Mesh.generateBox." size of indices: "
+			type:empty name:<,>      Token::LOG_SEPARATOR line: 403 rae.3d.Mesh.Mesh.generateBox.,
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 403 rae.3d.Mesh.Mesh.generateBox.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 403 rae.3d.Mesh.Mesh.generateBox..
+			type:empty name:<size>   Token::FUNC_CALL line: 403 rae.3d.Mesh.Mesh.generateBox.size
+			type:empty name:<)>      Token::PARENTHESIS_END_LOG line: 403 rae.3d.Mesh.Mesh.generateBox.)
+			NEWLINE
+			type:empty name:<}>      Token::SCOPE_END line: 404 rae.3d.Mesh.Mesh.generateBox.}
+		NEWLINE
+		NEWLINE
+		type:empty name:<createVBOs> Token::FUNC line: 406 rae.3d.Mesh.Mesh.createVBOs
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 407 rae.3d.Mesh.Mesh.createVBOs.{
+			NEWLINE
+			type:empty name:<log>    Token::LOG line: 408 rae.3d.Mesh.Mesh.createVBOs.log
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_LOG line: 408 rae.3d.Mesh.Mesh.createVBOs.(
+			type:empty name:<"Mesh.createVBOs"> Token::QUOTE line: 408 rae.3d.Mesh.Mesh.createVBOs."Mesh.createVBOs"
+			type:empty name:<)>      Token::PARENTHESIS_END_LOG line: 408 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<glGenBuffers> Token::FUNC_CALL line: 410 rae.3d.Mesh.Mesh.createVBOs.glGenBuffers
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 410 rae.3d.Mesh.Mesh.createVBOs.(
+			type:empty name:<1>      Token::NUMBER line: 410 rae.3d.Mesh.Mesh.createVBOs.1
+			type:empty name:<,>      Token::COMMA line: 410 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<uint> name:<vertexBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 410 rae.3d.Mesh.Mesh.createVBOs.vertexBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 410 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			type:empty name:<glBindBuffer> Token::FUNC_CALL line: 411 rae.3d.Mesh.Mesh.createVBOs.glBindBuffer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 411 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<GL_ARRAY_BUFFER> name:<GL_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 411 rae.3d.Mesh.Mesh.createVBOs.GL_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 411 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<uint> name:<vertexBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 411 rae.3d.Mesh.Mesh.createVBOs.vertexBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 411 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			type:empty name:<glBufferData> Token::FUNC_CALL line: 412 rae.3d.Mesh.Mesh.createVBOs.glBufferData
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 412 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<GL_ARRAY_BUFFER> name:<GL_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 412 rae.3d.Mesh.Mesh.createVBOs.GL_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 412 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 412 rae.3d.Mesh.Mesh.createVBOs.vertices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 412 rae.3d.Mesh.Mesh.createVBOs..
+			type:empty name:<size>   Token::FUNC_CALL line: 412 rae.3d.Mesh.Mesh.createVBOs.size
+			type:empty name:<*>      Token::MULTIPLY line: 412 rae.3d.Mesh.Mesh.createVBOs.*
+			type:empty name:<sizeof> Token::SIZEOF line: 412 rae.3d.Mesh.Mesh.createVBOs.sizeof
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 412 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<vec3> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 412 rae.3d.Mesh.Mesh.createVBOs.
+			type:empty name:<)>      Token::PARENTHESIS_END line: 412 rae.3d.Mesh.Mesh.createVBOs.)
+			type:empty name:<,>      Token::COMMA line: 412 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<array> name:<vertices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 412 rae.3d.Mesh.Mesh.createVBOs.vertices
+			type:empty name:<,>      Token::COMMA line: 412 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<GL_STATIC_DRAW> name:<GL_STATIC_DRAW> Token::USE_REFERENCE typetype: TypeType::VAL line: 412 rae.3d.Mesh.Mesh.createVBOs.GL_STATIC_DRAW
+			type:empty name:<)>      Token::PARENTHESIS_END line: 412 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<glGenBuffers> Token::FUNC_CALL line: 414 rae.3d.Mesh.Mesh.createVBOs.glGenBuffers
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 414 rae.3d.Mesh.Mesh.createVBOs.(
+			type:empty name:<1>      Token::NUMBER line: 414 rae.3d.Mesh.Mesh.createVBOs.1
+			type:empty name:<,>      Token::COMMA line: 414 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<uint> name:<uvBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 414 rae.3d.Mesh.Mesh.createVBOs.uvBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 414 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			type:empty name:<glBindBuffer> Token::FUNC_CALL line: 415 rae.3d.Mesh.Mesh.createVBOs.glBindBuffer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 415 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<GL_ARRAY_BUFFER> name:<GL_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 415 rae.3d.Mesh.Mesh.createVBOs.GL_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 415 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<uint> name:<uvBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 415 rae.3d.Mesh.Mesh.createVBOs.uvBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 415 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			type:empty name:<glBufferData> Token::FUNC_CALL line: 416 rae.3d.Mesh.Mesh.createVBOs.glBufferData
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 416 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<GL_ARRAY_BUFFER> name:<GL_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 416 rae.3d.Mesh.Mesh.createVBOs.GL_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 416 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 416 rae.3d.Mesh.Mesh.createVBOs.uvs
+			type:empty name:<.>      Token::REFERENCE_DOT line: 416 rae.3d.Mesh.Mesh.createVBOs..
+			type:empty name:<size>   Token::FUNC_CALL line: 416 rae.3d.Mesh.Mesh.createVBOs.size
+			type:empty name:<*>      Token::MULTIPLY line: 416 rae.3d.Mesh.Mesh.createVBOs.*
+			type:empty name:<sizeof> Token::SIZEOF line: 416 rae.3d.Mesh.Mesh.createVBOs.sizeof
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 416 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<vec2> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 416 rae.3d.Mesh.Mesh.createVBOs.
+			type:empty name:<)>      Token::PARENTHESIS_END line: 416 rae.3d.Mesh.Mesh.createVBOs.)
+			type:empty name:<,>      Token::COMMA line: 416 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<array> name:<uvs>  Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 416 rae.3d.Mesh.Mesh.createVBOs.uvs
+			type:empty name:<,>      Token::COMMA line: 416 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<GL_STATIC_DRAW> name:<GL_STATIC_DRAW> Token::USE_REFERENCE typetype: TypeType::VAL line: 416 rae.3d.Mesh.Mesh.createVBOs.GL_STATIC_DRAW
+			type:empty name:<)>      Token::PARENTHESIS_END line: 416 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<glGenBuffers> Token::FUNC_CALL line: 418 rae.3d.Mesh.Mesh.createVBOs.glGenBuffers
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 418 rae.3d.Mesh.Mesh.createVBOs.(
+			type:empty name:<1>      Token::NUMBER line: 418 rae.3d.Mesh.Mesh.createVBOs.1
+			type:empty name:<,>      Token::COMMA line: 418 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<uint> name:<normalBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 418 rae.3d.Mesh.Mesh.createVBOs.normalBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 418 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			type:empty name:<glBindBuffer> Token::FUNC_CALL line: 419 rae.3d.Mesh.Mesh.createVBOs.glBindBuffer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 419 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<GL_ARRAY_BUFFER> name:<GL_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 419 rae.3d.Mesh.Mesh.createVBOs.GL_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 419 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<uint> name:<normalBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 419 rae.3d.Mesh.Mesh.createVBOs.normalBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 419 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			type:empty name:<glBufferData> Token::FUNC_CALL line: 420 rae.3d.Mesh.Mesh.createVBOs.glBufferData
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 420 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<GL_ARRAY_BUFFER> name:<GL_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 420 rae.3d.Mesh.Mesh.createVBOs.GL_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 420 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 420 rae.3d.Mesh.Mesh.createVBOs.normals
+			type:empty name:<.>      Token::REFERENCE_DOT line: 420 rae.3d.Mesh.Mesh.createVBOs..
+			type:empty name:<size>   Token::FUNC_CALL line: 420 rae.3d.Mesh.Mesh.createVBOs.size
+			type:empty name:<*>      Token::MULTIPLY line: 420 rae.3d.Mesh.Mesh.createVBOs.*
+			type:empty name:<sizeof> Token::SIZEOF line: 420 rae.3d.Mesh.Mesh.createVBOs.sizeof
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 420 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<vec3> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 420 rae.3d.Mesh.Mesh.createVBOs.
+			type:empty name:<)>      Token::PARENTHESIS_END line: 420 rae.3d.Mesh.Mesh.createVBOs.)
+			type:empty name:<,>      Token::COMMA line: 420 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<array> name:<normals> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 420 rae.3d.Mesh.Mesh.createVBOs.normals
+			type:empty name:<,>      Token::COMMA line: 420 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<GL_STATIC_DRAW> name:<GL_STATIC_DRAW> Token::USE_REFERENCE typetype: TypeType::VAL line: 420 rae.3d.Mesh.Mesh.createVBOs.GL_STATIC_DRAW
+			type:empty name:<)>      Token::PARENTHESIS_END line: 420 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<glGenBuffers> Token::FUNC_CALL line: 422 rae.3d.Mesh.Mesh.createVBOs.glGenBuffers
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 422 rae.3d.Mesh.Mesh.createVBOs.(
+			type:empty name:<1>      Token::NUMBER line: 422 rae.3d.Mesh.Mesh.createVBOs.1
+			type:empty name:<,>      Token::COMMA line: 422 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<uint> name:<indexBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 422 rae.3d.Mesh.Mesh.createVBOs.indexBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 422 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			type:empty name:<glBindBuffer> Token::FUNC_CALL line: 423 rae.3d.Mesh.Mesh.createVBOs.glBindBuffer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 423 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<GL_ELEMENT_ARRAY_BUFFER> name:<GL_ELEMENT_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 423 rae.3d.Mesh.Mesh.createVBOs.GL_ELEMENT_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 423 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<uint> name:<indexBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 423 rae.3d.Mesh.Mesh.createVBOs.indexBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 423 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			type:empty name:<glBufferData> Token::FUNC_CALL line: 424 rae.3d.Mesh.Mesh.createVBOs.glBufferData
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 424 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<GL_ELEMENT_ARRAY_BUFFER> name:<GL_ELEMENT_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 424 rae.3d.Mesh.Mesh.createVBOs.GL_ELEMENT_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 424 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 424 rae.3d.Mesh.Mesh.createVBOs.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 424 rae.3d.Mesh.Mesh.createVBOs..
+			type:empty name:<size>   Token::FUNC_CALL line: 424 rae.3d.Mesh.Mesh.createVBOs.size
+			type:empty name:<*>      Token::MULTIPLY line: 424 rae.3d.Mesh.Mesh.createVBOs.*
+			type:empty name:<sizeof> Token::SIZEOF line: 424 rae.3d.Mesh.Mesh.createVBOs.sizeof
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 424 rae.3d.Mesh.Mesh.createVBOs.(
+			type:<ushort> name:empty Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 424 rae.3d.Mesh.Mesh.createVBOs.
+			type:empty name:<)>      Token::PARENTHESIS_END line: 424 rae.3d.Mesh.Mesh.createVBOs.)
+			type:empty name:<,>      Token::COMMA line: 424 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 424 rae.3d.Mesh.Mesh.createVBOs.indices
+			type:empty name:<,>      Token::COMMA line: 424 rae.3d.Mesh.Mesh.createVBOs.,
+			type:<GL_STATIC_DRAW> name:<GL_STATIC_DRAW> Token::USE_REFERENCE typetype: TypeType::VAL line: 424 rae.3d.Mesh.Mesh.createVBOs.GL_STATIC_DRAW
+			type:empty name:<)>      Token::PARENTHESIS_END line: 424 rae.3d.Mesh.Mesh.createVBOs.)
+			NEWLINE
+			type:empty name:<}>      Token::SCOPE_END line: 425 rae.3d.Mesh.Mesh.createVBOs.}
+		NEWLINE
+		NEWLINE
+		type:empty name:<render> Token::FUNC line: 427 rae.3d.Mesh.Mesh.render
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN_FUNC_PARAM_TYPES line: 427 rae.3d.Mesh.Mesh.render.(
+			type:<uint> name:<set_shader_program_id> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 427 rae.3d.Mesh.Mesh.render.set_shader_program_id
+			type:empty name:<)>      Token::PARENTHESIS_END_FUNC_PARAM_TYPES line: 427 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:empty name:<{>      Token::SCOPE_BEGIN line: 428 rae.3d.Mesh.Mesh.render.{
+			NEWLINE
+			type:empty name:<glUseProgram> Token::FUNC_CALL line: 429 rae.3d.Mesh.Mesh.render.glUseProgram
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 429 rae.3d.Mesh.Mesh.render.(
+			type:<uint> name:<set_shader_program_id> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 429 rae.3d.Mesh.Mesh.render.set_shader_program_id
+			type:empty name:<)>      Token::PARENTHESIS_END line: 429 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			NEWLINE
+			type:empty name:< Get a handle for our buffers> Token::COMMENT line: 432 rae.3d.Mesh.Mesh.render. Get a handle for our buffers
+			NEWLINE
+			type:<GLuint> name:<vertex_position_id> Token::DEFINE_REFERENCE typetype: TypeType::VAL line: 432 rae.3d.Mesh.Mesh.render.vertex_position_id
+			type:empty name:<=>      Token::ASSIGNMENT line: 432 rae.3d.Mesh.Mesh.render.=
+			type:empty name:<glGetAttribLocation> Token::FUNC_CALL line: 432 rae.3d.Mesh.Mesh.render.glGetAttribLocation
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 432 rae.3d.Mesh.Mesh.render.(
+			type:<uint> name:<set_shader_program_id> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 432 rae.3d.Mesh.Mesh.render.set_shader_program_id
+			type:empty name:<,>      Token::COMMA line: 432 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<"inPosition"> Token::QUOTE line: 432 rae.3d.Mesh.Mesh.render."inPosition"
+			type:empty name:<)>      Token::PARENTHESIS_END line: 432 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:<GLuint> name:<vertex_uv_id> Token::DEFINE_REFERENCE typetype: TypeType::VAL line: 433 rae.3d.Mesh.Mesh.render.vertex_uv_id
+			type:empty name:<=>      Token::ASSIGNMENT line: 433 rae.3d.Mesh.Mesh.render.=
+			type:empty name:<glGetAttribLocation> Token::FUNC_CALL line: 433 rae.3d.Mesh.Mesh.render.glGetAttribLocation
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 433 rae.3d.Mesh.Mesh.render.(
+			type:<uint> name:<set_shader_program_id> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 433 rae.3d.Mesh.Mesh.render.set_shader_program_id
+			type:empty name:<,>      Token::COMMA line: 433 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<"inUV"> Token::QUOTE line: 433 rae.3d.Mesh.Mesh.render."inUV"
+			type:empty name:<)>      Token::PARENTHESIS_END line: 433 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:<GLuint> name:<vertex_normal_id> Token::DEFINE_REFERENCE typetype: TypeType::VAL line: 434 rae.3d.Mesh.Mesh.render.vertex_normal_id
+			type:empty name:<=>      Token::ASSIGNMENT line: 434 rae.3d.Mesh.Mesh.render.=
+			type:empty name:<glGetAttribLocation> Token::FUNC_CALL line: 434 rae.3d.Mesh.Mesh.render.glGetAttribLocation
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 434 rae.3d.Mesh.Mesh.render.(
+			type:<uint> name:<set_shader_program_id> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 434 rae.3d.Mesh.Mesh.render.set_shader_program_id
+			type:empty name:<,>      Token::COMMA line: 434 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<"inNormal"> Token::QUOTE line: 434 rae.3d.Mesh.Mesh.render."inNormal"
+			type:empty name:<)>      Token::PARENTHESIS_END line: 434 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			NEWLINE
+			type:empty name:< vertices> Token::COMMENT line: 437 rae.3d.Mesh.Mesh.render. vertices
+			NEWLINE
+			type:empty name:<glEnableVertexAttribArray> Token::FUNC_CALL line: 437 rae.3d.Mesh.Mesh.render.glEnableVertexAttribArray
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 437 rae.3d.Mesh.Mesh.render.(
+			type:<GLuint> name:<vertex_position_id> Token::USE_REFERENCE typetype: TypeType::VAL line: 437 rae.3d.Mesh.Mesh.render.vertex_position_id
+			type:empty name:<)>      Token::PARENTHESIS_END line: 437 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:empty name:<glBindBuffer> Token::FUNC_CALL line: 438 rae.3d.Mesh.Mesh.render.glBindBuffer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 438 rae.3d.Mesh.Mesh.render.(
+			type:<GL_ARRAY_BUFFER> name:<GL_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 438 rae.3d.Mesh.Mesh.render.GL_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 438 rae.3d.Mesh.Mesh.render.,
+			type:<uint> name:<vertexBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 438 rae.3d.Mesh.Mesh.render.vertexBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 438 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:empty name:<glVertexAttribPointer> Token::FUNC_CALL line: 439 rae.3d.Mesh.Mesh.render.glVertexAttribPointer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 439 rae.3d.Mesh.Mesh.render.(
+			type:<GLuint> name:<vertex_position_id> Token::USE_REFERENCE typetype: TypeType::VAL line: 439 rae.3d.Mesh.Mesh.render.vertex_position_id
+			type:empty name:<,>      Token::COMMA line: 439 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<3>      Token::NUMBER line: 439 rae.3d.Mesh.Mesh.render.3
+			type:empty name:<,>      Token::COMMA line: 439 rae.3d.Mesh.Mesh.render.,
+			type:<GL_FLOAT> name:<GL_FLOAT> Token::USE_REFERENCE typetype: TypeType::VAL line: 439 rae.3d.Mesh.Mesh.render.GL_FLOAT
+			type:empty name:<,>      Token::COMMA line: 439 rae.3d.Mesh.Mesh.render.,
+			type:<GL_FALSE> name:<GL_FALSE> Token::USE_REFERENCE typetype: TypeType::VAL line: 439 rae.3d.Mesh.Mesh.render.GL_FALSE
+			type:empty name:<,>      Token::COMMA line: 439 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<0>      Token::NUMBER line: 439 rae.3d.Mesh.Mesh.render.0
+			type:empty name:<,>      Token::COMMA line: 439 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<0>      Token::NUMBER line: 439 rae.3d.Mesh.Mesh.render.0
+			type:empty name:<)>      Token::PARENTHESIS_END line: 439 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<(void*)> Token::COMMENT line: 442 rae.3d.Mesh.Mesh.render.(void*)
+			NEWLINE
+			NEWLINE
+			type:empty name:< UVs>   Token::COMMENT line: 444 rae.3d.Mesh.Mesh.render. UVs
+			NEWLINE
+			type:empty name:<glEnableVertexAttribArray> Token::FUNC_CALL line: 444 rae.3d.Mesh.Mesh.render.glEnableVertexAttribArray
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 444 rae.3d.Mesh.Mesh.render.(
+			type:<GLuint> name:<vertex_uv_id> Token::USE_REFERENCE typetype: TypeType::VAL line: 444 rae.3d.Mesh.Mesh.render.vertex_uv_id
+			type:empty name:<)>      Token::PARENTHESIS_END line: 444 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:empty name:<glBindBuffer> Token::FUNC_CALL line: 445 rae.3d.Mesh.Mesh.render.glBindBuffer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 445 rae.3d.Mesh.Mesh.render.(
+			type:<GL_ARRAY_BUFFER> name:<GL_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 445 rae.3d.Mesh.Mesh.render.GL_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 445 rae.3d.Mesh.Mesh.render.,
+			type:<uint> name:<uvBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 445 rae.3d.Mesh.Mesh.render.uvBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 445 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:empty name:<glVertexAttribPointer> Token::FUNC_CALL line: 446 rae.3d.Mesh.Mesh.render.glVertexAttribPointer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 446 rae.3d.Mesh.Mesh.render.(
+			type:<GLuint> name:<vertex_uv_id> Token::USE_REFERENCE typetype: TypeType::VAL line: 446 rae.3d.Mesh.Mesh.render.vertex_uv_id
+			type:empty name:<,>      Token::COMMA line: 446 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<2>      Token::NUMBER line: 446 rae.3d.Mesh.Mesh.render.2
+			type:empty name:<,>      Token::COMMA line: 446 rae.3d.Mesh.Mesh.render.,
+			type:<GL_FLOAT> name:<GL_FLOAT> Token::USE_REFERENCE typetype: TypeType::VAL line: 446 rae.3d.Mesh.Mesh.render.GL_FLOAT
+			type:empty name:<,>      Token::COMMA line: 446 rae.3d.Mesh.Mesh.render.,
+			type:<GL_FALSE> name:<GL_FALSE> Token::USE_REFERENCE typetype: TypeType::VAL line: 446 rae.3d.Mesh.Mesh.render.GL_FALSE
+			type:empty name:<,>      Token::COMMA line: 446 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<0>      Token::NUMBER line: 446 rae.3d.Mesh.Mesh.render.0
+			type:empty name:<,>      Token::COMMA line: 446 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<0>      Token::NUMBER line: 446 rae.3d.Mesh.Mesh.render.0
+			type:empty name:<)>      Token::PARENTHESIS_END line: 446 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			NEWLINE
+			type:empty name:< normals> Token::COMMENT line: 449 rae.3d.Mesh.Mesh.render. normals
+			NEWLINE
+			type:empty name:<glEnableVertexAttribArray> Token::FUNC_CALL line: 449 rae.3d.Mesh.Mesh.render.glEnableVertexAttribArray
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 449 rae.3d.Mesh.Mesh.render.(
+			type:<GLuint> name:<vertex_normal_id> Token::USE_REFERENCE typetype: TypeType::VAL line: 449 rae.3d.Mesh.Mesh.render.vertex_normal_id
+			type:empty name:<)>      Token::PARENTHESIS_END line: 449 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:empty name:<glBindBuffer> Token::FUNC_CALL line: 450 rae.3d.Mesh.Mesh.render.glBindBuffer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 450 rae.3d.Mesh.Mesh.render.(
+			type:<GL_ARRAY_BUFFER> name:<GL_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 450 rae.3d.Mesh.Mesh.render.GL_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 450 rae.3d.Mesh.Mesh.render.,
+			type:<uint> name:<normalBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 450 rae.3d.Mesh.Mesh.render.normalBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 450 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:empty name:<glVertexAttribPointer> Token::FUNC_CALL line: 451 rae.3d.Mesh.Mesh.render.glVertexAttribPointer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 451 rae.3d.Mesh.Mesh.render.(
+			type:<GLuint> name:<vertex_normal_id> Token::USE_REFERENCE typetype: TypeType::VAL line: 451 rae.3d.Mesh.Mesh.render.vertex_normal_id
+			type:empty name:<,>      Token::COMMA line: 451 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<3>      Token::NUMBER line: 451 rae.3d.Mesh.Mesh.render.3
+			type:empty name:<,>      Token::COMMA line: 451 rae.3d.Mesh.Mesh.render.,
+			type:<GL_FLOAT> name:<GL_FLOAT> Token::USE_REFERENCE typetype: TypeType::VAL line: 451 rae.3d.Mesh.Mesh.render.GL_FLOAT
+			type:empty name:<,>      Token::COMMA line: 451 rae.3d.Mesh.Mesh.render.,
+			type:<GL_FALSE> name:<GL_FALSE> Token::USE_REFERENCE typetype: TypeType::VAL line: 451 rae.3d.Mesh.Mesh.render.GL_FALSE
+			type:empty name:<,>      Token::COMMA line: 451 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<0>      Token::NUMBER line: 451 rae.3d.Mesh.Mesh.render.0
+			type:empty name:<,>      Token::COMMA line: 451 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<0>      Token::NUMBER line: 451 rae.3d.Mesh.Mesh.render.0
+			type:empty name:<)>      Token::PARENTHESIS_END line: 451 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			NEWLINE
+			type:empty name:< Index buffer> Token::COMMENT line: 454 rae.3d.Mesh.Mesh.render. Index buffer
+			NEWLINE
+			type:empty name:<glBindBuffer> Token::FUNC_CALL line: 454 rae.3d.Mesh.Mesh.render.glBindBuffer
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 454 rae.3d.Mesh.Mesh.render.(
+			type:<GL_ELEMENT_ARRAY_BUFFER> name:<GL_ELEMENT_ARRAY_BUFFER> Token::USE_REFERENCE typetype: TypeType::VAL line: 454 rae.3d.Mesh.Mesh.render.GL_ELEMENT_ARRAY_BUFFER
+			type:empty name:<,>      Token::COMMA line: 454 rae.3d.Mesh.Mesh.render.,
+			type:<uint> name:<indexBufferID> Token::USE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 454 rae.3d.Mesh.Mesh.render.indexBufferID
+			type:empty name:<)>      Token::PARENTHESIS_END line: 454 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<glDrawElements> Token::FUNC_CALL line: 456 rae.3d.Mesh.Mesh.render.glDrawElements
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 456 rae.3d.Mesh.Mesh.render.(
+			type:<GL_TRIANGLES> name:<GL_TRIANGLES> Token::USE_REFERENCE typetype: TypeType::VAL line: 456 rae.3d.Mesh.Mesh.render.GL_TRIANGLES
+			type:empty name:<,>      Token::COMMA line: 456 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 456 rae.3d.Mesh.Mesh.render.(
+			type:<GLsizei> name:empty Token::DEFINE_REFERENCE typetype: TypeType::VAL line: 456 rae.3d.Mesh.Mesh.render.
+			type:empty name:<)>      Token::PARENTHESIS_END line: 456 rae.3d.Mesh.Mesh.render.)
+			type:<array> name:<indices> Token::USE_REFERENCE typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 456 rae.3d.Mesh.Mesh.render.indices
+			type:empty name:<.>      Token::REFERENCE_DOT line: 456 rae.3d.Mesh.Mesh.render..
+			type:empty name:<size>   Token::FUNC_CALL line: 456 rae.3d.Mesh.Mesh.render.size
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 456 rae.3d.Mesh.Mesh.render.(
+			type:empty name:<)>      Token::PARENTHESIS_END line: 456 rae.3d.Mesh.Mesh.render.)
+			type:empty name:<,>      Token::COMMA line: 456 rae.3d.Mesh.Mesh.render.,
+			type:<GL_UNSIGNED_SHORT> name:<GL_UNSIGNED_SHORT> Token::USE_REFERENCE typetype: TypeType::VAL line: 456 rae.3d.Mesh.Mesh.render.GL_UNSIGNED_SHORT
+			type:empty name:<,>      Token::COMMA line: 456 rae.3d.Mesh.Mesh.render.,
+			type:empty name:<0>      Token::NUMBER line: 456 rae.3d.Mesh.Mesh.render.0
+			type:empty name:<)>      Token::PARENTHESIS_END line: 456 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			NEWLINE
+			type:empty name:<glDisableVertexAttribArray> Token::FUNC_CALL line: 458 rae.3d.Mesh.Mesh.render.glDisableVertexAttribArray
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 458 rae.3d.Mesh.Mesh.render.(
+			type:<GLuint> name:<vertex_position_id> Token::USE_REFERENCE typetype: TypeType::VAL line: 458 rae.3d.Mesh.Mesh.render.vertex_position_id
+			type:empty name:<)>      Token::PARENTHESIS_END line: 458 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:empty name:<glDisableVertexAttribArray> Token::FUNC_CALL line: 459 rae.3d.Mesh.Mesh.render.glDisableVertexAttribArray
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 459 rae.3d.Mesh.Mesh.render.(
+			type:<GLuint> name:<vertex_uv_id> Token::USE_REFERENCE typetype: TypeType::VAL line: 459 rae.3d.Mesh.Mesh.render.vertex_uv_id
+			type:empty name:<)>      Token::PARENTHESIS_END line: 459 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:empty name:<glDisableVertexAttribArray> Token::FUNC_CALL line: 460 rae.3d.Mesh.Mesh.render.glDisableVertexAttribArray
+			type:empty name:<(>      Token::PARENTHESIS_BEGIN line: 460 rae.3d.Mesh.Mesh.render.(
+			type:<GLuint> name:<vertex_normal_id> Token::USE_REFERENCE typetype: TypeType::VAL line: 460 rae.3d.Mesh.Mesh.render.vertex_normal_id
+			type:empty name:<)>      Token::PARENTHESIS_END line: 460 rae.3d.Mesh.Mesh.render.)
+			NEWLINE
+			type:empty name:<}>      Token::SCOPE_END line: 461 rae.3d.Mesh.Mesh.render.}
+		NEWLINE
+		NEWLINE
+		type:empty name:<priv>   Token::VISIBILITY_DEFAULT line: 463 rae.3d.Mesh.Mesh.priv
+		NEWLINE
+		type:<array> name:<vertices> Token::BRACKET_DEFINE_ARRAY_BEGIN typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 464 rae.3d.Mesh.Mesh.vertices
+			type:<vec3> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 464 rae.3d.Mesh.Mesh.vertices.
+			type:empty name:<]>      Token::BRACKET_DEFINE_ARRAY_END line: 464 rae.3d.Mesh.Mesh.vertices.]
+		NEWLINE
+		type:<array> name:<uvs>  Token::BRACKET_DEFINE_ARRAY_BEGIN typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 465 rae.3d.Mesh.Mesh.uvs
+			type:<vec2> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 465 rae.3d.Mesh.Mesh.uvs.
+			type:empty name:<]>      Token::BRACKET_DEFINE_ARRAY_END line: 465 rae.3d.Mesh.Mesh.uvs.]
+		NEWLINE
+		type:<array> name:<normals> Token::BRACKET_DEFINE_ARRAY_BEGIN typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 466 rae.3d.Mesh.Mesh.normals
+			type:<vec3> name:empty   Token::DEFINE_REFERENCE typetype: TypeType::VAL usenamespace: glm:: line: 466 rae.3d.Mesh.Mesh.normals.
+			type:empty name:<]>      Token::BRACKET_DEFINE_ARRAY_END line: 466 rae.3d.Mesh.Mesh.normals.]
+		NEWLINE
+		type:<array> name:<indices> Token::BRACKET_DEFINE_ARRAY_BEGIN typetype: TypeType::VAL containerType: ContainerType::ARRAY line: 467 rae.3d.Mesh.Mesh.indices
+			type:<ushort> name:empty Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 467 rae.3d.Mesh.Mesh.indices.
+			type:empty name:<]>      Token::BRACKET_DEFINE_ARRAY_END line: 467 rae.3d.Mesh.Mesh.indices.]
+		NEWLINE
+		NEWLINE
+		type:<uint> name:<vertexBufferID> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 469 rae.3d.Mesh.Mesh.vertexBufferID
+			type:empty name:<=>      Token::INIT_DATA line: 469 =
+				type:empty name:<0>      Token::NUMBER line: 469 =.0
+		NEWLINE
+		type:<uint> name:<uvBufferID> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 470 rae.3d.Mesh.Mesh.uvBufferID
+			type:empty name:<=>      Token::INIT_DATA line: 470 =
+				type:empty name:<0>      Token::NUMBER line: 470 =.0
+		NEWLINE
+		type:<uint> name:<normalBufferID> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 471 rae.3d.Mesh.Mesh.normalBufferID
+			type:empty name:<=>      Token::INIT_DATA line: 471 =
+				type:empty name:<0>      Token::NUMBER line: 471 =.0
+		NEWLINE
+		type:<uint> name:<indexBufferID> Token::DEFINE_REFERENCE typetype: TypeType::BUILT_IN_TYPE line: 472 rae.3d.Mesh.Mesh.indexBufferID
+			type:empty name:<=>      Token::INIT_DATA line: 472 =
+				type:empty name:<0>      Token::NUMBER line: 472 =.0
+		NEWLINE
+		type:empty name:<}>      Token::SCOPE_END line: 473 rae.3d.Mesh.Mesh.}
+	NEWLINE
+	type:empty name:empty    Token::CLOSE_MODULE line: 474 rae.3d.Mesh.
