@@ -1,11 +1,11 @@
 module GL.glew
- // Means that no C++ will be generated for this file
+@dont_generate_code # Means that no C++ will be generated for this file
 
-// Rae bindings would look something like this:
-//func glDeleteBuffers(GLsizei n, let ptr GLuint buffers)
+# Rae bindings would look something like this:
+#func glDeleteBuffers(GLsizei n, let ptr GLuint buffers)
 
-// But it would be cool to be able to just write simplified C/C++ here.
-// Something like:
+# But here we are writing a simplified C++ header, that will be parsed by the Rae compiler.
+# You can't really use defines as macros here.
 
 @cpp_bindings
 typedef unsigned int GLenum;

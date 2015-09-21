@@ -111,6 +111,13 @@ void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, i
 	*/
 }
 
+void GLFWonWindowClose(GLFWwindow* set_window)
+{
+	if( g_engine == nullptr )
+		return;
+	g_engine->osEventCloseWindow();
+}
+
 #define check_gl_error() _check_gl_error(__FILE__,__LINE__)
 
 void _check_gl_error(const char *file, int line)
@@ -134,7 +141,7 @@ void _check_gl_error(const char *file, int line)
 }
 
 //@end
-; // line: 161
+; // line: 168
 
 /* TODO
 void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, int set_mods)

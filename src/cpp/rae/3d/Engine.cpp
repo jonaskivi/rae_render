@@ -33,7 +33,8 @@ Engine::~Engine()
 }
 
 Engine::Engine(GLFWwindow* set_window)
-: m_previousTime(0.0)
+: m_isRunning(true)
+, m_previousTime(0.0)
 , m_currentTime(0.0)
 , m_currentAngle(0.0f)
 , modelViewMatrixUni(0)
@@ -70,13 +71,13 @@ Engine::Engine(GLFWwindow* set_window)
 
 void Engine::run()
 {
-	bool isRunning = true; // line: 62
+	m_isRunning = true; // line: 62
 	
-	for (; isRunning == true; )
+	for (; m_isRunning == true; )
 	{
 		if (glfwGetKey(m_window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		{
-			isRunning = false;
+			m_isRunning = false;
 		}
 		
 		m_currentTime = glfwGetTime(); // line: 71
@@ -85,7 +86,7 @@ void Engine::run()
 		
 		glViewport(0, 0, m_windowWidth, m_windowHeight); // line: 75
 		
-		glClearColor(0.3, 0.3, 0.3, 0.0); // line: 77
+		glClearColor(0.3f, 0.3f, 0.3f, 0.0f); // line: 77
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); // line: 78
 		
 		glDisable(GL_BLEND); // line: 80
@@ -136,7 +137,7 @@ void Engine::run()
 			else glBindTexture(GL_TEXTURE_2D, 0);
 			*/
 		
-		m_currentAngle += 10.0f * deltaTime; // line: 129
+		m_currentAngle += 10.0f * static_cast<float>(deltaTime); // line: 129
 		if (m_currentAngle > 360.0f)
 		m_currentAngle = 0.0f; // line: 131
 		
@@ -210,25 +211,30 @@ void Engine::update(double time, double delta_time)
 	
 }
 
+void Engine::osEventCloseWindow()
+{
+	m_isRunning = false;
+}
+
 void Engine::osEventResizeWindow(int32_t width, int32_t height)
 {
-	std::cout<<"osEventResizeWindow TODO"<<"\n"; // line: 201
+	std::cout<<"osEventResizeWindow TODO"<<"\n"; // line: 206
 	//m_renderSystem.osEventResizeWindow(width, height)
-	m_windowWidth = width; // line: 203
+	m_windowWidth = width; // line: 208
 	m_windowHeight = height;
 }
 
 void Engine::osEventResizeWindowPixels(int32_t width, int32_t height)
 {
-	std::cout<<"osEventResizeWindowPixels TODO"<<"\n"; // line: 209
+	std::cout<<"osEventResizeWindowPixels TODO"<<"\n"; // line: 214
 	//m_renderSystem.osEventResizeWindowPixels(width, height)
-	m_windowWidth = width; // line: 211
+	m_windowWidth = width; // line: 216
 	m_windowHeight = height;
 }
 
 void Engine::onMouseButtonPress(int32_t set_button, double x, double y)
 {
-	std::cout<<"mouse press: x: "<<x<<" y: "<<y<<"\n"; // line: 217
+	std::cout<<"mouse press: x: "<<x<<" y: "<<y<<"\n"; // line: 222
 	
 	/*TODO
 		# Have to scale input on retina screens:

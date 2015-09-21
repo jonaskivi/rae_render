@@ -99,43 +99,46 @@ class Engine
 	//-------------end Rae boilerplate code-------------
 
 
-	~Engine(); // line: 279
+	~Engine(); // line: 286
 public: 
 	
-	Engine(GLFWwindow* set_window); // line: 256
+	Engine(GLFWwindow* set_window); // line: 258
 	void run();
 	
 	void update(double time, double delta_time); // line: 194
-	void osEventResizeWindow(int32_t width, int32_t height); // line: 199
-	void osEventResizeWindowPixels(int32_t width, int32_t height); // line: 207
-	void onMouseButtonPress(int32_t set_button, double x, double y); // line: 215
+	void osEventCloseWindow(); // line: 199
+	void osEventResizeWindow(int32_t width, int32_t height); // line: 204
+	void osEventResizeWindowPixels(int32_t width, int32_t height); // line: 212
+	void onMouseButtonPress(int32_t set_button, double x, double y); // line: 220
 	protected: 
 	
-	GLFWwindow* m_window; // line: 254
+	bool m_isRunning; // line: 259
+	
+	GLFWwindow* m_window; // line: 261
 	
 	// timing
-	double m_previousTime; // line: 257
-	double m_currentTime; // line: 258
+	double m_previousTime; // line: 264
+	double m_currentTime; // line: 265
 	
 	// TODO
 	//RenderSystem m_renderSystem
 	
-	float m_currentAngle; // line: 263
+	float m_currentAngle; // line: 270
 	
-	Shader shader; // line: 265
-	Mesh mesh; // line: 266
+	Shader shader; // line: 272
+	Mesh mesh; // line: 273
 	
 	//temp
-	uint32_t modelViewMatrixUni; // line: 269
-	uint32_t viewMatrixUni; // line: 270
-	uint32_t modelMatrixUni; // line: 271
-	uint32_t lightPositionUni; // line: 272
-	uint32_t textureUni; // line: 273
+	uint32_t modelViewMatrixUni; // line: 276
+	uint32_t viewMatrixUni; // line: 277
+	uint32_t modelMatrixUni; // line: 278
+	uint32_t lightPositionUni; // line: 279
+	uint32_t textureUni; // line: 280
 	
 	//temp window size stuff:
 	
-	int32_t m_windowWidth; // line: 277
-	int32_t m_windowHeight; // line: 278
+	int32_t m_windowWidth; // line: 284
+	int32_t m_windowHeight; // line: 285
 	
 };
 

@@ -58,13 +58,13 @@ pub:
 
 	func run
 	{
-		bool isRunning = true
+		m_isRunning = true
 
-		loop(; isRunning == true;)
+		loop(; m_isRunning == true;)
 		{
 			if (glfwGetKey( m_window, GLFW_KEY_ESCAPE ) == GLFW_PRESS)
 			{
-				isRunning = false
+				m_isRunning = false
 			}
 
 			m_currentTime    = glfwGetTime
@@ -73,7 +73,7 @@ pub:
 
 			glViewport(0, 0, m_windowWidth, m_windowHeight)
 
-			glClearColor(0.3, 0.3, 0.3, 0.0)
+			glClearColor(0.3f, 0.3f, 0.3f, 0.0f)
 			glClear(GL_COLOR_BUFFER_BIT bitor GL_DEPTH_BUFFER_BIT bitor GL_STENCIL_BUFFER_BIT)
 			
 			glDisable(GL_BLEND)
@@ -124,7 +124,7 @@ pub:
 			else glBindTexture(GL_TEXTURE_2D, 0);
 			*#
 
-			m_currentAngle += 10.0f * deltaTime
+			m_currentAngle += 10.0f * cast[float](deltaTime)
 				if(m_currentAngle > 360.0f)
 				    m_currentAngle = 0.0f
 
@@ -194,6 +194,11 @@ pub:
 
 	}
 
+	func osEventCloseWindow()
+	{
+		m_isRunning = false
+	}
+
 	func osEventResizeWindow(int width, int height)
 	{
 		log("osEventResizeWindow TODO")
@@ -247,6 +252,8 @@ pub:
 	}
 
 priv:
+
+	bool m_isRunning = true
 
 	ptr GLFWwindow m_window
 

@@ -49,7 +49,7 @@ using namespace Rae;
 
 
 //@end
-; // line: 161
+; // line: 168
 
 /* TODO
 void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, int set_mods)
@@ -74,7 +74,7 @@ void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, i
 
 int32_t main(int argc, char* const argv[])
 {
-	std::cout<<"Rae Render 0.1"<<"\n"; // line: 187
+	std::cout<<"Rae Render 0.1"<<"\n"; // line: 194
 	
 	//@cpp
 
@@ -130,12 +130,12 @@ int32_t main(int argc, char* const argv[])
 
 	glfwSetInputMode(glfw_window, GLFW_STICKY_KEYS, GL_TRUE);
 //@end
-; // line: 241
+; // line: 248
 	
 	// Load it into a VBO
 	
 	// TODO pass glfw_window here or something...
-	Engine engine(glfw_window); // line: 246
+	Engine engine(glfw_window); // line: 253
 	
 	g_engine = &engine; // Set global access point just for GLFW callbacks.
 	
@@ -144,19 +144,20 @@ int32_t main(int argc, char* const argv[])
 	glfwSetWindowSizeCallback     (glfw_window, windowSizeCallback);
 	glfwSetFramebufferSizeCallback(glfw_window, windowPixelSizeCallback); // Support hi-dpi displays
 	glfwSetMouseButtonCallback    (glfw_window, GLFWonMouseButton);
+	glfwSetWindowCloseCallback    (glfw_window, GLFWonWindowClose);
 //@end
-; // line: 254
+; // line: 262
 	
 	
-	engine.osEventResizeWindow(screenWidth, screenHeight); // line: 259
+	engine.osEventResizeWindow(screenWidth, screenHeight); // line: 267
 	
-	engine.run(); // line: 261
+	engine.run(); // line: 269
 	
 	//@cpp
 
 		glfwTerminate();
 //@end
-; // line: 265
+; // line: 273
 	
 	return 0;
 }
