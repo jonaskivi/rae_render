@@ -15,8 +15,9 @@ solution "rae_render"
       links {"glfw3", "glew", "nanovg"}
       defines { "GLEW_STATIC", "NANOVG_GLEW" }
 
-      --configuration { "linux" }
-      --  links {"X11","Xrandr", "rt", "GL", "GLU", "pthread"}
+      configuration { "linux" }
+        buildoptions { "-std=c++11" }
+        links {"X11","Xrandr", "Xxf86vm", "Xinerama", "Xcursor", "rt", "GL", "GLU", "pthread"}
        
       configuration { "windows" }
          defines { "_CRT_SECURE_NO_DEPRECATE" } -- to use fopen on windows without warnings.

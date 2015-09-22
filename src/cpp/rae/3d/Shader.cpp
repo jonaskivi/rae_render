@@ -1,5 +1,5 @@
 // this file is automatically created from Rae programming language module:
-///Users/joonaz/Dropbox/jonas/2015/ohjelmointi/rae_render/src/cpp/rae/3d/Shader
+///home/joonaz/2015/ohjelmointi/rae_render/src/cpp/rae/3d/Shader
 #include "Shader.hpp"
 ; // line: 2
 

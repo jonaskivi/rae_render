@@ -1,5 +1,5 @@
 // this file is automatically created from Rae programming language module:
-///Users/joonaz/Dropbox/jonas/2015/ohjelmointi/rae_render/src/cpp/rae/3d/Engine
+///home/joonaz/2015/ohjelmointi/rae_render/src/cpp/rae/3d/Engine
 #include "Engine.hpp"
 ; // line: 2
 
@@ -137,9 +137,9 @@ void Engine::run()
 			else glBindTexture(GL_TEXTURE_2D, 0);
 			*/
 		
-		m_currentAngle += 10.0f * static_cast<float>(deltaTime); // line: 128
+		m_currentAngle += 10.0f * static_cast<float>(deltaTime); // line: 129
 		if (m_currentAngle > 360.0f)
-		m_currentAngle = 0.0f; // line: 130
+		m_currentAngle = 0.0f; // line: 131
 		
 		float x_coord =  - 9.0f;
 		float y_coord =  - 4.0f;
@@ -151,11 +151,11 @@ void Engine::run()
 			{
 				//glm.mat4 modelMatrix = glm.translate(glm.mat4(1.0f), glm.vec3(0.0f, 0.0f, 3.0f))
 				//modelMatrix = glm.rotate(modelMatrix, m_currentAngle, glm.vec3(0.6f, 0.7f, 0.0f))
-				glm::mat4 modelMatrix = glm::translate(glm::mat4 (1.0f), glm::vec3 (x_coord, y_coord, z_coord)); // line: 142
-				modelMatrix = glm::rotate(modelMatrix, m_currentAngle, glm::vec3 (0.6f, 0.7f, 0.0f)); // line: 143
+				glm::mat4 modelMatrix = glm::translate(glm::mat4 (1.0f), glm::vec3 (x_coord, y_coord, z_coord)); // line: 143
+				modelMatrix = glm::rotate(modelMatrix, m_currentAngle, glm::vec3 (0.6f, 0.7f, 0.0f)); // line: 144
 				
 				// The model-view-projection matrix
-				glm::mat4 combinedMatrix = m_projectionMatrix * m_viewMatrix * modelMatrix; // line: 146
+				glm::mat4 combinedMatrix = m_projectionMatrix * m_viewMatrix * modelMatrix; // line: 147
 				
 				// TODO this will be difficult. Getting a const float* from a two dimensional array, which is actually glm::mat4
 				// with operator[] overloaded.
@@ -171,9 +171,9 @@ void Engine::run()
 					glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, &m_viewMatrix[0][0]);
 
 					//@end
-; // line: 160
+; // line: 161
 				
-				mesh.render(shader.shaderID); // line: 162
+				mesh.render(shader.shaderID); // line: 163
 				
 				x_coord += 2.0f;
 			}
@@ -183,11 +183,11 @@ void Engine::run()
 		}
 		
 		// render one more cube in the middle
-		glm::mat4 modelMatrix = glm::translate(glm::mat4 (1.0f), glm::vec3 (0.0f, 0.0f, 3.0f)); // line: 172
-		modelMatrix = glm::rotate(modelMatrix, m_currentAngle, glm::vec3 (0.6f, 0.7f, 0.0f)); // line: 173
+		glm::mat4 modelMatrix = glm::translate(glm::mat4 (1.0f), glm::vec3 (0.0f, 0.0f, 3.0f)); // line: 173
+		modelMatrix = glm::rotate(modelMatrix, m_currentAngle, glm::vec3 (0.6f, 0.7f, 0.0f)); // line: 174
 		
 		// The model-view-projection matrix
-		glm::mat4 combinedMatrix = m_projectionMatrix * m_viewMatrix * modelMatrix; // line: 176
+		glm::mat4 combinedMatrix = m_projectionMatrix * m_viewMatrix * modelMatrix; // line: 177
 		
 		//@cpp_src
 
@@ -197,11 +197,11 @@ void Engine::run()
 			glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, &m_viewMatrix[0][0]);
 
 			//@end
-; // line: 184
+; // line: 185
 		
-		mesh.render(shader.shaderID); // line: 186
+		mesh.render(shader.shaderID); // line: 187
 		
-		glfwSwapBuffers(m_window); // line: 188
+		glfwSwapBuffers(m_window); // line: 189
 		glfwPollEvents();
 	}
 }
@@ -218,23 +218,23 @@ void Engine::osEventCloseWindow()
 
 void Engine::osEventResizeWindow(int32_t width, int32_t height)
 {
-	std::cout<<"osEventResizeWindow TODO"<<"\n"; // line: 205
+	std::cout<<"osEventResizeWindow TODO"<<"\n"; // line: 206
 	//m_renderSystem.osEventResizeWindow(width, height)
-	m_windowWidth = width; // line: 207
+	m_windowWidth = width; // line: 208
 	m_windowHeight = height;
 }
 
 void Engine::osEventResizeWindowPixels(int32_t width, int32_t height)
 {
-	std::cout<<"osEventResizeWindowPixels TODO"<<"\n"; // line: 213
+	std::cout<<"osEventResizeWindowPixels TODO"<<"\n"; // line: 214
 	//m_renderSystem.osEventResizeWindowPixels(width, height)
-	m_windowWidth = width; // line: 215
+	m_windowWidth = width; // line: 216
 	m_windowHeight = height;
 }
 
 void Engine::onMouseButtonPress(int32_t set_button, double x, double y)
 {
-	std::cout<<"mouse press: x: "<<x<<" y: "<<y<<"\n"; // line: 221
+	std::cout<<"mouse press: x: "<<x<<" y: "<<y<<"\n"; // line: 222
 	
 	/*TODO
 		# Have to scale input on retina screens:
