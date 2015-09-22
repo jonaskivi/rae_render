@@ -1,5 +1,5 @@
 // this file is automatically created from Rae programming language module:
-//c:\Users\jonaz\Dropbox\jonas\2015\ohjelmointi\rae_render\src/cpp/main
+///Users/joonaz/Dropbox/jonas/2015/ohjelmointi/rae_render/src/cpp/main
 #ifndef _main_hpp_
 #define _main_hpp_
 
@@ -30,7 +30,7 @@ using namespace std;
 	#define GLFW_INCLUDE_GLCOREARB
 #endif
 //@end
-; // line: 63
+; // line: 61
 
 #include "GL/glew.hpp"
 
@@ -47,7 +47,7 @@ GLFWwindow* glfw_window;
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 //@end
-; // line: 77
+; // line: 75
 
 #include "rae/3d/Mesh.hpp"
 
@@ -72,7 +72,7 @@ GLFWwindow* glfw_window;
 using namespace Rae;
 */
 
-Engine* g_engine = nullptr; // line: 100
+Engine* g_engine = nullptr; // line: 97
 
 //@cpp
 
@@ -141,7 +141,7 @@ void _check_gl_error(const char *file, int line)
 }
 
 //@end
-; // line: 168
+; // line: 165
 
 /* TODO
 void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, int set_mods)
