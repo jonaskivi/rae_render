@@ -1,5 +1,5 @@
 // this file is automatically created from Rae programming language module:
-///home/joonaz/2015/ohjelmointi/rae_render/src/cpp/rae/3d/Mesh
+///Users/joonaz/Dropbox/jonas/2015/ohjelmointi/rae_render/src/cpp/rae/3d/Mesh
 #ifndef _rae_3d_Mesh_hpp_
 #define _rae_3d_Mesh_hpp_
 
@@ -85,8 +85,8 @@ class Mesh
 	//-------------end Rae boilerplate code-------------
 
 
-	Mesh(); // line: 469
-	~Mesh(); // line: 473
+	Mesh(); // line: 470
+	~Mesh(); // line: 474
 public: 
 	
 	/*
@@ -146,16 +146,16 @@ public:
 	
 	void createVBOs();
 	
-	void render(uint32_t set_shader_program_id); // line: 428
+	void render(uint32_t set_shader_program_id); // line: 429
 	protected: 
-	std::vector<glm::vec3 > vertices; // line: 465
-	std::vector<glm::vec2 > uvs; // line: 466
-	std::vector<glm::vec3 > normals; // line: 467
-	std::vector<uint16_t> indices; // line: 468
+	std::vector<glm::vec3 > vertices; // line: 466
+	std::vector<glm::vec2 > uvs; // line: 467
+	std::vector<glm::vec3 > normals; // line: 468
+	std::vector<uint16_t> indices; // line: 469
 	
-	uint32_t vertexBufferID; // line: 470
-	uint32_t uvBufferID; // line: 471
-	uint32_t normalBufferID; // line: 472
+	uint32_t vertexBufferID; // line: 471
+	uint32_t uvBufferID; // line: 472
+	uint32_t normalBufferID; // line: 473
 	uint32_t indexBufferID;
 };
 

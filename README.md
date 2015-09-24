@@ -15,7 +15,6 @@ Use the instructions in rae_programming_language project to build and install ra
 
     # on OSX:
 	premake4 xcode4
-    # On Xcode 5 I needed to change the SDK to 10.9 and the C++ dialect and stdlib versions to C++11.
     # Open the project file and build it.
 	
     # on Windows:

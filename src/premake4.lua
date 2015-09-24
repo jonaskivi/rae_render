@@ -24,7 +24,8 @@ solution "rae_render"
          links {"glu32","opengl32", "gdi32", "winmm", "user32"}
 
       configuration { "macosx" }
-         linkoptions { "-framework OpenGL", "-framework Cocoa", "-framework IOKit", "-framework CoreVideo"}
+         buildoptions { "-std=c++11 -stdlib=libc++" }
+         linkoptions { "-stdlib=libc++", "-framework OpenGL", "-framework Cocoa", "-framework IOKit", "-framework CoreVideo"}
          links
          {
             "IOKit.framework",

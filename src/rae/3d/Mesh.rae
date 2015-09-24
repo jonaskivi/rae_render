@@ -418,6 +418,7 @@ pub:
 		glGenBuffers(1, indexBufferID)
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID)
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size * sizeof(ushort), indices, GL_STATIC_DRAW)
+
 	}
 
 	func render(uint set_shader_program_id)

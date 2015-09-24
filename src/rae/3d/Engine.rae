@@ -168,16 +168,16 @@ pub:
 			}
 
 			# render one more cube in the middle
-			glm.mat4 modelMatrix = glm.translate(glm.mat4(1.0f), glm.vec3(0.0f, 0.0f, 3.0f))
-			modelMatrix = glm.rotate(modelMatrix, m_currentAngle, glm.vec3(0.6f, 0.7f, 0.0f))
+			glm.mat4 modelMatrix2 = glm.translate(glm.mat4(1.0f), glm.vec3(0.0f, 0.0f, 3.0f))
+			modelMatrix2 = glm.rotate(modelMatrix2, m_currentAngle, glm.vec3(0.6f, 0.7f, 0.0f))
 			
 			# The model-view-projection matrix
-			glm.mat4 combinedMatrix = m_projectionMatrix * m_viewMatrix * modelMatrix
+			glm.mat4 combinedMatrix2 = m_projectionMatrix * m_viewMatrix * modelMatrix2
 
 			@cpp_src
 
-			glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, &combinedMatrix[0][0]);
-			glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, &modelMatrix[0][0]);
+			glUniformMatrix4fv(modelViewMatrixUni, 1, GL_FALSE, &combinedMatrix2[0][0]);
+			glUniformMatrix4fv(modelMatrixUni, 1, GL_FALSE, &modelMatrix2[0][0]);
 			glUniformMatrix4fv(viewMatrixUni, 1, GL_FALSE, &m_viewMatrix[0][0]);
 
 			@end

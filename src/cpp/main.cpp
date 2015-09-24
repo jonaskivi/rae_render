@@ -1,5 +1,5 @@
 // this file is automatically created from Rae programming language module:
-///home/joonaz/2015/ohjelmointi/rae_render/src/cpp/main
+///Users/joonaz/Dropbox/jonas/2015/ohjelmointi/rae_render/src/cpp/main
 #include "main.hpp"
 ; // line: 2
 
@@ -16,13 +16,13 @@ using namespace std;
 */
 
 //@end
-; // line: 63
+; // line: 61
 
 #include "GL/glew.hpp"
 
 
 //@end
-; // line: 77
+; // line: 75
 
 #include "rae/3d/Mesh.hpp"
 
@@ -49,7 +49,7 @@ using namespace Rae;
 
 
 //@end
-; // line: 168
+; // line: 165
 
 /* TODO
 void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, int set_mods)
@@ -74,7 +74,7 @@ void GLFWonMouseButton(GLFWwindow* set_window, int set_button, int set_action, i
 
 int32_t main(int argc, char* const argv[])
 {
-	std::cout<<"Rae Render 0.1"<<"\n"; // line: 194
+	std::cout<<"Rae Render 0.1"<<"\n"; // line: 190
 	
 	//@cpp
 
@@ -130,12 +130,12 @@ int32_t main(int argc, char* const argv[])
 
 	glfwSetInputMode(glfw_window, GLFW_STICKY_KEYS, GL_TRUE);
 //@end
-; // line: 248
+; // line: 244
 	
 	// Load it into a VBO
 	
 	// TODO pass glfw_window here or something...
-	Engine engine(glfw_window); // line: 253
+	Engine engine(glfw_window); // line: 249
 	
 	g_engine = &engine; // Set global access point just for GLFW callbacks.
 	
@@ -146,18 +146,18 @@ int32_t main(int argc, char* const argv[])
 	glfwSetMouseButtonCallback    (glfw_window, GLFWonMouseButton);
 	glfwSetWindowCloseCallback    (glfw_window, GLFWonWindowClose);
 //@end
-; // line: 262
+; // line: 258
 	
 	
-	engine.osEventResizeWindow(screenWidth, screenHeight); // line: 267
+	engine.osEventResizeWindow(screenWidth, screenHeight); // line: 263
 	
-	engine.run(); // line: 269
+	engine.run(); // line: 265
 	
 	//@cpp
 
 		glfwTerminate();
 //@end
-; // line: 273
+; // line: 269
 	
 	return 0;
 }

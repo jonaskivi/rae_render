@@ -1,5 +1,5 @@
 // this file is automatically created from Rae programming language module:
-///home/joonaz/2015/ohjelmointi/rae_render/src/cpp/rae/3d/Engine
+///Users/joonaz/Dropbox/jonas/2015/ohjelmointi/rae_render/src/cpp/rae/3d/Engine
 #ifndef _rae_3d_Engine_hpp_
 #define _rae_3d_Engine_hpp_
 
@@ -99,46 +99,46 @@ class Engine
 	//-------------end Rae boilerplate code-------------
 
 
-	~Engine(); // line: 286
+	~Engine(); // line: 284
 public: 
 	
-	Engine(GLFWwindow* set_window); // line: 258
+	Engine(GLFWwindow* set_window); // line: 256
 	void run();
 	
-	void update(double time, double delta_time); // line: 194
-	void osEventCloseWindow(); // line: 199
-	void osEventResizeWindow(int32_t width, int32_t height); // line: 204
-	void osEventResizeWindowPixels(int32_t width, int32_t height); // line: 212
-	void onMouseButtonPress(int32_t set_button, double x, double y); // line: 220
+	void update(double time, double delta_time); // line: 193
+	void osEventCloseWindow(); // line: 198
+	void osEventResizeWindow(int32_t width, int32_t height); // line: 203
+	void osEventResizeWindowPixels(int32_t width, int32_t height); // line: 211
+	void onMouseButtonPress(int32_t set_button, double x, double y); // line: 219
 	protected: 
 	
-	bool m_isRunning; // line: 259
+	bool m_isRunning; // line: 257
 	
-	GLFWwindow* m_window; // line: 261
+	GLFWwindow* m_window; // line: 259
 	
 	// timing
-	double m_previousTime; // line: 264
-	double m_currentTime; // line: 265
+	double m_previousTime; // line: 262
+	double m_currentTime; // line: 263
 	
 	// TODO
 	//RenderSystem m_renderSystem
 	
-	float m_currentAngle; // line: 270
+	float m_currentAngle; // line: 268
 	
-	Shader shader; // line: 272
-	Mesh mesh; // line: 273
+	Shader shader; // line: 270
+	Mesh mesh; // line: 271
 	
 	//temp
-	uint32_t modelViewMatrixUni; // line: 276
-	uint32_t viewMatrixUni; // line: 277
-	uint32_t modelMatrixUni; // line: 278
-	uint32_t lightPositionUni; // line: 279
-	uint32_t textureUni; // line: 280
+	uint32_t modelViewMatrixUni; // line: 274
+	uint32_t viewMatrixUni; // line: 275
+	uint32_t modelMatrixUni; // line: 276
+	uint32_t lightPositionUni; // line: 277
+	uint32_t textureUni; // line: 278
 	
 	//temp window size stuff:
 	
-	int32_t m_windowWidth; // line: 284
-	int32_t m_windowHeight; // line: 285
+	int32_t m_windowWidth; // line: 282
+	int32_t m_windowHeight; // line: 283
 	
 };
 

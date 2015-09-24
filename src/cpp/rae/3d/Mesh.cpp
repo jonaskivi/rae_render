@@ -1,5 +1,5 @@
 // this file is automatically created from Rae programming language module:
-///home/joonaz/2015/ohjelmointi/rae_render/src/cpp/rae/3d/Mesh
+///Users/joonaz/Dropbox/jonas/2015/ohjelmointi/rae_render/src/cpp/rae/3d/Mesh
 #include "Mesh.hpp"
 ; // line: 2
 
@@ -388,42 +388,43 @@ void Mesh::createVBOs()
 	
 	glGenBuffers(1, &indexBufferID); // line: 423
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID); // line: 424
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(uint16_t ), &indices[0], GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(uint16_t ), &indices[0], GL_STATIC_DRAW); // line: 425
+	
 }
 
 void Mesh::render(uint32_t set_shader_program_id)
 {
-	glUseProgram(set_shader_program_id); // line: 430
+	glUseProgram(set_shader_program_id); // line: 431
 	
 	// Get a handle for our buffers
-	GLuint vertex_position_id = glGetAttribLocation(set_shader_program_id, "inPosition"); // line: 433
-	GLuint vertex_uv_id = glGetAttribLocation(set_shader_program_id, "inUV"); // line: 434
-	GLuint vertex_normal_id = glGetAttribLocation(set_shader_program_id, "inNormal"); // line: 435
+	GLuint vertex_position_id = glGetAttribLocation(set_shader_program_id, "inPosition"); // line: 434
+	GLuint vertex_uv_id = glGetAttribLocation(set_shader_program_id, "inUV"); // line: 435
+	GLuint vertex_normal_id = glGetAttribLocation(set_shader_program_id, "inNormal"); // line: 436
 	
 	// vertices
-	glEnableVertexAttribArray(vertex_position_id); // line: 438
-	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID); // line: 439
-	glVertexAttribPointer(vertex_position_id, 3, GL_FLOAT, GL_FALSE, 0, 0); // line: 440
+	glEnableVertexAttribArray(vertex_position_id); // line: 439
+	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID); // line: 440
+	glVertexAttribPointer(vertex_position_id, 3, GL_FLOAT, GL_FALSE, 0, 0); // line: 441
 	
 	//(void*)
 	
 	// UVs
-	glEnableVertexAttribArray(vertex_uv_id); // line: 445
-	glBindBuffer(GL_ARRAY_BUFFER, uvBufferID); // line: 446
-	glVertexAttribPointer(vertex_uv_id, 2, GL_FLOAT, GL_FALSE, 0, 0); // line: 447
+	glEnableVertexAttribArray(vertex_uv_id); // line: 446
+	glBindBuffer(GL_ARRAY_BUFFER, uvBufferID); // line: 447
+	glVertexAttribPointer(vertex_uv_id, 2, GL_FLOAT, GL_FALSE, 0, 0); // line: 448
 	
 	// normals
-	glEnableVertexAttribArray(vertex_normal_id); // line: 450
-	glBindBuffer(GL_ARRAY_BUFFER, normalBufferID); // line: 451
-	glVertexAttribPointer(vertex_normal_id, 3, GL_FLOAT, GL_FALSE, 0, 0); // line: 452
+	glEnableVertexAttribArray(vertex_normal_id); // line: 451
+	glBindBuffer(GL_ARRAY_BUFFER, normalBufferID); // line: 452
+	glVertexAttribPointer(vertex_normal_id, 3, GL_FLOAT, GL_FALSE, 0, 0); // line: 453
 	
 	// Index buffer
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID); // line: 455
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID); // line: 456
 	
-	glDrawElements(GL_TRIANGLES, (GLsizei )indices.size(), GL_UNSIGNED_SHORT, 0); // line: 457
+	glDrawElements(GL_TRIANGLES, (GLsizei )indices.size(), GL_UNSIGNED_SHORT, 0); // line: 458
 	
-	glDisableVertexAttribArray(vertex_position_id); // line: 459
-	glDisableVertexAttribArray(vertex_uv_id); // line: 460
+	glDisableVertexAttribArray(vertex_position_id); // line: 460
+	glDisableVertexAttribArray(vertex_uv_id); // line: 461
 	glDisableVertexAttribArray(vertex_normal_id);
 }
 
